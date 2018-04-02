@@ -1,0 +1,75 @@
+﻿
+/*==============fileupload======================*/
+.MultiFile-list {
+    width:auto;
+	height:auto;
+    background:#f8f9fd;
+	overflow:hidden;
+    padding:10px;
+	position:relative;
+}
+.MultiFile-list .MultiFile-label {
+    float:left;
+	border:1px solid #09F;
+	border-radius:5px;
+	width:85px;
+	height:75px;
+	margin-top:5px;
+	margin-left:5px;
+	overflow:hidden;
+    cursor:pointer;
+	position:relative;
+	background-color:#099;
+}
+.MultiFile-label .MultiFile-remove {
+    background:url(../images/x_alt.png) no-repeat;
+    position:absolute;
+	width:16px;
+	height:16px;
+	top:2px;
+	right:2px;
+	cursor:pointer;
+	display:block;
+}
+
+.MultiFile-label .MultiFile-view {
+    position:absolute;
+    background-position:center;
+    background-repeat:no-repeat;
+	top:0;
+	left:0;
+	width:85px;
+	height:75px;
+	overflow:hidden;
+}
+
+.MultiFile-label .rar_bg {
+    background-image:url(../images/filebg/rar.png) !important;  
+}
+.MultiFile-label .xlsx_bg,.MultiFile-label .xls_bg {
+    background-image:url(../images/filebg/xls.png) !important;  
+}
+.MultiFile-label .doc_bg,.MultiFile-label .docx_bg {
+    background-image:url(../images/filebg/doc.png) !important;  
+}
+.MultiFile-label .pdf_bg {
+    background-image:url(../images/filebg/pdf.png) !important;  
+}
+
+.MultiFile-label .MultiFile-view img {
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);
+}
+
+.MultiFile-label .MultiFile-title {
+    position:absolute;
+	bottom:0px;
+	left:0px;
+	width:100%;
+	height:20px;
+	line-height:20px;
+	text-align:center;
+	color:#fff;
+	font-size:12px;
+	display:block;
+	background:url(../images/bgblack.png);
+}

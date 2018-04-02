@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{67FB3F95-2EEE-4CC4-BD4C-9E70876B63DB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SysBase</RootNamespace>
+    <AssemblyName>SysBase</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\BDepartment.cs" />
+    <Compile Include="BLL\BMenu.cs" />
+    <Compile Include="BLL\BOperateLog.cs" />
+    <Compile Include="BLL\BRole.cs" />
+    <Compile Include="BLL\BSysCode.cs" />
+    <Compile Include="BLL\BSysOperateLog.cs" />
+    <Compile Include="BLL\BUser.cs" />
+    <Compile Include="DAL\DDepartment.cs" />
+    <Compile Include="DAL\DMenu.cs" />
+    <Compile Include="DAL\DOperateLog.cs" />
+    <Compile Include="DAL\DRole.cs" />
+    <Compile Include="DAL\DSysCode.cs" />
+    <Compile Include="DAL\DSysOperateLog.cs" />
+    <Compile Include="DAL\DUser.cs" />
+    <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\Menu.cs" />
+    <Compile Include="Model\OperateLog.cs" />
+    <Compile Include="Model\SysCode.cs" />
+    <Compile Include="Model\SysDepartment.cs" />
+    <Compile Include="Model\SysOperateLog.cs" />
+    <Compile Include="Model\SysRole.cs" />
+    <Compile Include="Model\SysUser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ECIS.Model\ECIS.Model.csproj">
+      <Project>{2c8d5bce-5066-4a31-ae4c-796e8f775b8b}</Project>
+      <Name>ECIS.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZLib\Zlib.csproj">
+      <Project>{5762bfb7-503d-4090-95c9-2c58ec2fdcd2}</Project>
+      <Name>Zlib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\ECIS.Model.dll" />
+    <Content Include="bin\Debug\ECIS.Model.pdb" />
+    <Content Include="bin\Debug\Excel.dll" />
+    <Content Include="bin\Debug\log4net.dll" />
+    <Content Include="bin\Debug\Microsoft.Vbe.Interop.dll" />
+    <Content Include="bin\Debug\Newtonsoft.Json.Net35.dll" />
+    <Content Include="bin\Debug\office.dll" />
+    <Content Include="bin\Debug\stdole.dll" />
+    <Content Include="bin\Debug\SysBase.dll" />
+    <Content Include="bin\Debug\SysBase.pdb" />
+    <Content Include="bin\Debug\TSOA.Model.dll" />
+    <Content Include="bin\Debug\TSOA.Model.pdb" />
+    <Content Include="bin\Debug\ZLib.dll" />
+    <Content Include="bin\Debug\ZLib.pdb" />
+    <Content Include="bin\Debug\ZLib.xml" />
+    <Content Include="bin\Release\Excel.dll" />
+    <Content Include="bin\Release\log4net.dll" />
+    <Content Include="bin\Release\log4net.xml" />
+    <Content Include="bin\Release\Newtonsoft.Json.Net35.dll" />
+    <Content Include="bin\Release\SysBase.dll" />
+    <Content Include="bin\Release\SysBase.pdb" />
+    <Content Include="bin\Release\ZLib.dll" />
+    <Content Include="bin\Release\ZLib.pdb" />
+    <Content Include="obj\Debug\SysBase.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\SysBase.dll" />
+    <Content Include="obj\Debug\SysBase.pdb" />
+    <Content Include="obj\Release\SysBase.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Release\SysBase.dll" />
+    <Content Include="obj\Release\SysBase.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\SysBase.csprojResolveAssemblyReference.cache" />
+    <None Include="obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Release\SysBase.csprojResolveAssemblyReference.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="obj\Release\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

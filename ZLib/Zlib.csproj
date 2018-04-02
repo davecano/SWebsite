@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5762BFB7-503D-4090-95C9-2C58EC2FDCD2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Z</RootNamespace>
+    <AssemblyName>ZLib</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\ZLib.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Excel, Version=1.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>ExcelDll\Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExcelDll\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.Net35, Version=4.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExcelDll\Newtonsoft.Json.Net35.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attribute.cs" />
+    <Compile Include="Base\DbHelper.cs" />
+    <Compile Include="Base\EntityBase.cs" />
+    <Compile Include="Base\PaginationBase.cs" />
+    <Compile Include="Base\WeakEntity.cs" />
+    <Compile Include="Configuration\ZConfigSection.cs" />
+    <Compile Include="DataBaseType.cs" />
+    <Compile Include="Data\ColumnInfo.cs" />
+    <Compile Include="Data\DALUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\DB2Pagination.cs" />
+    <Compile Include="Data\KeyMapping.cs" />
+    <Compile Include="Data\MysqlPagination.cs" />
+    <Compile Include="Data\OraclePagination.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\PageDescribe.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Query.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\SqlPagination.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\TableInfo.cs" />
+    <Compile Include="EncryptHelper.cs" />
+    <Compile Include="EntityErrorException.cs" />
+    <Compile Include="ExcelHelper.cs" />
+    <Compile Include="Extension\IDbHelperExtension.cs" />
+    <Compile Include="FileDownload.cs" />
+    <Compile Include="FileExcel.cs" />
+    <Compile Include="Interface\IDbHelper.cs" />
+    <Compile Include="Interface\IPagination.cs" />
+    <Compile Include="Interface\ITransation.cs" />
+    <Compile Include="JsonHelper.cs" />
+    <Compile Include="MailHelper.cs" />
+    <Compile Include="Page.cs" />
+    <Compile Include="PinYin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Message.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Pur\PurOperate.cs" />
+    <Compile Include="Pur\ZPurWebControls.cs" />
+    <Compile Include="SMS\SmsHelper.cs" />
+    <Compile Include="SqlForbidden.cs" />
+    <Compile Include="StringHelper.cs" />
+    <Compile Include="Thumbnail.cs" />
+    <Compile Include="TypeConverter.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="ValidateHelper.cs" />
+    <Compile Include="Web References\Mobset\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Winform\DataGridToExcelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winform\DataGridToExcelForm.designer.cs">
+      <DependentUpon>DataGridToExcelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XmlHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Winform\DataGridToExcelForm.resx">
+      <DependentUpon>DataGridToExcelForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ExcelDll\Excel.dll" />
+    <Content Include="ExcelDll\excel9.dll" />
+    <Content Include="ExcelDll\log4net.dll" />
+    <Content Include="ExcelDll\Newtonsoft.Json.Net35.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\Mobset\Api.wsdl" />
+    <None Include="Web References\Mobset\MmsIDGroup.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Mobset\MmsRecvFileGroup.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Mobset\MmsReportGroup.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Mobset\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\Mobset\SmsIDGroup.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Mobset\SmsRecvGroup.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Mobset\SmsReportGroup.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://sms3.mobset.com:8080/Api%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\Mobset\</RelPath>
+      <UpdateFromURL>http://sms3.mobset.com:8080/Api%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ZLib_Mobset_MobsetApi</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

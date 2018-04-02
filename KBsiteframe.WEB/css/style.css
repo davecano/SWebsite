@@ -1,0 +1,40 @@
+  .wrap{position: relative}
+       #searchresult
+       {
+           width:226px;
+           position: absolute;
+           z-index: 1;
+           overflow: hidden;
+           left: 0;
+           top: 200px;
+           background: #f9f9f9;
+           border-top: none;
+       }
+          .searchresult
+       {
+           width:226px;
+           position: absolute;
+           z-index: 1;
+           overflow: hidden;
+           left: 0;
+           top: 200px;
+           background: #f9f9f9;
+           border-top: none;
+       }
+      .line
+      {
+          font-size: 1em;
+          background: #f9f9f9;
+          width: 226px;
+          padding: 2px;
+      }
+      .hover
+      {
+          background: #337ab7;
+          width: 226px;
+          color: #fff;
+      }
+      .std
+      {
+          width: 226px;
+      }
