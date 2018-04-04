@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 using SysBase.BLL;
 using SysBase.Model;
 
-namespace MyCmsWEB
+namespace KBsiteframe.WEB.Comm
 {
     public class PubCom
     {

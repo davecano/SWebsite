@@ -9,7 +9,8 @@ using SysBase.Model;
 
 using Z;
 using System.Web.Services;
-using MyCmsWEB;
+using KBsiteframe.WEB.Comm;
+
 
 namespace KBsiteframe.Web.Share
 {

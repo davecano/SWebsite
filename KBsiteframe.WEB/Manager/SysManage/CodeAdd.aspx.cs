@@ -5,7 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using KBsiteframe.Model;
-using MyCmsWEB;
+using KBsiteframe.WEB.Comm;
+
 using SysBase.BLL;
 using SysBase.Model;
 using Z;

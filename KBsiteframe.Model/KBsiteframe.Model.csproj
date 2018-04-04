@@ -40,8 +40,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Member.cs" />
+    <Compile Include="Project.cs" />
+    <Compile Include="Treatise.cs" />
     <Compile Include="CommDef.cs" />
+    <Compile Include="Dynamic.cs" />
+    <Compile Include="Expert.cs" />
+    <Compile Include="Article.cs" />
+    <Compile Include="New.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZLib\Zlib.csproj">
+      <Project>{5762bfb7-503d-4090-95c9-2c58ec2fdcd2}</Project>
+      <Name>Zlib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

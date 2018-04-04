@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using MyCmsWEB;
+using KBsiteframe.WEB.Comm;
 using SysBase.Model;
 using Z;
 using SysBase;
@@ -18,8 +18,8 @@ namespace KBsiteframe.WEB
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //txtUserName.Text = "admin";
-            //txtPassword.Text = "999999";
+            txtUserName.Text = "admin";
+            txtPassword.Text = "999999";
 
         }
 

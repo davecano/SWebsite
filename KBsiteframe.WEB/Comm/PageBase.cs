@@ -6,14 +6,14 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using SysBase.Model;
 using Z;
-using Page = System.Web.UI.Page;
 
-namespace MyCmsWEB
+
+namespace KBsiteframe.WEB.Comm
 {
     /// <summary>
     ///     所有页面的基类
     /// </summary>
-    public class PageBase : Page
+    public class PageBase : System.Web.UI.Page
     {
         public string CompanyCode = ConfigurationManager.AppSettings["CompanyCode"];
 

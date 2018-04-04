@@ -494,11 +494,13 @@ namespace Z
         /// <summary>
         /// 截取字符长度
         /// </summary>
-        /// <param name="inputString">字符</param>
+        /// <param name="input">字符</param>
         /// <param name="len">长度</param>
         /// <returns></returns>
-        public static string CutString(string inputString, int len)
+        public static string CutString(object input, int len)
         {
+            if (input == null) return "";
+            string inputString = input.ToString().Trim();
             if (string.IsNullOrEmpty(inputString))
                 return "";
             //inputString = DropHTML(inputString);
@@ -529,10 +531,10 @@ namespace Z
                 if (tempLen > len)
                     break;
             }
-            //如果截过则加上半个省略号 
-            //byte[] mybyte = System.Text.Encoding.Default.GetBytes(inputString);
-            //if (mybyte.Length > len)
-            //    tempString += "…";
+            //如果截过则加上半个省略号
+            byte[] mybyte = System.Text.Encoding.Default.GetBytes(inputString);
+            if (mybyte.Length > len)
+                tempString += "…";
             return tempString;
         }
         #endregion

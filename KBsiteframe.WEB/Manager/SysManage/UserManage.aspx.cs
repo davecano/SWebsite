@@ -5,10 +5,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using KBsiteframe.Model;
+using KBsiteframe.WEB.Comm;
 using SysBase.BLL;
 using SysBase.Model;
 
-using MyCmsWEB;
+
 using Z;
 
 namespace KBsiteframe.Web.Manager.SysManage
@@ -81,15 +82,15 @@ namespace KBsiteframe.Web.Manager.SysManage
             rplist.DataBind();
             AspNetPager1.RecordCount = rec;
 
-            //// 插入日志
-            //SysOperateLog log = new SysOperateLog();
-            //log.LogID = StringHelper.getKey();
-            //log.LogType = LogType.帐户信息.ToString();
-            //log.OperateUser = GetLogUserName();
-            //log.OperateDate = DateTime.Now;
-            //log.LogOperateType = "用户查询";
-            //log.LogAfterObject = JsonHelper.Obj2Json<string>(q.GetCondition(true));
-            //bsol.Insert(log);
+            // 插入日志
+            SysOperateLog log = new SysOperateLog();
+            log.LogID = StringHelper.getKey();
+            log.LogType = LogType.帐户信息.ToString();
+            log.OperateUser = GetLogUserName();
+            log.OperateDate = DateTime.Now;
+            log.LogOperateType = "用户查询";
+            log.LogAfterObject = JsonHelper.Obj2Json<string>(q.GetCondition(true));
+            bsol.Insert(log);
         }
         
         protected void zbquery_Click(object sender, EventArgs e)

@@ -1,4 +1,4 @@
-﻿namespace MyCmsWEB
+﻿namespace KBsiteframe.WEB.Comm
 {
     public class Constants
     {

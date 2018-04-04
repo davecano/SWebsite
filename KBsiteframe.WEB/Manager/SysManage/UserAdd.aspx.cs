@@ -9,7 +9,8 @@ using SysBase.BLL;
 using SysBase.Model;
 using Z;
 using System.Collections;
-using MyCmsWEB;
+using KBsiteframe.WEB.Comm;
+
 
 namespace KBsiteframe.Web.Manager.SysManage
 {

@@ -575,6 +575,15 @@
     <Content Include="images\zuixin.jpg" />
     <Content Include="images\无标题-1.gif" />
     <Content Include="Login.aspx" />
+    <Content Include="Manager\ContentManage\TreatiseEdit.aspx" />
+    <Content Include="Manager\ContentManage\TreatiseManage.aspx" />
+    <Content Include="Manager\ContentManage\TreatiseAdd.aspx" />
+    <Content Include="Manager\ContentManage\ArticleEdit.aspx" />
+    <Content Include="Manager\ContentManage\ArticleAdd.aspx" />
+    <Content Include="Manager\ContentManage\ArticleManage.aspx" />
+    <Content Include="Manager\ContentManage\NewsAdd.aspx" />
+    <Content Include="Manager\ContentManage\NewsEdit.aspx" />
+    <Content Include="Manager\ContentManage\NewsManage.aspx" />
     <Content Include="Manager\SysManage\CodeAdd.aspx" />
     <Content Include="Manager\SysManage\CodeManage.aspx" />
     <Content Include="Manager\SysManage\CodeUpdate.aspx" />
@@ -613,7 +622,6 @@
     <Content Include="Ueditor\third-party\video-js\font\vjs.eot" />
     <Content Include="Ueditor\third-party\video-js\font\vjs.ttf" />
     <Content Include="Ueditor\third-party\video-js\font\vjs.woff" />
-    <Content Include="WebForm1.aspx" />
     <Content Include="css\docs\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="css\docs\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="css\docs\fonts\glyphicons-halflings-regular.woff" />
@@ -1112,6 +1120,69 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Manager\ContentManage\TreatiseEdit.aspx.cs">
+      <DependentUpon>TreatiseEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\TreatiseEdit.aspx.designer.cs">
+      <DependentUpon>TreatiseEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ContentManage\TreatiseManage.aspx.cs">
+      <DependentUpon>TreatiseManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\TreatiseManage.aspx.designer.cs">
+      <DependentUpon>TreatiseManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ContentManage\TreatiseAdd.aspx.cs">
+      <DependentUpon>TreatiseAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\TreatiseAdd.aspx.designer.cs">
+      <DependentUpon>TreatiseAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ContentManage\ArticleEdit.aspx.cs">
+      <DependentUpon>ArticleEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\ArticleEdit.aspx.designer.cs">
+      <DependentUpon>ArticleEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ContentManage\ArticleAdd.aspx.cs">
+      <DependentUpon>ArticleAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\ArticleAdd.aspx.designer.cs">
+      <DependentUpon>ArticleAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ContentManage\ArticleManage.aspx.cs">
+      <DependentUpon>ArticleManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\ArticleManage.aspx.designer.cs">
+      <DependentUpon>ArticleManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ContentManage\NewsAdd.aspx.cs">
+      <DependentUpon>NewsAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\NewsAdd.aspx.designer.cs">
+      <DependentUpon>NewsAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ContentManage\NewsEdit.aspx.cs">
+      <DependentUpon>NewsEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\NewsEdit.aspx.designer.cs">
+      <DependentUpon>NewsEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ContentManage\NewsManage.aspx.cs">
+      <DependentUpon>NewsManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\NewsManage.aspx.designer.cs">
+      <DependentUpon>NewsManage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Manager\SysManage\CodeAdd.aspx.cs">
       <DependentUpon>CodeAdd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1254,15 +1325,12 @@
     <Compile Include="Ueditor\net\App_Code\NotSupportedHandler.cs" />
     <Compile Include="Ueditor\net\App_Code\PathFormater.cs" />
     <Compile Include="Ueditor\net\App_Code\UploadHandler.cs" />
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\KBsiteframe.Bll\KBsiteframe.Bll.csproj">
+      <Project>{cbb2c39c-214e-4e54-bfe5-777e5e3b07df}</Project>
+      <Name>KBsiteframe.Bll</Name>
+    </ProjectReference>
     <ProjectReference Include="..\KBsiteframe.Model\KBsiteframe.Model.csproj">
       <Project>{ab0bdddc-dd2c-4a5f-a421-3d9e03998312}</Project>
       <Name>KBsiteframe.Model</Name>

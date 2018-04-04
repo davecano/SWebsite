@@ -127,10 +127,11 @@ function closeLayer(obj) {
 
 //资质附件删除
 function delFileUpload($file, pageurl) {
-    var attachID = $file.attr("data-value");
-    var senddata = '{ attachID: "' + attachID + '"}';
+    var ArticleID = $file.attr("data-value");
+    var senddata = '{ ArticleID: "' + ArticleID + '"}';
     $prent_file = $file.parent(".MultiFile-label");
-    ajaxExistTwo(pageurl + "/DeleteQAttachByID", senddata, $prent_file, "资质附件删除成功", "资质附件删除成功");
+
+    ajaxExistTwo(pageurl + "/DeletePicByID", senddata, $prent_file, "pdf删除成功", "pdf删除成功");
     var e = $file[0];
     if (e && e.stopPropagation)
         //因此它支持W3C的stopPropagation()方法
@@ -164,16 +165,11 @@ function ajaxExistTwo(pageurl, senddata, $file, showmessage, errormessage) {
 
 //资质文件下载或查看
 function showOrdown($div) {
-    var exten = $div.attr("data-value1");
-    var quali_id = $div.attr("data-value2");
-    var attach_id = $div.attr("data-value3");
-    var path = $div.attr("data-value4");
-    var all_exten = "png|jpg|jpeg|gif|bmp";
-    if (all_exten.indexOf(exten) != -1) {
-        window.open("/Pub/ShowPicture.aspx?quali_id=" + quali_id + "&attach_id=" + attach_id);
-    } else {
+
+    var path = $div.attr("data-value");
+  
         window.open(path);
-    }
+    
 }
 
 

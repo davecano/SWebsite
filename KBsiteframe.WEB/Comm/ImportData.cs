@@ -2,7 +2,7 @@
 using System.Data;
 using Z.Data;
 
-namespace MyCmsWEB.Comm
+namespace KBsiteframe.WEB.Comm
 {
     public class ImportData
     {
