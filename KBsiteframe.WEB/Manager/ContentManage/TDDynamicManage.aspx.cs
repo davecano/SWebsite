@@ -17,17 +17,17 @@ using Z;
 
 namespace KBsiteframe.WEB.Manager.ContentManage
 {
-    public partial class NewsManage : PageBase
+    public partial class TDDynamicManage : PageBase
     {
-        public NewsManage()
+        public TDDynamicManage()
         {
-            ModuleCode = "NewsManage";
+            ModuleCode = "TDDynamicManage";
             PageOperate=PurOperate.查询;
         }
  
       
-        BNew bn=new BNew();
-         BSysOperateLog bsol=new BSysOperateLog();
+        BDynamic bd=new BDynamic();
+   BSysOperateLog bsol=new BSysOperateLog();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -38,8 +38,10 @@ namespace KBsiteframe.WEB.Manager.ContentManage
 
         private void BindingList()
         {
-            Query qm = Query.Build(new {SortFields = "IsTop Desc,IsHot Desc,SubmitTime Desc" });
-         
+            Query qm = Query.Build(new {SortFields = "IsTop Desc,SubTime Desc" });
+            //联盟动态
+            qm.Add("DynamicType", DynamicType.团队动态.ToString());
+
             string Title = PubCom.CheckString(txtTitle.Text.Trim());
             if (Title != "")
                 qm.Add("Title", Title);
@@ -55,23 +57,21 @@ namespace KBsiteframe.WEB.Manager.ContentManage
             if (dpIsTop.SelectedValue != "")
                 qm.Add("IsTop", dpIsTop.SelectedValue == "1" );
 
-            if (dpIsHot.SelectedValue != "")
-                qm.Add("IsHot", dpIsHot.SelectedValue == "1");
 
             int ret = 0;
-            rplist.DataSource = bn.GetNewsList(qm, AspNetPager1.CurrentPageIndex, AspNetPager1.PageSize, out ret);
+            rplist.DataSource = bd.GetDynamicsList(qm, AspNetPager1.CurrentPageIndex, AspNetPager1.PageSize, out ret);
             rplist.DataBind();
             AspNetPager1.RecordCount = ret;
-
             // 插入日志  query
             SysOperateLog log = new SysOperateLog();
             log.LogID = StringHelper.getKey();
-            log.LogType = LogType.新闻信息.ToString();
+            log.LogType = LogType.团队动态信息.ToString();
             log.OperateUser = GetLogUserName();
             log.OperateDate = DateTime.Now;
-            log.LogOperateType = "用户查询";
+            log.LogOperateType = "团队动态信息查询";
             log.LogAfterObject = JsonHelper.Obj2Json<string>(qm.GetCondition(true));
             bsol.Insert(log);
+
         }
 
         protected void zbquery_OnClick(object sender, EventArgs e)
@@ -86,37 +86,39 @@ namespace KBsiteframe.WEB.Manager.ContentManage
 
         protected void ZButton2_OnClick(object sender, EventArgs e)
         {
-            Response.Redirect("NewsAdd.aspx");
+            Response.Redirect("TDDynamicAdd.aspx");
         }
 
         protected void rplist_OnItemCommand(object source, RepeaterCommandEventArgs e)
         {
             if (e.CommandName=="bj")
             {
-                Response.Redirect("NewsEdit.aspx?ID="+e.CommandArgument);
+                Response.Redirect("TDDynamicEdit.aspx?ID=" + e.CommandArgument);
             }
             if (e.CommandName == "sc")
             {
               
                 int id = int.Parse(e.CommandArgument.ToString());
-                var newsmodel = bn.GetNewsByID(id);
+                var newsmodel = bd.GetDynamicsByID(id);
 
-                if (bn.Delete(newsmodel) == 1)
+                if (bd.Delete(newsmodel) == 1)
                 {
+                    //// 插入日志  delete
                     SysOperateLog log = new SysOperateLog();
                     log.LogID = StringHelper.getKey();
-                    log.LogType = LogType.新闻信息.ToString();
+                    log.LogType = LogType.联盟动态信息.ToString();
                     log.OperateUser = GetLogUserName();
                     log.OperateDate = DateTime.Now;
-                    log.LogOperateType = "文章删除";
+                    log.LogOperateType = "团队动态信息删除";
                     log.LogBeforeObject = JsonHelper.Obj2Json(newsmodel);
                     bsol.Insert(log);
-                    Message.ShowOK(this, "删除文章成功!");
+                 
+                    Message.ShowOK(this, "删除团队动态成功!");
                 }
-      
+        
                 
                 else
-                    Message.ShowWrong(this,"删除文章失败");
+                    Message.ShowWrong(this,"删除团队动态失败");
                 
             }
             BindingList();

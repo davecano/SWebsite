@@ -1,5 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TreatiseManage.aspx.cs" Inherits="KBsiteframe.WEB.Manager.ContentManage.TreatiseManage" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LMDynamicManage.aspx.cs" Inherits="KBsiteframe.WEB.Manager.ContentManage.LMDynamicManage" %>
 
 <%@ Register Assembly="ZLib" Namespace="Z" TagPrefix="cc1" %>
 <%@ Register Assembly="AspNetPager" Namespace="Z" TagPrefix="webdiyer" %>
@@ -9,7 +8,7 @@
 <html>
 <head id="Head1" runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>专著管理</title>
+    <title>联盟动态管理</title>
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
@@ -53,48 +52,40 @@
                         <div class="col-sm-2 align-left">
                             <asp:TextBox ID="txtClassName" runat="server"></asp:TextBox>
                         </div>--%>
-                        <label class="col-sm-1 align-right">书名</label>
+                        <label class="col-sm-1 align-right">标题</label>
                         <div class="col-sm-2 align-left">
-                            <asp:TextBox ID="txtBookName" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtTitle" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
-                        <label class="col-sm-1 align-right">作者</label>
+                        <label class="col-sm-1 align-right">上传者</label>
                         <div class="col-sm-2 align-left">
-                            <asp:TextBox ID="txtAuthor" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtAuthor" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
-                        <label class="col-sm-1 align-right">完成时间</label>
+                        <label class="col-sm-1 align-right">发布时间</label>
                         <div class="col-sm-2 align-left">
                             <asp:TextBox runat="server" name="ExecuteDateStart" type="text" class="Wdate" ID="StarTime" onFocus="WdatePicker({maxDate:'#F{$dp.$D(\'StarTime\',{d:730});}',minDate:'#F{$dp.$D(\'StarTime\',{d:0});}',startDate:'#F{$dp.$D(\'StarTime\',{d:365});}',alwaysUseStartDate:true})" Width="70px"></asp:TextBox>
                         </div>
-                        <label class="col-sm-1 align-right">出版社</label>
-                        <div class="col-sm-2 align-left">
-                            <asp:TextBox ID="txtPublish" runat="server"></asp:TextBox>
-                        </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-1 align-right control-label no-padding-right">联盟成员</label>
-                        <div class="col-sm-2">
-                            <asp:DropDownList runat="server" ID="dpLm" />
-                        </div>
-                        <label class="col-sm-1 align-right control-label no-padding-right">团队成员</label>
-                        <div class="col-sm-2">
-                            <asp:DropDownList runat="server" ID="dpTd" />
-                        </div>
-                        <label class="col-sm-1 align-right control-label no-padding-right">所属专家</label>
-                        <div class="col-sm-2">
-                            <asp:DropDownList runat="server" ID="dpExpert" />
-                        </div>
-                        <label class="col-sm-1 align-right control-label no-padding-right">所属项目</label>
-                        <div class="col-sm-2">
-                            <asp:DropDownList runat="server" ID="dpProject" />
-                        </div>
 
+
+                        <label class="col-sm-1 align-right">是否置顶</label>
+                        <div class="col-sm-2 align-left">
+                            <asp:DropDownList ID="dpIsTop" runat="server" CssClass="form-control">
+                                <asp:ListItem Value="">==请选择==</asp:ListItem>
+                                <asp:ListItem Value="1">是</asp:ListItem>
+                                <asp:ListItem Value="0">否</asp:ListItem>
+                            </asp:DropDownList>
+
+                            <%-- <asp:CheckBox ID="IsTop" runat="server" Text="显示" CssClass="ace" />--%>
+                        </div>
+                      
                     </div>
                 </div>
             </div>
             <div class="panel-footer align-center">
-                <cc1:ZButton ID="zbquery" runat="server" Text="查询" ModuleCode="TreatiseManage" OnClick="zbquery_OnClick" Operate="查询" CssClass="btn btn-sm btn-primary" />
+                <cc1:ZButton ID="zbquery" runat="server" Text="查询" ModuleCode="LMDynamicManage" OnClick="zbquery_OnClick" Operate="查询" CssClass="btn btn-sm btn-primary" />
                 &nbsp;
-                <cc1:ZButton ID="ZButton2" runat="server" Text="新增" ModuleCode="TreatiseManage" OnClick="ZButton2_OnClick" Operate="添加" CssClass="btn btn-sm btn-primary" />
+                <cc1:ZButton ID="ZButton2" runat="server" Text="新增" ModuleCode="LMDynamicManage" OnClick="ZButton2_OnClick" Operate="添加" CssClass="btn btn-sm btn-primary" />
 
                 <%--   <cc1:ZButton ID="ZButton3" runat="server" Text="修改" OnClick="ZButton3_Click" ModuleCode="HospitalManage" Operate="修改" />--%>
 
@@ -108,17 +99,13 @@
                         <tr class="table-header">
                             <th class="center col-sm-1">选</th>
 
-                            <th class="center">书名</th>
+                            <th class="center">标题</th>
+                            <th class="center ">上传者</th>
+                            <th class="center ">发布时间</th>
 
-                            <th class="center ">完成时间</th>
-
-                            <th class="center ">作者</th>
-                            <th class="center ">出版社</th>
-                            <th class="center">专家</th>
-                            <th class="center">联盟成员</th>
-                            <th class="center">团队成员</th>
-                            <th class="center">所属项目</th>
-                            <th class="center">操作</th>
+                            <th class="center ">是否置顶</th>
+                             <th class="center ">浏览数</th>
+                            <th class="center">修改</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -126,24 +113,18 @@
                             <ItemTemplate>
                                 <tr>
                                     <td class="center">
-                                        <input type="checkbox" value='<%#Eval("TreatiseID") %>' id="cbselect" name="cbselect" onclick="Change(event, 'tlist');" runat="server" />
+                                        <input type="checkbox" value='<%#Eval("DynamicID") %>' id="cbselect" name="cbselect" onclick="Change(event, 'tlist');" runat="server" />
                                     </td>
-                                    <td class="center"><%#Eval("TreatiseName") %></td>
-                                    <td class="center"><%#String.Format(@"{0:D}", Eval("FinishTime")) %></td>
-                                    <td class="center"><%#Eval("Author") %></td>
+                                    <td class="center"><%#Eval("Title") %></td>
+                                    <td class="center"><%#Eval("Uploader") %></td>
 
 
-
-                                    <td class="center"><%#Eval("Publishing") %></td>
-
-
-                                    <td class="center"><%#Eval("EName")??"无" %></td>
-                                    <td class="center"><%#Eval("LmMemberName ")??"无"  %></td>
-                                    <td class="center"><%#Eval("TdMemberName ")??"无"  %></td>
-                                    <td class="center"><%#Eval("ProjectName ")??"无"  %></td>
+                                    <td class="center"><%#String.Format(@"{0:D}", Eval("SubTime")) %></td>
+                                    <td class="center"><%#Utils.Istrue(Eval("IsTop"))%></td>
+                                    <td class="center"><%#Eval("DynamicViews")??0 %></td>
                                     <td class="center">
-                                        <cc1:ZLinkButton ID="zlbj" CommandName="bj" runat="server" CommandArgument='<%#Eval("TreatiseID") %>' ModuleCode="TreatiseManage" Operate="修改" CssClass="btn btn-primary btn-sm">修改</cc1:ZLinkButton>
-                                        <cc1:ZLinkButton ID="zlsc" CommandName="sc" runat="server" CommandArgument='<%#Eval("TreatiseID") %>' OnClientClick="return confirm('确定要删除吗？');" ModuleCode="TreatiseManage" Operate="删除" CssClass="btn btn-danger btn-sm">删除</cc1:ZLinkButton>
+                                        <cc1:ZLinkButton ID="zlbj" CommandName="bj" runat="server" CommandArgument='<%#Eval("DynamicID") %>' ModuleCode="LMDynamicManage" Operate="修改">修改</cc1:ZLinkButton>
+                                        <cc1:ZLinkButton ID="zlsc" CommandName="sc" runat="server" CommandArgument='<%#Eval("DynamicID") %>' OnClientClick="return confirm('确定要删除吗？');" ModuleCode="LMDynamicManage" Operate="删除">删除</cc1:ZLinkButton>
                                     </td>
                                 </tr>
                             </ItemTemplate>

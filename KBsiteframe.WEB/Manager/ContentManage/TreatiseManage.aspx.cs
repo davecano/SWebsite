@@ -106,7 +106,7 @@ namespace KBsiteframe.WEB.Manager.ContentManage
                 qm.Add("p.ProjectID", dpProject.SelectedValue);
 
             string Name = PubCom.CheckString(txtBookName.Text.Trim());
-            if (Title != "")
+            if (Name != "")
                 qm.Add("t.TreatiseName", Name);
             string author = PubCom.CheckString(txtAuthor.Text.Trim());
             if (author != "")
@@ -123,6 +123,16 @@ namespace KBsiteframe.WEB.Manager.ContentManage
             rplist.DataSource = bt.GetTreatisesList(qm, AspNetPager1.CurrentPageIndex, AspNetPager1.PageSize, out ret);
             rplist.DataBind();
             AspNetPager1.RecordCount = ret;
+
+            // 插入日志  query
+            SysOperateLog log = new SysOperateLog();
+            log.LogID = StringHelper.getKey();
+            log.LogType = LogType.专著信息.ToString();
+            log.OperateUser = GetLogUserName();
+            log.OperateDate = DateTime.Now;
+            log.LogOperateType = "专著查询";
+            log.LogAfterObject = JsonHelper.Obj2Json<string>(qm.GetCondition(true));
+            bsol.Insert(log);
         }
 
         protected void zbquery_OnClick(object sender, EventArgs e)
@@ -153,10 +163,24 @@ namespace KBsiteframe.WEB.Manager.ContentManage
                 var newsmodel = bt.GetTreatisesByID(id);
 
                 if (bt.Delete(newsmodel) == 1)
-                    Message.ShowOK(this, "删除文章成功!");
+                {
+
+                    //// 插入日志  delete
+                    SysOperateLog log = new SysOperateLog();
+                    log.LogID = StringHelper.getKey();
+                    log.LogType = LogType.专著信息.ToString();
+                    log.OperateUser = GetLogUserName();
+                    log.OperateDate = DateTime.Now;
+                    log.LogOperateType = "删除专著";
+                    log.LogBeforeObject = JsonHelper.Obj2Json(newsmodel);
+                    bsol.Insert(log);
+
+                    Message.ShowOK(this, "删除专著成功!");
+                }
+          
 
                 else
-                    Message.ShowWrong(this, "删除文章失败");
+                    Message.ShowWrong(this, "删除专著失败");
 
             }
             BindingList();

@@ -7,7 +7,7 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace MyCmsWEB.Content {
+namespace KBsiteframe.WEB.Manager.ContentManage {
     
     
     public partial class TreatiseAdd {

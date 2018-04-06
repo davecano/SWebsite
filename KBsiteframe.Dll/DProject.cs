@@ -40,6 +40,11 @@ namespace KBsiteframe.Dll
         {
             return db.Update<Project>(m);
         }
+        public int sqlUpdate(int objID)
+        {
+            string sql = @"Update  Project set ExpertID=null where ExpertID=" + objID;
+            return db.ExecuteNonQuery(sql);
+        }
 
         public Project GetProjectsById(int newsID)
         {

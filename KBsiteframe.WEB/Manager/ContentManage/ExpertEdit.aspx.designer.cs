@@ -10,7 +10,7 @@
 namespace KBsiteframe.WEB.Manager.ContentManage {
     
     
-    public partial class TreatiseEdit {
+    public partial class ExpertEdit {
         
         /// <summary>
         /// form1 控件。
@@ -22,22 +22,22 @@ namespace KBsiteframe.WEB.Manager.ContentManage {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// hftreatiseID 控件。
+        /// hfexpertid 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hftreatiseID;
+        protected global::System.Web.UI.WebControls.HiddenField hfexpertid;
         
         /// <summary>
-        /// txtBookName 控件。
+        /// txtEName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBookName;
+        protected global::System.Web.UI.WebControls.TextBox txtEName;
         
         /// <summary>
         /// Literal5 控件。
@@ -49,13 +49,13 @@ namespace KBsiteframe.WEB.Manager.ContentManage {
         protected global::System.Web.UI.WebControls.Literal Literal5;
         
         /// <summary>
-        /// txtauthor 控件。
+        /// txtECountry 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtauthor;
+        protected global::System.Web.UI.WebControls.TextBox txtECountry;
         
         /// <summary>
         /// Literal1 控件。
@@ -67,76 +67,22 @@ namespace KBsiteframe.WEB.Manager.ContentManage {
         protected global::System.Web.UI.WebControls.Literal Literal1;
         
         /// <summary>
-        /// StarTime 控件。
+        /// dpIstop 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox StarTime;
+        protected global::System.Web.UI.WebControls.DropDownList dpIstop;
         
         /// <summary>
-        /// Literal2 控件。
+        /// dpEIdentification 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Literal2;
-        
-        /// <summary>
-        /// txtPublishing 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPublishing;
-        
-        /// <summary>
-        /// Literal3 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Literal3;
-        
-        /// <summary>
-        /// txtsummary 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtsummary;
-        
-        /// <summary>
-        /// Literal4 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Literal4;
-        
-        /// <summary>
-        /// txtCatalog 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCatalog;
-        
-        /// <summary>
-        /// Literal6 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Literal6;
+        protected global::System.Web.UI.WebControls.DropDownList dpEIdentification;
         
         /// <summary>
         /// ImgNews 控件。
@@ -166,40 +112,22 @@ namespace KBsiteframe.WEB.Manager.ContentManage {
         protected global::System.Web.UI.WebControls.Label lbl_pic;
         
         /// <summary>
-        /// dpExpert 控件。
+        /// txtESummary 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dpExpert;
+        protected global::System.Web.UI.WebControls.TextBox txtESummary;
         
         /// <summary>
-        /// dpProject 控件。
+        /// Literal4 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dpProject;
-        
-        /// <summary>
-        /// dpLm 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dpLm;
-        
-        /// <summary>
-        /// dpTd 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dpTd;
+        protected global::System.Web.UI.WebControls.Literal Literal4;
         
         /// <summary>
         /// btnAdd 控件。

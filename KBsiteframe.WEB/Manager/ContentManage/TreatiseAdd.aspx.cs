@@ -10,10 +10,11 @@ using System.Web.UI.WebControls;
 using KBsiteframe.Bll;
 using KBsiteframe.Model;
 using KBsiteframe.WEB.Comm;
-
+using SysBase.BLL;
+using SysBase.Model;
 using Z;
 
-namespace MyCmsWEB.Content
+namespace KBsiteframe.WEB.Manager.ContentManage
 {
     public partial class TreatiseAdd : PageBase
     {
@@ -22,10 +23,11 @@ namespace MyCmsWEB.Content
             ModuleCode = "TreatiseManage";
             PageOperate = PurOperate.添加;
         }
-       BTreatise bt=new BTreatise();
+        BTreatise bt = new BTreatise();
         BExpert be = new BExpert();
         BProject bp = new BProject();
         BMember bm = new BMember();
+        BSysOperateLog bsol = new BSysOperateLog();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -36,7 +38,7 @@ namespace MyCmsWEB.Content
 
         void BindDropDownList()
         {
-            
+
             //绑定 专家，项目，联盟成员，团队成员
             Query qe = Query.Build(new { SortFields = "ExpertID" });
             Query qp = Query.Build(new { SortFields = "ProjectID" });
@@ -86,34 +88,56 @@ namespace MyCmsWEB.Content
 
         protected void btnAdd_OnClick(object sender, EventArgs e)
         {
-            string picurl = "";
-            string  savepath= DateTime.Now.Year + "_" + DateTime.Now.Month + "/" + DateTime.Now.Day;
-            if (bt.UploadValidate(pic_upload, lbl_pic, PicFilePath, savepath, out picurl))
-            {
-                Treatise t = new Treatise();
 
-                t.TreatiseID = bt.GetMaxID() + 1;
-                t.TreatiseName = PubCom.CheckString(txtBookName.Text.Trim());
-                t.FinishTime = DateTime.Parse(StarTime.Text.Trim());
-                t.Author = PubCom.CheckString(txtauthor.Text.Trim());
-                t.Publishing = PubCom.CheckString(txtPublishing.Text.Trim());
-                t.Summary = PubCom.CheckString(txtsummary.Text.Trim());
-                t.Catalog = PubCom.CheckString(txtCatalog.Text.Trim());
-                t.Picpath = picurl;
-                if(bt.Insert(t)==1)
-                    Message.ShowOKAndRedirect(this, "添加专著成功", "TreatiseManage.aspx");
+            string savepath = DateTime.Now.Year + "_" + DateTime.Now.Month + "/" + DateTime.Now.Day;
+
+            Treatise t = new Treatise();
+
+            t.TreatiseID = bt.GetMaxID() + 1;
+            t.TreatiseName = PubCom.CheckString(txtBookName.Text.Trim());
+            t.FinishTime = DateTime.Parse(StarTime.Text.Trim());
+            t.Author = PubCom.CheckString(txtauthor.Text.Trim());
+            t.Publishing = PubCom.CheckString(txtPublishing.Text.Trim());
+            t.Summary = PubCom.CheckString(txtsummary.Text.Trim());
+            t.Catalog = PubCom.CheckString(txtCatalog.Text.Trim());
+            if (dpExpert.SelectedValue != "")
+                t.ExpertID = Utils.StrToInt(dpExpert.SelectedValue, 0);
+            if (dpLm.SelectedValue != "")
+                t.LmMemberID = Utils.StrToInt(dpLm.SelectedValue, 0);
+            if (dpTd.SelectedValue != "")
+                t.TdMemberID = Utils.StrToInt(dpTd.SelectedValue, 0);
+            if (dpProject.SelectedValue != "")
+                t.ProjectID = Utils.StrToInt(dpProject.SelectedValue, 0);
+
+            if (bt.Insert(t) == 1)
+            {
+                bt.UploadValidate(pic_upload, lbl_pic, PicFilePath, savepath, t.TreatiseID);
+
+
+                //// 插入日志 add
+                SysOperateLog log = new SysOperateLog();
+                log.LogID = StringHelper.getKey();
+                log.LogType = LogType.专著信息.ToString();
+                log.OperateUser = GetLogUserName();
+                log.OperateDate = DateTime.Now;
+                log.LogOperateType = "专著新增";
+
+                log.LogAfterObject = JsonHelper.Obj2Json(t);
+                bsol.Insert(log);
+                Message.ShowOKAndRedirect(this, "添加专著成功", "TreatiseManage.aspx");
             }
+
             else
             {
                 Message.ShowWrong(this, "添加专著失败！");
                 return;
             }
-          
-       
-            }
-        
-        
-       
+
+
+        }
+
+
+
     }
 
 }

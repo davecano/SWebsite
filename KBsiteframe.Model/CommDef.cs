@@ -6,7 +6,7 @@ using System.Text;
 namespace KBsiteframe.Model
 {
 
-    public class ModelConstants 
+    public class ModelConstants
     {
         //常量
         public static string FileBathPath = "ArticleFile";//文章上传文件的根目录
@@ -15,8 +15,8 @@ namespace KBsiteframe.Model
         public static string DocumentBathPath = "DocumentFile"; // 文档上传文件的根目录
         public static string InvoiceBathPath = "InvoiceFile"; // 文档上传文件的根目录
         public static string BidResultBathPath = "BidResultFile"; // 文档上传文件的根目录
-        public static string DeliveryPricesBasePath ="DeliveryPricesFile"; // 文档上传文件的根目录
-        
+        public static string DeliveryPricesBasePath = "DeliveryPricesFile"; // 文档上传文件的根目录
+
         public static string ProjectBathPath = "ProjectFile"; // 文档上传文件的根目录
         public static int FileMaxLength = 3;//上传文件最大大小。单位MB
         public static string CanUploadFile = ".png|.jpg|.jpeg|.gif|.bmp|.xls|.xlsx|.rar|.zip|.doc|.docx|.pdf|.ppt|.pptx";
@@ -39,7 +39,7 @@ namespace KBsiteframe.Model
     /// </summary>
     public enum UserStatus
     {
-      
+
         审核中,
         审核通过,
         审核不通过
@@ -55,7 +55,7 @@ namespace KBsiteframe.Model
         审核不通过
     }
 
-  
+
 
     public enum FieldType
     {
@@ -66,7 +66,7 @@ namespace KBsiteframe.Model
         日期
     }
 
- 
+
 
     public enum LogType
     {
@@ -74,10 +74,14 @@ namespace KBsiteframe.Model
         菜单信息,
         角色信息,
         日志信息,
-         部门信息,
+        部门信息,
         数据字典,
         文章信息,
-        新闻信息
+        新闻信息,
+        专著信息,
+        专家信息,
+        联盟动态信息,
+        团队动态信息
     }
 
     public enum MemberType
@@ -85,4 +89,16 @@ namespace KBsiteframe.Model
         联盟成员,
         团队成员
     }
+    public enum DynamicType
+    {
+        联盟动态,
+        团队动态
+    }
+    public enum ExpertType
+    {
+        普通专家 = 1,
+        成员进盟 = 2,
+        校内专家=3
+    }
+
 }

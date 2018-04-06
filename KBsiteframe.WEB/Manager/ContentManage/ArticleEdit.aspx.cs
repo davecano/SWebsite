@@ -147,6 +147,7 @@ namespace KBsiteframe.WEB.Manager.ContentManage
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
+            Article olda = ba.GetArticlesByID(Utils.StrToInt(hfArticleID.Value, 0));
             Article a=new Article();
 
             a.ArticleID = Utils.StrToInt(hfArticleID.Value, 0);
@@ -171,34 +172,30 @@ namespace KBsiteframe.WEB.Manager.ContentManage
 
                 a.TdMemberID = Utils.StrToInt(dpTd.SelectedValue, 0);
             int rec= ba.Update(a);
-            int ret = 0;
+        
             if (rec == 1)
             {
 
                 HttpFileCollection htf = Request.Files;
-             ret = ba.UploadFile(htf[0], PicFilePath, a.ArticleID);
-               
-            }
-       
+               ba.UploadFile(htf[0], PicFilePath, a.ArticleID);
 
 
-
-       
-            if (ret == 1)
-            {
                 //// 插入日志
                 SysOperateLog log = new SysOperateLog();
                 log.LogID = StringHelper.getKey();
                 log.LogType = LogType.文章信息.ToString();
                 log.OperateUser = GetLogUserName();
                 log.OperateDate = DateTime.Now;
-                log.LogOperateType = "新增文章";
-
+                log.LogOperateType = "修改文章";
+                
+              log.LogBeforeObject = JsonHelper.Obj2Json(olda);//不包含附件
                 log.LogAfterObject = JsonHelper.Obj2Json(a);//不包含附件
                 log.LogRemark = "不包含附件内容";
                 bsol.Insert(log);
                 Message.ShowOKAndRedirect(this, "修改成功", "ArticleManage.aspx");
+
             }
+       
             else
             {
                 Message.ShowWrong(this, "修改失败");

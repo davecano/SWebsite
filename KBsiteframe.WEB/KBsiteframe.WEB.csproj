@@ -575,7 +575,16 @@
     <Content Include="images\zuixin.jpg" />
     <Content Include="images\无标题-1.gif" />
     <Content Include="Login.aspx" />
+    <Content Include="Manager\ContentManage\ExpertEdit.aspx" />
+    <Content Include="Manager\ContentManage\ExpertAdd.aspx" />
+    <Content Include="Manager\ContentManage\TDDynamicAdd.aspx" />
+    <Content Include="Manager\ContentManage\TDDynamicEdit.aspx" />
+    <Content Include="Manager\ContentManage\LMDynamicEdit.aspx" />
+    <Content Include="Manager\ContentManage\LMDynamicAdd.aspx" />
+    <Content Include="Manager\ContentManage\TDDynamicManage.aspx" />
+    <Content Include="Manager\ContentManage\LMDynamicManage.aspx" />
     <Content Include="Manager\ContentManage\TreatiseEdit.aspx" />
+    <Content Include="Manager\ContentManage\ExpertManage.aspx" />
     <Content Include="Manager\ContentManage\TreatiseManage.aspx" />
     <Content Include="Manager\ContentManage\TreatiseAdd.aspx" />
     <Content Include="Manager\ContentManage\ArticleEdit.aspx" />
@@ -1120,12 +1129,75 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Manager\ContentManage\ExpertEdit.aspx.cs">
+      <DependentUpon>ExpertEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\ExpertEdit.aspx.designer.cs">
+      <DependentUpon>ExpertEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ContentManage\ExpertAdd.aspx.cs">
+      <DependentUpon>ExpertAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\ExpertAdd.aspx.designer.cs">
+      <DependentUpon>ExpertAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ContentManage\TDDynamicAdd.aspx.cs">
+      <DependentUpon>TDDynamicAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\TDDynamicAdd.aspx.designer.cs">
+      <DependentUpon>TDDynamicAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ContentManage\TDDynamicEdit.aspx.cs">
+      <DependentUpon>TDDynamicEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\TDDynamicEdit.aspx.designer.cs">
+      <DependentUpon>TDDynamicEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ContentManage\LMDynamicEdit.aspx.cs">
+      <DependentUpon>LMDynamicEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\LMDynamicEdit.aspx.designer.cs">
+      <DependentUpon>LMDynamicEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ContentManage\LMDynamicAdd.aspx.cs">
+      <DependentUpon>LMDynamicAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\LMDynamicAdd.aspx.designer.cs">
+      <DependentUpon>LMDynamicAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ContentManage\TDDynamicManage.aspx.cs">
+      <DependentUpon>TDDynamicManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\TDDynamicManage.aspx.designer.cs">
+      <DependentUpon>TDDynamicManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ContentManage\LMDynamicManage.aspx.cs">
+      <DependentUpon>LMDynamicManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\LMDynamicManage.aspx.designer.cs">
+      <DependentUpon>LMDynamicManage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Manager\ContentManage\TreatiseEdit.aspx.cs">
       <DependentUpon>TreatiseEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Manager\ContentManage\TreatiseEdit.aspx.designer.cs">
       <DependentUpon>TreatiseEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ContentManage\ExpertManage.aspx.cs">
+      <DependentUpon>ExpertManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\ExpertManage.aspx.designer.cs">
+      <DependentUpon>ExpertManage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manager\ContentManage\TreatiseManage.aspx.cs">
       <DependentUpon>TreatiseManage.aspx</DependentUpon>

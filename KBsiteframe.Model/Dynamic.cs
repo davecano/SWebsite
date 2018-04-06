@@ -21,8 +21,9 @@ namespace KBsiteframe.Model
         public string Content { get; set; }
         public int? DynamicViews { get; set; }
         public string DynamicType { get; set; }
-
-
+        public string Uploader { get; set; }
+        public DateTime? SubTime { get; set; }
+         public bool? IsTop { get; set; }
 
     }
 }

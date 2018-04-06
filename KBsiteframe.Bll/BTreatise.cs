@@ -20,7 +20,7 @@ namespace KBsiteframe.Bll
         DTreatise da = new DTreatise();
 
         #region"增删改"
-        public int Insert(Treatise a)
+        public int Insert(Treatise a )
         {
             return da.Insert(a);
         }
@@ -108,10 +108,10 @@ namespace KBsiteframe.Bll
             }
         }
 
-        public bool UploadValidate( FileUpload pic_upload, Label lbl_pic, string UploadBasePath,string SavePath, out string PicUrl)
+        public bool UploadValidate( FileUpload pic_upload, Label lbl_pic, string UploadBasePath,string SavePath,int treatiseID)
         {
-            Boolean fileOk, res = false;
-            PicUrl = "";
+            bool fileOk, res = false;
+        
             if (pic_upload.HasFile)
             {
                 string fileExtension = Path.GetExtension(pic_upload.FileName).ToLower();
@@ -124,7 +124,7 @@ namespace KBsiteframe.Bll
                     if (pic_upload.PostedFile.ContentLength < 8192000)
                     {
 
-                        string path = ModelConstants.FileBathPath + "/" + SavePath + "/";
+                        string path = ModelConstants.TreatiseBathPath + "/" + SavePath + "/";
 
                         string path_p = UploadBasePath + path;
                         if (!Directory.Exists(path_p))
@@ -138,8 +138,13 @@ namespace KBsiteframe.Bll
                         //ImgNews.ImageUrl =".."+ virpath;
                         //清空提示
                         lbl_pic.Text = "";
-                        PicUrl = path+filename;
-
+                        //更新专著表
+                      if(da.Update(new Treatise()
+                      {
+                          TreatiseID = treatiseID,
+                          Picpath = path + filename
+                      })==1)  
+                    
                         res = true;
                     }
                     else

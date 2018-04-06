@@ -44,6 +44,11 @@ left join  Member m2 on m2.MemberID= t.TdMemberID  where 1=1{0}";
         {
             return db.Update<Treatise>(m);
         }
+        public int sqlUpdate(int objID)
+        {
+            string sql = @"Update  Treatise set ExpertID=null where ExpertID=" + objID;
+            return db.ExecuteNonQuery(sql);
+        }
 
         public Treatise GetTreatisesById(int newsID)
         {

@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" ValidateRequest="false" CodeBehind="TreatiseEdit.aspx.cs" Inherits="MyCmsWEB.Content.TreatiseEdit" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" ValidateRequest="false" CodeBehind="TreatiseEdit.aspx.cs" Inherits=" KBsiteframe.WEB.Manager.ContentManage.TreatiseEdit" %>
 <%@ Register Assembly="ZLib" Namespace="Z" TagPrefix="cc1" %>
 
 <!DOCTYPE HTML>
 <html>
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
+    <title>修改专著</title>
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
       <script type="text/javascript" src="/Ueditor/ueditor.config.js"></script>
@@ -93,7 +93,7 @@
             <div class="page-header">
                 <h1>
 				    <small>
-					  添加专著
+					  修改专著
 				    </small>
 			    </h1>
             </div>
@@ -203,33 +203,17 @@
                         </div>
                     </div>
 
-                    <div class="col-xs-12">
-                        <div class="form-group">
-                            <label class="col-sm-2 align-right control-label no-padding-right">文章原件：</label>
-                            <div class="col-sm-10" style="vertical-align: middle;">
-                                <span class="red">可以上传单个pdf文件,文件大小不超过3M</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12">
-                        <div class="form-group">
-                            <label class="col-sm-2 align-right control-label no-padding-right"></label>
-                            <div class="col-sm-8">
-                                <input type="file" name="FileUpload1" id="FileUpload1" class="multi" accept="pdf" />
-                                <div class="MultiFile-list" id="FileUpload1_wrap_list"></div>
-                            </div>
-                        </div>
-                    </div>
+                  
                 </div>
 
             </div>
             <div class="clearfix form-actions">
                 <div class="col-md-offset-5 col-md-12">
-                    <input id="Return" class="btn btn-sm btn-info" type="button" value="返回" onclick="window.location.href = 'ArticleManage.aspx'" />
+                    <input id="Return" class="btn btn-sm btn-info" type="button" value="返回" onclick="window.location.href = 'TreatiseManage.aspx'" />
                     &nbsp;
                     <input id="Reset1" class="btn btn-sm btn-warning" type="reset" value="清空" />
                     &nbsp;
-                    <cc1:ZButton ID="btnAdd" runat="server" CssClass="btn btn-sm btn-primary" Text="添加" OnClientClick="return CheckForm();" OnClick="btnAdd_OnClick" ModuleCode="ArticleManage" Operate="添加" />
+                    <cc1:ZButton ID="btnAdd" runat="server" CssClass="btn btn-sm btn-primary" Text="修改" OnClientClick="return CheckForm();" OnClick="btnAdd_OnClick" ModuleCode="TreatiseManage" Operate="修改" />
                        &nbsp;
                    
                      </div>

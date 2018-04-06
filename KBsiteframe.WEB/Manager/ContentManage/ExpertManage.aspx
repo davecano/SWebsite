@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NewsManage.aspx.cs" Inherits="KBsiteframe.WEB.Manager.ContentManage.NewsManage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ExpertManage.aspx.cs" Inherits="KBsiteframe.WEB.Manager.ContentManage.ExpertManage" %>
+
 
 <%@ Register Assembly="ZLib" Namespace="Z" TagPrefix="cc1" %>
 <%@ Register Assembly="AspNetPager" Namespace="Z" TagPrefix="webdiyer" %>
@@ -8,7 +9,7 @@
 <html>
 <head id="Head1" runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>新闻管理</title>
+    <title>专家管理</title>
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
@@ -40,7 +41,25 @@
     <script type="text/javascript" src="/js/My97DatePicker4.7.2/WdatePicker.js"></script>
     <script type="text/javascript" src="/js/layer/layer.min.js"></script>
     <script type="text/javascript" src="/js/Common.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //$("#all_select :checkbox").click();
+   
+            $("#ZButton3").click(function () {
+                var ret = false;
+                var chk = $("#tlist").find('input[name*="select"][type="checkbox"]:checked');
+                if (chk.length <= 0) {
+                    layer.msg('请选择需要勾选的专家', 2, 8);
+                    ret = false;
+                }
+                else {
 
+                    ret = confirm('确定要讲选定的专家置顶？');
+                }
+                return ret;
+            });
+        });
+    </script>
 </head>
 <body>
     <form id="form1" runat="server" defaultbutton="zbquery">
@@ -52,51 +71,37 @@
                         <div class="col-sm-2 align-left">
                             <asp:TextBox ID="txtClassName" runat="server"></asp:TextBox>
                         </div>--%>
-                        <label class="col-sm-1 align-right">新闻标题</label>
+                        <label class="col-sm-1 align-right">专家姓名</label>
                         <div class="col-sm-2 align-left">
-                            <asp:TextBox ID="txtTitle" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtExpertName" runat="server"></asp:TextBox>
                         </div>
-                        <label class="col-sm-1 align-right">上传者</label>
+                        <label class="col-sm-1 align-right">国别</label>
                         <div class="col-sm-2 align-left">
-                            <asp:TextBox ID="txtAuthor" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtCountry" runat="server"></asp:TextBox>
                         </div>
-                        <label class="col-sm-1 align-right">发布时间</label>
-                        <div class="col-sm-2 align-left">
-                            <asp:TextBox runat="server" name="ExecuteDateStart" type="text" class="Wdate" ID="StarTime" onFocus="WdatePicker({maxDate:'#F{$dp.$D(\'StarTime\',{d:730});}',minDate:'#F{$dp.$D(\'StarTime\',{d:0});}',startDate:'#F{$dp.$D(\'StarTime\',{d:365});}',alwaysUseStartDate:true})" Width="70px"></asp:TextBox>
-                        </div>
-                    </div>
-                    <div class="form-group">
-
-
+                   
                         <label class="col-sm-1 align-right">是否置顶</label>
                         <div class="col-sm-2 align-left">
-                            <asp:DropDownList ID="dpIsTop" runat="server" CssClass="form-control">
-                                <asp:ListItem Value="">==请选择==</asp:ListItem>
+                          <asp:DropDownList runat="server" ID="dpIsTop">
+                              <asp:ListItem Value="">==请选择==</asp:ListItem>
                                 <asp:ListItem Value="1">是</asp:ListItem>
                                 <asp:ListItem Value="0">否</asp:ListItem>
-                            </asp:DropDownList>
-
-                            <%-- <asp:CheckBox ID="IsTop" runat="server" Text="显示" CssClass="ace" />--%>
+                          </asp:DropDownList>
                         </div>
-                        <label class="col-sm-1 align-right">是否热门</label>
+                        
+                        <label class="col-sm-1 align-right">是否置顶</label>
                         <div class="col-sm-2 align-left">
-                            <asp:DropDownList ID="dpIsHot" runat="server" CssClass="form-control">
-                                <asp:ListItem Value="">==请选择==</asp:ListItem>
-                                <asp:ListItem Value="1">是</asp:ListItem>
-                                <asp:ListItem Value="0">否</asp:ListItem>
-                            </asp:DropDownList>
-
-                            <%-- <asp:CheckBox ID="IsTop" runat="server" Text="显示" CssClass="ace" />--%>
+                      <asp:DropDownList runat="server" ID="dpEIdentification"/>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="panel-footer align-center">
-                <cc1:ZButton ID="zbquery" runat="server" Text="查询" ModuleCode="NewsManage" OnClick="zbquery_OnClick" Operate="查询" CssClass="btn btn-sm btn-primary" />
+                <cc1:ZButton ID="zbquery" runat="server" Text="查询" ModuleCode="ExpertManage" OnClick="zbquery_OnClick" Operate="查询" CssClass="btn btn-sm btn-primary" />
                 &nbsp;
-                <cc1:ZButton ID="ZButton2" runat="server" Text="新增" ModuleCode="NewsManage" OnClick="ZButton2_OnClick" Operate="添加" CssClass="btn btn-sm btn-primary" />
-
-                <%--   <cc1:ZButton ID="ZButton3" runat="server" Text="修改" OnClick="ZButton3_Click" ModuleCode="HospitalManage" Operate="修改" />--%>
+                <cc1:ZButton ID="ZButton2" runat="server" Text="新增" ModuleCode="ExpertManage" OnClick="ZButton2_OnClick" Operate="添加" CssClass="btn btn-sm btn-primary" />
+                    &nbsp;
+                   <cc1:ZButton ID="ZButton3" runat="server" Text="设置置顶专家" OnClick="ZButton3_OnClick" ModuleCode="ExpertManage" Operate="修改"  />
 
                 <%--<cc1:ZButton ID="ZButton4" runat="server" Text="删除" OnClientClick="return DeleteConfirm('tlist', '请选择需要删除的医院信息', '确定要删除吗？');" OnClick="ZButton4_Click" ModuleCode="NewsManage" Operate="删除"  EnableTheming="false"  class="btn btn-sm btn-danger" />--%>
             </div>
@@ -107,15 +112,15 @@
                     <thead>
                         <tr class="table-header">
                             <th class="center col-sm-1">选</th>
+                             <th class="center col-sm-1">置顶顺序</th>
+                            <th class="center">专家姓名</th>
 
-                            <th class="center">新闻标题</th>
-                            <th class="center ">上传者</th>
-                            <th class="center ">发布时间</th>
+                            <th class="center ">国别</th>
 
-                            <th class="center ">是否置顶</th>
-                            <th class="center ">是否热门</th>
-                              <th class="center ">浏览数</th>
-                            <th class="center">修改</th>
+                            <th class="center ">简介</th>
+                            <th class="center ">标识</th>
+                         
+                            <th class="center">操作</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -123,19 +128,20 @@
                             <ItemTemplate>
                                 <tr>
                                     <td class="center">
-                                        <input type="checkbox" value='<%#Eval("NewsID") %>' id="cbselect" name="cbselect" onclick="Change(event, 'tlist');" runat="server" />
+                                        <input type="checkbox" value='<%#Eval("ExpertID") %>' id="cbselect" name="cbselect"  runat="server" />
                                     </td>
-                                    <td class="center"><%#Eval("Title") %></td>
-                                    <td class="center"><%#Eval("Uploader") %></td>
+                                      <td class="center"><asp:TextBox runat="server" ID="txtsort" Text='<%#Eval("Sort") %>'></asp:TextBox></td>
+                                    <td class="center"><%#Eval("EName") %></td>
+                                    
+                                    <td class="center"><%#Eval("ECountry") %></td>
 
+                                     <td class="center" title='<%#Eval("ESummary") %>'><%#Utils.CutString(Eval("ESummary"),10) %></td>
 
-                                    <td class="center"><%#String.Format(@"{0:D}", Eval("SubmitTime")) %></td>
-                                    <td class="center"><%#Utils.Istrue(Eval("IsTop")) %></td>
-                                    <td class="center"><%#Utils.Istrue(Eval("IsHot") )%></td>
-                                          <td class="center"><%#Eval("Views")??0 %></td>
+                                    <td class="center"><%#Eval("EIdentification") %></td>
+
                                     <td class="center">
-                                        <cc1:ZLinkButton ID="zlbj" CommandName="bj" runat="server" CommandArgument='<%#Eval("NewsID") %>' ModuleCode="NewsManage" Operate="修改">修改</cc1:ZLinkButton>
-                                        <cc1:ZLinkButton ID="zlsc" CommandName="sc" runat="server" CommandArgument='<%#Eval("NewsID") %>' OnClientClick="return confirm('确定要删除吗？');" ModuleCode="NewsManage" Operate="删除">删除</cc1:ZLinkButton>
+                                        <cc1:ZLinkButton ID="zlbj" CommandName="bj" runat="server" CommandArgument='<%#Eval("ExpertID") %>' ModuleCode="ExpertManage" Operate="修改" CssClass="btn btn-primary btn-sm">修改</cc1:ZLinkButton>
+                                        <cc1:ZLinkButton ID="zlsc" CommandName="sc" runat="server" CommandArgument='<%#Eval("ExpertID") %>' OnClientClick="return confirm('确定要删除吗？');" ModuleCode="ExpertManage" Operate="删除" CssClass="btn btn-danger btn-sm">删除</cc1:ZLinkButton>
                                     </td>
                                 </tr>
                             </ItemTemplate>

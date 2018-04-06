@@ -1241,6 +1241,13 @@ namespace Z
 
             return Math.Round(size,2).ToString();
         }
+
+
+        public static string Istrue(object obj)
+        {
+            if ((bool?) obj == true) return "是";
+            return "否";
+        }
     }
 
 }

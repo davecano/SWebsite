@@ -7,7 +7,7 @@
 <html>
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
+    <title>修改文章</title>
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
 
@@ -234,7 +234,7 @@
                         &nbsp;
                     <input id="Reset1" class="btn btn-sm btn-warning" type="reset" value="清空" />
                         &nbsp;
-                    <cc1:ZButton ID="btnAdd" runat="server" Text="修改" OnClientClick="return CheckForm();" OnClick="btnAdd_Click" ModuleCode="ArticleManage" Operate="添加" />
+                    <cc1:ZButton ID="btnAdd" runat="server" Text="修改" OnClientClick="return CheckForm();" OnClick="btnAdd_Click" ModuleCode="ArticleManage" Operate="修改" />
                     </div>
                 </div>
             </div>

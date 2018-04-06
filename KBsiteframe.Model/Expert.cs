@@ -18,12 +18,13 @@ namespace KBsiteframe.Model
 
         public string EPicPath { get; set; }
         public string ESummary { get; set; }
- 
+
         public string EName { get; set; }
         public string ECountry { get; set; }
-        public string EType { get; set; }
- 
-
+        public bool? Istop { get; set; }
+        public int? Sort { get; set; }
+        public string EIdentification { get; set; }
+        
 
     }
 }

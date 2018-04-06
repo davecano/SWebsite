@@ -47,6 +47,13 @@ left join  Member m2 on m2.MemberID= a.TdMemberID where 1=1{0}";
         {
             return db.Delete<Article>(m);
         }
+
+        public int sqlUpdate(int objID)
+        {
+            string sql = @"Update  Article set ExpertID=null where ExpertID=" + objID ;
+            return db.ExecuteNonQuery(sql);
+        }
+
         public int Update(Article m)
         {
             return db.Update<Article>(m);
