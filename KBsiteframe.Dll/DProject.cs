@@ -13,8 +13,13 @@ namespace KBsiteframe.Dll
     {
         #region
         DbHelper db = new DbHelper();
-        private string Vsql = "select * from Project where 1=1{0}";
-   
+        private string Vsql = @"select p.*,e.EName,m.MenberName as LmMemberName,m2.MenberName as  TdMemberName  from Project p left join Expert e on p.ExpertID=e.ExpertID
+
+left join Member m on m.MemberID= p.LmMemberID
+left join  Member m2 on m2.MemberID= p.TdMemberID 
+
+ where 1=1{0}";
+
         public IList<Project> GetProjectsList(Query q, int pageindex, int pagesize, out int totalcount)
         {
             return db.Query<Project>(string.Format(Vsql, q.GetCondition(true)), pageindex, pagesize, out totalcount);
@@ -23,7 +28,7 @@ namespace KBsiteframe.Dll
         {
             return db.Query<Project>(string.Format(Vsql, q.GetCondition(true)));
         }
-      
+
         #endregion
 
 
@@ -40,12 +45,19 @@ namespace KBsiteframe.Dll
         {
             return db.Update<Project>(m);
         }
-        public int sqlUpdate(int objID)
+     
+        public int sqlUpdate(int objID, string type)
         {
-            string sql = @"Update  Project set ExpertID=null where ExpertID=" + objID;
+            string sql = "";
+            if (type == "Expert")
+                sql = @"Update  Project set ExpertID=null where ExpertID=" + objID;
+        
+            else if (type == "LmMemberID")
+                sql = @"Update  Project set LmMemberID=null where LmMemberID=" + objID;
+            else
+                sql = @"Update  Project set TdMemberID=null where TdMemberID=" + objID;
             return db.ExecuteNonQuery(sql);
         }
-
         public Project GetProjectsById(int newsID)
         {
             return db.GetEntityById<Project>(newsID);

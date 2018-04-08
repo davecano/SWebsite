@@ -12,7 +12,8 @@ namespace KBsiteframe.Bll
     public class BProject
     {
         DProject de = new DProject();
-
+        DTreatise dt=new DTreatise();
+        DArticle da=new DArticle();
         #region"增删改"
         public int Insert(Project m)
         {
@@ -24,7 +25,10 @@ namespace KBsiteframe.Bll
         }
         public int Delete(Project m)
         {
-
+            //专家删除要更新文章、专著、关于项目的编号
+            da.sqlUpdate(m.ProjectID, "Project");
+            dt.sqlUpdate(m.ProjectID, "Project");
+       
             return de.Delete(m);
         }
         #endregion

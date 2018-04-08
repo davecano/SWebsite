@@ -15,14 +15,20 @@ namespace KBsiteframe.Model
     {
         [ColumnAttribute(PrimaryKey = true)]
         public int ProjectID { get; set; }
-      
+
 
         public string ProjectName { get; set; }
 
-      
+
         public string ProjectContent { get; set; }
- 
-      
+
+        public DateTime? StartTime { get; set; }
+
+        public DateTime? EndTime { get; set; }
+        public string ProjectPeriod { get; set; }
+        public string OrgName { get; set; }
+
+
         /// <summary>
         /// 专家编号 用于成果列表
         /// </summary>
@@ -35,8 +41,15 @@ namespace KBsiteframe.Model
         /// 动态成员编号 用于成果列表
         /// </summary>
         public int? TdMemberID { get; set; }
-       
-        
+
+        [Ignore]
+        public string EName { get; set; }
+      
+        [Ignore]
+        public string LmMemberName { get; set; }
+        [Ignore]
+        public string TdMemberName { get; set; }
+
 
     }
 }

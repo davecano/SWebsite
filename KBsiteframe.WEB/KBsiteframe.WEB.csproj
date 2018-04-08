@@ -577,14 +577,17 @@
     <Content Include="Login.aspx" />
     <Content Include="Manager\ContentManage\ExpertEdit.aspx" />
     <Content Include="Manager\ContentManage\ExpertAdd.aspx" />
+    <Content Include="Manager\ContentManage\ProjectEdit.aspx" />
     <Content Include="Manager\ContentManage\TDDynamicAdd.aspx" />
     <Content Include="Manager\ContentManage\TDDynamicEdit.aspx" />
     <Content Include="Manager\ContentManage\LMDynamicEdit.aspx" />
     <Content Include="Manager\ContentManage\LMDynamicAdd.aspx" />
     <Content Include="Manager\ContentManage\TDDynamicManage.aspx" />
     <Content Include="Manager\ContentManage\LMDynamicManage.aspx" />
+    <Content Include="Manager\ContentManage\ProjectAdd.aspx" />
     <Content Include="Manager\ContentManage\TreatiseEdit.aspx" />
     <Content Include="Manager\ContentManage\ExpertManage.aspx" />
+    <Content Include="Manager\ContentManage\ProjectManage.aspx" />
     <Content Include="Manager\ContentManage\TreatiseManage.aspx" />
     <Content Include="Manager\ContentManage\TreatiseAdd.aspx" />
     <Content Include="Manager\ContentManage\ArticleEdit.aspx" />
@@ -1143,6 +1146,13 @@
     <Compile Include="Manager\ContentManage\ExpertAdd.aspx.designer.cs">
       <DependentUpon>ExpertAdd.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Manager\ContentManage\ProjectEdit.aspx.cs">
+      <DependentUpon>ProjectEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\ProjectEdit.aspx.designer.cs">
+      <DependentUpon>ProjectEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Manager\ContentManage\TDDynamicAdd.aspx.cs">
       <DependentUpon>TDDynamicAdd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1185,6 +1195,13 @@
     <Compile Include="Manager\ContentManage\LMDynamicManage.aspx.designer.cs">
       <DependentUpon>LMDynamicManage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Manager\ContentManage\ProjectAdd.aspx.cs">
+      <DependentUpon>ProjectAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\ProjectAdd.aspx.designer.cs">
+      <DependentUpon>ProjectAdd.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Manager\ContentManage\TreatiseEdit.aspx.cs">
       <DependentUpon>TreatiseEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1198,6 +1215,13 @@
     </Compile>
     <Compile Include="Manager\ContentManage\ExpertManage.aspx.designer.cs">
       <DependentUpon>ExpertManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ContentManage\ProjectManage.aspx.cs">
+      <DependentUpon>ProjectManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\ProjectManage.aspx.designer.cs">
+      <DependentUpon>ProjectManage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manager\ContentManage\TreatiseManage.aspx.cs">
       <DependentUpon>TreatiseManage.aspx</DependentUpon>

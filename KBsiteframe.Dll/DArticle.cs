@@ -48,12 +48,20 @@ left join  Member m2 on m2.MemberID= a.TdMemberID where 1=1{0}";
             return db.Delete<Article>(m);
         }
 
-        public int sqlUpdate(int objID)
+     
+        public int sqlUpdate(int objID, string type)
         {
-            string sql = @"Update  Article set ExpertID=null where ExpertID=" + objID ;
+            string sql = "";
+            if (type == "Expert")
+                sql = @"Update  Article set ExpertID=null where ExpertID=" + objID;
+            else if (type == "Project")
+                sql = @"Update  Article set ProjectID=null where ProjectID=" + objID;
+            else if (type == "LmMemberID")
+                sql = @"Update  Article set LmMemberID=null where LmMemberID=" + objID;
+            else
+                sql = @"Update  Article set TdMemberID=null where TdMemberID=" + objID;
             return db.ExecuteNonQuery(sql);
         }
-
         public int Update(Article m)
         {
             return db.Update<Article>(m);

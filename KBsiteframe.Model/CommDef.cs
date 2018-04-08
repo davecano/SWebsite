@@ -79,6 +79,7 @@ namespace KBsiteframe.Model
         文章信息,
         新闻信息,
         专著信息,
+        项目信息,
         专家信息,
         联盟动态信息,
         团队动态信息

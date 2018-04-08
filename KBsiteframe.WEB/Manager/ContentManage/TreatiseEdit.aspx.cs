@@ -47,6 +47,17 @@ namespace KBsiteframe.WEB.Manager.ContentManage
             StarTime.Text = t.FinishTime.ToString();
             ImgNews.ImageUrl = PicFilePathV + t.Picpath;
 
+            if (t.ExpertID != null || t.ExpertID != 0)
+                dpExpert.SelectedValue = t.ExpertID.ToString();
+
+            if (t.ProjectID != null || t.ProjectID != 0)
+                dpProject.SelectedValue = t.ProjectID.ToString();
+
+            if (t.LmMemberID != null || t.LmMemberID != 0)
+                dpLm.SelectedValue = t.LmMemberID.ToString();
+
+            if (t.TdMemberID != null || t.TdMemberID != 0)
+                dpTd.SelectedValue = t.TdMemberID.ToString();
         }
 
 

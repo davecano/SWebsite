@@ -32,9 +32,9 @@ namespace KBsiteframe.Bll
         public int Delete(Expert m)
         {
             //专家删除要更新文章、专著、项目关于专家的编号
-            da.sqlUpdate(m.ExpertID);
-            dt.sqlUpdate(m.ExpertID);
-            dp.sqlUpdate(m.ExpertID);
+            da.sqlUpdate(m.ExpertID, "Expert");
+            dt.sqlUpdate(m.ExpertID, "Expert");
+            dp.sqlUpdate(m.ExpertID, "Expert");
             return de.Delete(m);
         }
         #endregion

@@ -25,6 +25,8 @@ namespace KBsiteframe.Bll
         {
             return da.Update(a);
         }
+
+  
         public int Delete(Article a)
         {
 
