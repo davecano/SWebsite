@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DNotice.cs" />
     <Compile Include="DProject.cs" />
     <Compile Include="DMember.cs" />
     <Compile Include="DTreatise.cs" />

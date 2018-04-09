@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BNotice.cs" />
     <Compile Include="BMember.cs" />
     <Compile Include="BProject.cs" />
     <Compile Include="BTreatise.cs" />

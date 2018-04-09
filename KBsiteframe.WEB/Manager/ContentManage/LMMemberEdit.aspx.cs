@@ -17,11 +17,11 @@ using Z;
 
 namespace KBsiteframe.WEB.Manager.ContentManage
 {
-    public partial class TDMemberEdit : PageBase
+    public partial class LMMemberEdit : PageBase
     {
-        public TDMemberEdit()
+        public LMMemberEdit()
         {
-            ModuleCode = "TDMemberManage";
+            ModuleCode = "LMMemberManage";
             PageOperate = PurOperate.修改;
         }
         
@@ -68,19 +68,19 @@ namespace KBsiteframe.WEB.Manager.ContentManage
                 //// 插入日志 add
                 SysOperateLog log = new SysOperateLog();
                 log.LogID = StringHelper.getKey();
-                log.LogType = LogType.团队成员信息.ToString();
+                log.LogType = LogType.联盟成员信息.ToString();
                 log.OperateUser = GetLogUserName();
                 log.OperateDate = DateTime.Now;
-                log.LogOperateType = "团队成员修改";
+                log.LogOperateType = "联盟成员修改";
                 log.LogBeforeObject = JsonHelper.Obj2Json(mold);
                 log.LogAfterObject = JsonHelper.Obj2Json(m);
                 bsol.Insert(log);
-                Message.ShowOKAndRedirect(this, "修改团队成员成功", "TDMemberManage.aspx");
+                Message.ShowOKAndRedirect(this, "修改联盟成员成功", "LMMemberManage.aspx");
             }
 
             else
             {
-                Message.ShowWrong(this, "修改团队成员失败！");
+                Message.ShowWrong(this, "修改联盟成员失败！");
                 return;
             }
 

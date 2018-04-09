@@ -84,7 +84,8 @@ namespace KBsiteframe.Model
         联盟动态信息,
         团队动态信息,
         团队成员信息,
-        联盟成员信息
+        联盟成员信息,
+        公告信息
     }
 
     public enum MemberType
@@ -103,5 +104,10 @@ namespace KBsiteframe.Model
         成员进盟 = 2,
         校内专家=3
     }
-
+    public enum NoticeType
+    {
+        未过期,
+        已过期,
+        禁用
+    }
 }

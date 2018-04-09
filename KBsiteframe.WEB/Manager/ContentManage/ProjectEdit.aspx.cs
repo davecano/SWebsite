@@ -24,7 +24,7 @@ namespace KBsiteframe.WEB.Manager.ContentManage
             ModuleCode = "ProjectManage";
             PageOperate = PurOperate.修改;
         }
-          BSysCode bc=new BSysCode();
+        BSysCode bc = new BSysCode();
         BExpert be = new BExpert();
         BProject bp = new BProject();
         BMember bm = new BMember();
@@ -32,18 +32,18 @@ namespace KBsiteframe.WEB.Manager.ContentManage
         private string pid = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-          pid=  PubCom.Q("ID");
+            pid = PubCom.Q("ID");
             if (!IsPostBack)
             {
-                  hfProjectID.Value= pid ;
-                   BindDropDownList();
-                  BindDetail();
+                hfProjectID.Value = pid;
+                BindDropDownList();
+                BindDetail();
             }
         }
 
         private void BindDetail()
         {
-            Project p = bp.GetProjectsByID(Utils.StrToInt(hfProjectID.Value,0));
+            Project p = bp.GetProjectsByID(Utils.StrToInt(hfProjectID.Value, 0));
             txtName.Text = p.ProjectName;
             txtOrgName.Text = p.OrgName;
             txtContent.Text = p.ProjectContent;
@@ -53,7 +53,7 @@ namespace KBsiteframe.WEB.Manager.ContentManage
             if (p.ExpertID != null || p.ExpertID != 0)
                 dpExpert.SelectedValue = p.ExpertID.ToString();
 
-         
+
             if (p.LmMemberID != null || p.LmMemberID != 0)
                 dpLm.SelectedValue = p.LmMemberID.ToString();
 
@@ -64,19 +64,19 @@ namespace KBsiteframe.WEB.Manager.ContentManage
         void BindDropDownList()
         {
             //绑定项目阶段
-            Query q=Query.Build(new {SortFields="CodeID"});
+            Query q = Query.Build(new { SortFields = "CodeID" });
             q.Add("CodeName", "ProjectPeriod");
             DpProjectPeriod.Items.Clear();
-            DpProjectPeriod.Items.Add(new ListItem("==请选择==",""));
-           IList<SysCode>  slist=bc.GetSysCodeList(q);
-            if(slist.Count>0)
-            foreach (SysCode sc in slist)
-            {
-                    DpProjectPeriod.Items.Add(new ListItem(sc.CodeText,sc.CodeValue));
-            }
+            DpProjectPeriod.Items.Add(new ListItem("==请选择==", ""));
+            IList<SysCode> slist = bc.GetSysCodeList(q);
+            if (slist.Count > 0)
+                foreach (SysCode sc in slist)
+                {
+                    DpProjectPeriod.Items.Add(new ListItem(sc.CodeText, sc.CodeValue));
+                }
             //绑定 专家，联盟成员，团队成员
             Query qe = Query.Build(new { SortFields = "ExpertID" });
-         
+
             Query qm = Query.Build(new { SortFields = "MemberID" });
             IList<Expert> elist = be.GetExpertsList(qe);
             dpExpert.Items.Clear();
@@ -88,8 +88,8 @@ namespace KBsiteframe.WEB.Manager.ContentManage
                     dpExpert.Items.Add(new ListItem(e.EName, e.ExpertID.ToString()));
                 }
             }
-   
-         
+
+
             IList<Member> lmlist = bm.GetMembersList(qm).Where(t => t.MemberType == MemberType.联盟成员.ToString()).ToList();
             dpLm.Items.Clear();
             dpLm.Items.Add(new ListItem("==请选择==", ""));
@@ -116,7 +116,7 @@ namespace KBsiteframe.WEB.Manager.ContentManage
         protected void btnAdd_OnClick(object sender, EventArgs e)
         {
 
-     
+            Project pold = bp.GetProjectsByID(Utils.StrToInt(hfProjectID.Value, 0));
 
             Project p = new Project();
 
@@ -133,11 +133,11 @@ namespace KBsiteframe.WEB.Manager.ContentManage
                 p.LmMemberID = Utils.StrToInt(dpLm.SelectedValue, 0);
             if (dpTd.SelectedValue != "")
                 p.TdMemberID = Utils.StrToInt(dpTd.SelectedValue, 0);
-           
+
 
             if (bp.Update(p) == 1)
             {
-              
+
                 //// 插入日志 add
                 SysOperateLog log = new SysOperateLog();
                 log.LogID = StringHelper.getKey();
@@ -146,6 +146,7 @@ namespace KBsiteframe.WEB.Manager.ContentManage
                 log.OperateDate = DateTime.Now;
                 log.LogOperateType = "项目修改";
 
+                log.LogBeforeObject = JsonHelper.Obj2Json(pold);
                 log.LogAfterObject = JsonHelper.Obj2Json(p);
                 bsol.Insert(log);
                 Message.ShowOKAndRedirect(this, "添加修改成功", "ProjectManage.aspx");

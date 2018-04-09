@@ -4771,10 +4771,10 @@ TableComment 0 新宋体,8,N</a:FontList>
 <o:Column Id="o162">
 <a:ObjectID>684DF99D-E7AB-48C3-AE92-09194745710C</a:ObjectID>
 <a:Name>成员编号</a:Name>
-<a:Code>MenberID</a:Code>
+<a:Code>MemberID</a:Code>
 <a:CreationDate>1522733671</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1522733671</a:ModificationDate>
+<a:ModificationDate>1523242761</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:DataType>bigint</a:DataType>
 </o:Column>
@@ -4792,10 +4792,10 @@ TableComment 0 新宋体,8,N</a:FontList>
 <o:Column Id="o164">
 <a:ObjectID>973C2D9B-A360-464B-920D-79DA4C837BA9</a:ObjectID>
 <a:Name>成员姓名</a:Name>
-<a:Code>MenberName</a:Code>
+<a:Code>MemberName</a:Code>
 <a:CreationDate>1522733671</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
-<a:ModificationDate>1522733671</a:ModificationDate>
+<a:ModificationDate>1523242798</a:ModificationDate>
 <a:Modifier>Administrator</a:Modifier>
 <a:DataType>nvarchar(200)</a:DataType>
 <a:Length>200</a:Length>

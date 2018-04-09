@@ -17,12 +17,12 @@ using Z;
 
 namespace KBsiteframe.WEB.Manager.ContentManage
 {
-    public partial class TDMemberEdit : PageBase
+    public partial class LMMemberAdd : PageBase
     {
-        public TDMemberEdit()
+        public LMMemberAdd()
         {
-            ModuleCode = "TDMemberManage";
-            PageOperate = PurOperate.修改;
+            ModuleCode = "LMMemberManage";
+            PageOperate = PurOperate.添加;
         }
         
    
@@ -31,56 +31,47 @@ namespace KBsiteframe.WEB.Manager.ContentManage
         BSysOperateLog bsol = new BSysOperateLog();
         protected void Page_Load(object sender, EventArgs e)
         {
-            hfMemberID.Value = PubCom.Q("ID");
             if (!IsPostBack)
             {
-                BindDetail();
+             
             }
         }
 
-        private void BindDetail()
-        {
-            Member m = bm.GetMembersByID(Utils.StrToInt(hfMemberID.Value,0));
-            txtMName.Text = m.MemberName;
-            txtMail.Text = m.Email;
-            txtPhone.Text = m.Phone;
-            txtQualification.Text = m.Qualification;
-            ttxOrgName.Text = m.Organization;
-        }
+       
 
 
         protected void btnAdd_OnClick(object sender, EventArgs e)
         {
             Member m=new Member();
-            m.MemberID = Utils.StrToInt(hfMemberID.Value, 0);
-        
+            m.MemberID = bm.GetMaxID() + 1;
+            m.MemberType = MemberType.联盟成员.ToString();
             m.MemberName = PubCom.CheckString(txtMName.Text.Trim());
             m.Phone = PubCom.CheckString(txtPhone.Text.Trim());
             m.Email = PubCom.CheckString(txtMail.Text.Trim());
             m.Organization = PubCom.CheckString(ttxOrgName.Text.Trim());
             m.Qualification = PubCom.CheckString(txtQualification.Text.Trim());
 
+           
 
-            Member mold = bm.GetMembersByID(Utils.StrToInt(hfMemberID.Value, 0));
-            if (bm.Update(m) == 1)
+            if (bm.Insert(m) == 1)
             {
               
                 //// 插入日志 add
                 SysOperateLog log = new SysOperateLog();
                 log.LogID = StringHelper.getKey();
-                log.LogType = LogType.团队成员信息.ToString();
+                log.LogType = LogType.联盟成员信息.ToString();
                 log.OperateUser = GetLogUserName();
                 log.OperateDate = DateTime.Now;
-                log.LogOperateType = "团队成员修改";
-                log.LogBeforeObject = JsonHelper.Obj2Json(mold);
+                log.LogOperateType = "联盟成员新增";
+
                 log.LogAfterObject = JsonHelper.Obj2Json(m);
                 bsol.Insert(log);
-                Message.ShowOKAndRedirect(this, "修改团队成员成功", "TDMemberManage.aspx");
+                Message.ShowOKAndRedirect(this, "添加联盟成员成功", "LMMemberManage.aspx");
             }
 
             else
             {
-                Message.ShowWrong(this, "修改团队成员失败！");
+                Message.ShowWrong(this, "添加联盟成员失败！");
                 return;
             }
 

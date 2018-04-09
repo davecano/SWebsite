@@ -577,7 +577,13 @@
     <Content Include="Login.aspx" />
     <Content Include="Manager\ContentManage\ExpertEdit.aspx" />
     <Content Include="Manager\ContentManage\ExpertAdd.aspx" />
+    <Content Include="Manager\ContentManage\NoticeEdit.aspx" />
+    <Content Include="Manager\ContentManage\NoticeAdd.aspx" />
+    <Content Include="Manager\ContentManage\LMMemberAdd.aspx" />
+    <Content Include="Manager\ContentManage\LMMemberEdit.aspx" />
+    <Content Include="Manager\ContentManage\NoticeManage.aspx" />
     <Content Include="Manager\ContentManage\TDMemberEdit.aspx" />
+    <Content Include="Manager\ContentManage\LMMemberManage.aspx" />
     <Content Include="Manager\ContentManage\TDMemberManage.aspx" />
     <Content Include="Manager\ContentManage\TDMemberAdd.aspx" />
     <Content Include="Manager\ContentManage\ProjectEdit.aspx" />
@@ -1149,12 +1155,54 @@
     <Compile Include="Manager\ContentManage\ExpertAdd.aspx.designer.cs">
       <DependentUpon>ExpertAdd.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Manager\ContentManage\NoticeEdit.aspx.cs">
+      <DependentUpon>NoticeEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\NoticeEdit.aspx.designer.cs">
+      <DependentUpon>NoticeEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ContentManage\NoticeAdd.aspx.cs">
+      <DependentUpon>NoticeAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\NoticeAdd.aspx.designer.cs">
+      <DependentUpon>NoticeAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ContentManage\LMMemberAdd.aspx.cs">
+      <DependentUpon>LMMemberAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\LMMemberAdd.aspx.designer.cs">
+      <DependentUpon>LMMemberAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ContentManage\LMMemberEdit.aspx.cs">
+      <DependentUpon>LMMemberEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\LMMemberEdit.aspx.designer.cs">
+      <DependentUpon>LMMemberEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ContentManage\NoticeManage.aspx.cs">
+      <DependentUpon>NoticeManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\NoticeManage.aspx.designer.cs">
+      <DependentUpon>NoticeManage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Manager\ContentManage\TDMemberEdit.aspx.cs">
       <DependentUpon>TDMemberEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Manager\ContentManage\TDMemberEdit.aspx.designer.cs">
       <DependentUpon>TDMemberEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ContentManage\LMMemberManage.aspx.cs">
+      <DependentUpon>LMMemberManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\LMMemberManage.aspx.designer.cs">
+      <DependentUpon>LMMemberManage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manager\ContentManage\TDMemberManage.aspx.cs">
       <DependentUpon>TDMemberManage.aspx</DependentUpon>
