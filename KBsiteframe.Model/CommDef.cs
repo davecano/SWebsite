@@ -82,7 +82,9 @@ namespace KBsiteframe.Model
         项目信息,
         专家信息,
         联盟动态信息,
-        团队动态信息
+        团队动态信息,
+        团队成员信息,
+        联盟成员信息
     }
 
     public enum MemberType

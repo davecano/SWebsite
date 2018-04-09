@@ -13,7 +13,7 @@ namespace KBsiteframe.Dll
     {
         #region
         DbHelper db = new DbHelper();
-        private string Vsql = @"select a.*,e.EName,p.ProjectName,m.MenberName as LmMemberName,m2.MenberName as  TdMemberName from Article a 
+        private string Vsql = @"select a.*,e.EName,p.ProjectName,m.MemberName as LmMemberName,m2.MemberName as  TdMemberName from Article a 
 left join Expert e on a.ExpertID=e.ExpertID
 left join Project p on p.ProjectID= a.ProjectID
 left join Member m on m.MemberID= a.LmMemberID
@@ -52,14 +52,21 @@ left join  Member m2 on m2.MemberID= a.TdMemberID where 1=1{0}";
         public int sqlUpdate(int objID, string type)
         {
             string sql = "";
-            if (type == "Expert")
-                sql = @"Update  Article set ExpertID=null where ExpertID=" + objID;
-            else if (type == "Project")
-                sql = @"Update  Article set ProjectID=null where ProjectID=" + objID;
-            else if (type == "LmMemberID")
-                sql = @"Update  Article set LmMemberID=null where LmMemberID=" + objID;
-            else
-                sql = @"Update  Article set TdMemberID=null where TdMemberID=" + objID;
+            switch (type)
+            {
+                case "Expert":
+                    sql = @"Update  Article set ExpertID=null where ExpertID=" + objID;
+                    break;
+                case "Project":
+                    sql = @"Update  Article set ProjectID=null where ProjectID=" + objID;
+                    break;
+                case "LmMember":
+                    sql = @"Update  Article set LmMemberID=null where LmMemberID=" + objID;
+                    break;
+                default:
+                    sql = @"Update  Article set TdMemberID=null where TdMemberID=" + objID;
+                    break;
+            }
             return db.ExecuteNonQuery(sql);
         }
         public int Update(Article m)

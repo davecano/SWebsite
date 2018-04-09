@@ -70,7 +70,7 @@ namespace KBsiteframe.WEB.Manager.ContentManage
             {
                 foreach (Member m in lmlist)
                 {
-                    dpLm.Items.Add(new ListItem(m.MenberName, m.MemberID.ToString()));
+                    dpLm.Items.Add(new ListItem(m.MemberName, m.MemberID.ToString()));
                 }
             }
             IList<Member> tdlist = bm.GetMembersList(qm).Where(t => t.MemberType == MemberType.团队成员.ToString()).ToList();
@@ -80,7 +80,7 @@ namespace KBsiteframe.WEB.Manager.ContentManage
             {
                 foreach (Member m in tdlist)
                 {
-                    dpTd.Items.Add(new ListItem(m.MenberName, m.MemberID.ToString()));
+                    dpTd.Items.Add(new ListItem(m.MemberName, m.MemberID.ToString()));
                 }
             }
         }

@@ -17,7 +17,7 @@ namespace KBsiteframe.Model
         public int MemberID { get; set; }
 
         public string MemberType { get; set; }
-        public string MenberName { get; set; }
+        public string MemberName { get; set; }
  
         public string Phone { get; set; }
         public string Email { get; set; }

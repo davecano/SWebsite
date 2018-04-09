@@ -577,6 +577,9 @@
     <Content Include="Login.aspx" />
     <Content Include="Manager\ContentManage\ExpertEdit.aspx" />
     <Content Include="Manager\ContentManage\ExpertAdd.aspx" />
+    <Content Include="Manager\ContentManage\TDMemberEdit.aspx" />
+    <Content Include="Manager\ContentManage\TDMemberManage.aspx" />
+    <Content Include="Manager\ContentManage\TDMemberAdd.aspx" />
     <Content Include="Manager\ContentManage\ProjectEdit.aspx" />
     <Content Include="Manager\ContentManage\TDDynamicAdd.aspx" />
     <Content Include="Manager\ContentManage\TDDynamicEdit.aspx" />
@@ -1145,6 +1148,27 @@
     </Compile>
     <Compile Include="Manager\ContentManage\ExpertAdd.aspx.designer.cs">
       <DependentUpon>ExpertAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ContentManage\TDMemberEdit.aspx.cs">
+      <DependentUpon>TDMemberEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\TDMemberEdit.aspx.designer.cs">
+      <DependentUpon>TDMemberEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ContentManage\TDMemberManage.aspx.cs">
+      <DependentUpon>TDMemberManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\TDMemberManage.aspx.designer.cs">
+      <DependentUpon>TDMemberManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ContentManage\TDMemberAdd.aspx.cs">
+      <DependentUpon>TDMemberAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\TDMemberAdd.aspx.designer.cs">
+      <DependentUpon>TDMemberAdd.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manager\ContentManage\ProjectEdit.aspx.cs">
       <DependentUpon>ProjectEdit.aspx</DependentUpon>

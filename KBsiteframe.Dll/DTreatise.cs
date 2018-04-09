@@ -13,7 +13,7 @@ namespace KBsiteframe.Dll
     {
         #region
         DbHelper db = new DbHelper();
-        private string Vsql = @"select t.*,e.EName,p.ProjectName,m.MenberName as LmMemberName,m2.MenberName as  TdMemberName   from Treatise t
+        private string Vsql = @"select t.*,e.EName,p.ProjectName,m.MemberName as LmMemberName,m2.MemberName as  TdMemberName   from Treatise t
 left join Expert e on t.ExpertID=e.ExpertID
 left join Project p on p.ProjectID= t.ProjectID
 left join Member m on m.MemberID= t.LmMemberID
