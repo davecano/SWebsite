@@ -14,7 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="css/login/ie.css">
 	<![endif]-->
 	<style type="text/css">
-	body { background: url(images/banner.jpg) fixed center center; }
+	body { background: url(images/banner.png) fixed center center; }
     .tit { margin: auto; margin-top: 170px; text-align: center; width: 450px; padding-bottom: 20px; text-shadow: 1px 1px 2px #000000; line-height: 40px; }
     .login-wrap { width: 50%; min-width: 570px; margin: 0 auto; }
     /*
@@ -22,7 +22,7 @@
     .login_passwd { background: url(images/input_icon_2.png) 98% 50% no-repeat; }*/
     .login-wrap img#logo { min-height: 300px; }
     .copyright { margin: auto; margin-top: 10px; text-align: center; width: 370px; color: #CCC }
-    .moshi{padding:35px;background-color:#0a4870; border:1px solid #378ec6; box-shadow:1px 1px 2px #000;}
+    .moshi{padding:35px;background-color:#54934c; border:1px solid #54934c; box-shadow:1px 1px 2px #000;}
     .user{width:24px;height:24px;background:url(images/yh.png);position: absolute;margin:8px 8px; background-repeat:no-repeat;}
     .uuser{width:24px;height:24px;background:url(images/mm.png);position: absolute;margin:8px 8px; background-repeat:no-repeat;}
     @media (max-height: 700px) {.tit { margin: auto; margin-top: 100px; }}

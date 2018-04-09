@@ -35,48 +35,19 @@
 <body>
     <div class="mainindex">
         <div class="welinfo">
-            <b><asp:Label ID="lblLoginUser" runat="server"></asp:Label>，欢迎使用智采市场准入资源管理系统</b>
+            <b><asp:Label ID="lblLoginUser" runat="server"></asp:Label>，欢迎使用kbsiteframe后台管理系统</b>
         </div>
         <div class="xline"></div>
         <ul class="iconlist">
-            <li><a href="/Manager/QualificationsManage/EQualityManage.aspx" onclick="changeBarName('企业资质管理');"><img src="../images/Main/ico03.png" width="32" height="32"/><p>企业资质管理<br/>Enterprise Qualification</p></a></li>
-            <li><a href="/Manager/QualificationsManage/PQualityManage.aspx" onclick="changeBarName('产品资质管理');"><img src="../images/Main/ico02.png" width="32" height="32"/><p>产品资质管理<br/>Product Qualification</p></a></li>
-            <li><a href="/Manager/ProductManage/ProductManage.aspx" onclick="changeBarName('基础产品管理');"><img src="../images/Main/ico04.png" width="32" height="32"/>
-                <p>基础产品管理<br/>Product Management</p></a></li>
-            <li><a href="/Enterprises/PricesManage/DeliveryPricesManage.aspx" onclick="changeBarName('终端价格管理');"><img src="../images/Main/i09.png" width="32" height="32"/>
-                <p>终端价格管理<br/>End Users Price</p></a></li>
-            <li><a href="/Enterprises/AttributeManage/PricesManage.aspx" onclick="changeBarName('物价收费管理');"><img src="../images/Main/i06.png" width="32" height="32"/>
-                <p>物价收费管理<br/>Reimbursement </p></a></li> 
-    <%--        <li><a href="/Enterprises/AttributeManage/HealthCareManage.aspx" onclick="changeBarName('产品医保管理');"><img src="../images/Main/ico05.png" width="32" height="32"/><p>产品医保管理</p></a></li>--%>
-           <%-- <li><a href="/Enterprises/PricesManage/BidResultManage.aspx" onclick="changeBarName('中标结果管理');"><img src="../images/Main/ico06.png" width="32" height="32"/><p>中标结果管理</p></a></li>--%>
-            <li><a href="/Enterprises/ProjectsManage/ProjectManage.aspx" onclick="changeBarName('项目信息管理');"><img src="../images/Main/icon03.png" width="32" height="32"/>
-                <p>项目信息管理<br/>Tender Project</p></a></li>
-               <li><a href="/Enterprises/ReportManage/DeliveryPricesAnalysis.aspx" onclick="changeBarName('数据分析');"><img src="../images/Main/ico06.png" width="32" height="32"/>
-                <p>数据分析<br/>Data Analysis</p></a></li>
-        </ul>
-     <%--   <div class="xline"></div>
-        <div class="box"></div>
-        <div class="welinfo">--%>
-      <%--      <b>待办事项</b>
-        </div>
-        <ul class="infolist">
-            <li><span>您有<a href="/Manager/QualificationsManage/EQualityManage.aspx" style="display:inline-block;font-size:16px; font-weight:bold; color:red;">&nbsp;<asp:Literal ID="ltrEQuality" runat="server"></asp:Literal>&nbsp;</a>条企业资质信息未审核</span></li>
-            <li><span>您有<a href="/Manager/QualificationsManage/PQualityManage.aspx" style="display:inline-block;font-size:16px; font-weight:bold; color:red;">&nbsp;<asp:Literal ID="ltrPQuality" runat="server"></asp:Literal>&nbsp;</a>条产品资质信息未审核</span></li>
-            <li><span>您有<a href="/Manager/ProductManage/ProductManage.aspx" style="display:inline-block;font-size:16px; font-weight:bold; color:red;">&nbsp;<asp:Literal ID="ltrProduct" runat="server"></asp:Literal>&nbsp;</a>条产品信息未审核</span></li>
-        </ul>--%>
-        <div class="xline"></div>
-        <div class="welinfo">
-            <span><img src="../images/Main/dp.png" alt="提醒" /></span>
-            <b>资质到期提醒</b>
-        </div>
-        <ul class="infolist">
-            <li><span>共有<a href="/Manager/QualificationsManage/PQualityManage.aspx" style="display:inline-block;font-size:16px; font-weight:bold; color:red;">&nbsp;<asp:Literal ID="ltrRegQuality" runat="server"></asp:Literal>&nbsp;</a>条注册证信息即将到期</span></li>
-            <li><span>共有<a href="/Manager/QualificationsManage/EQualityManage.aspx" style="display:inline-block;font-size:16px; font-weight:bold; color:red;">&nbsp;<asp:Literal ID="ltrEOQuality" runat="server"></asp:Literal>&nbsp;</a>条企业资质信息即将到期</span></li>
-            <li><span>共有<a href="/Manager/QualificationsManage/PQualityManage.aspx" style="display:inline-block;font-size:16px; font-weight:bold; color:red;">&nbsp;<asp:Literal ID="ltrPOQuality" runat="server"></asp:Literal>&nbsp;</a>条产品资质信息即将到期</span></li>
-            <li><span>共有<a href="/Manager/QualificationsManage/PQualityManage.aspx" style="display:inline-block;font-size:16px; font-weight:bold; color:red;">&nbsp;<asp:Literal ID="ltrRegEnd" runat="server"></asp:Literal>&nbsp;</a>条注册证信息已到期</span></li>
-            <li><span>共有<a href="/Manager/QualificationsManage/EQualityManage.aspx" style="display:inline-block;font-size:16px; font-weight:bold; color:red;">&nbsp;<asp:Literal ID="ltrEOEnd" runat="server"></asp:Literal>&nbsp;</a>条企业资质信息已到期</span></li>
-            <li><span>共有<a href="/Manager/QualificationsManage/PQualityManage.aspx" style="display:inline-block;font-size:16px; font-weight:bold; color:red;">&nbsp;<asp:Literal ID="ltrPOEnd" runat="server"></asp:Literal>&nbsp;</a>条产品资质信息已到期</span></li>
-        </ul>
+            <li><a href="/Manager/ContentManage/ArticleManage.aspx" onclick="changeBarName('文章管理');"><img src="../images/Main/ico03.png" width="32" height="32"/><p>文章管理<br/>Article Management</p></a></li>
+            <li><a href="/Manager/ContentManage/TreatiseManage.aspx" onclick="changeBarName('专著管理');"><img src="../images/Main/ico02.png" width="32" height="32"/><p>专著管理<br/>Treatise Management</p></a></li>
+            <li><a href="/Manager/ContentManage/ProjectManage.aspx" onclick="changeBarName('项目管理');"><img src="../images/Main/ico04.png" width="32" height="32"/><p>项目管理<br/>Project Management</p></a></li>
+            <li><a href="/Manager/ContentManage/ExpertManage.aspx" onclick="changeBarName('专家管理');"><img src="../images/Main/i09.png" width="32" height="32"/> <p>专家管理<br/>Expert Management</p></a></li>
+            <li><a href="/Manager/ContentManage/TDDynamicManage.aspx" onclick="changeBarName('团队动态');"><img src="../images/Main/i06.png" width="32" height="32"/><p>团队动态<br/>TeamDynamic Management </p></a></li> 
+     
+            <li><a href="/Manager/ContentManage/LMDynamicManage.aspx" onclick="changeBarName('联盟动态');"><img src="../images/Main/icon03.png" width="32" height="32"/><p>联盟动态<br/>LeagueDynamic Management </p></a></li>
+              </ul>
+    
     </div>
 </body>
 </html>

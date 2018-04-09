@@ -28,7 +28,7 @@ namespace SysBase.Model
         
         public string UserStatus { set; get; }
         public string UserType { set; get; }
-
+        public int? LoginTimes { set; get; }
         [Ignore]
         public string RoleIDs { set; get; }
         [Ignore]

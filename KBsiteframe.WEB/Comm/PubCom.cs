@@ -157,7 +157,7 @@ namespace KBsiteframe.WEB.Comm
                 //    HttpContext.Current.Response.Cookies.Add(cookie);
                 //}
                 //记录IP及时间
-                bu.Update(new SysUser {UserID = su.UserID, LastTime = DateTime.Now, LastIP = ip});
+                bu.Update(new SysUser {UserID = su.UserID, LastTime = DateTime.Now, LastIP = ip,LoginTimes = (su.LoginTimes ?? 0)+1});
                 //创建Account
                 var ac = new Account();
                 ac.User = su;

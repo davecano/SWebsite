@@ -633,6 +633,7 @@
     <Content Include="App_Themes\default\default.skin" />
     <Content Include="Share\ImgCreator.aspx" />
     <Content Include="Share\Index.aspx" />
+    <Content Include="Share\right.aspx" />
     <Content Include="Share\UpdatePassword.aspx" />
     <Content Include="Share\UserInfo.aspx" />
     <Content Include="Ueditor\net\config.json" />
@@ -1470,6 +1471,13 @@
     </Compile>
     <Compile Include="Share\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Share\right.aspx.cs">
+      <DependentUpon>right.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Share\right.aspx.designer.cs">
+      <DependentUpon>right.aspx</DependentUpon>
     </Compile>
     <Compile Include="Share\UpdatePassword.aspx.cs">
       <DependentUpon>UpdatePassword.aspx</DependentUpon>
