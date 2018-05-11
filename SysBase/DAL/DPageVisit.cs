@@ -15,7 +15,7 @@ namespace SysBase.DAL
         DbHelper db = new DbHelper();
         private string Vsql = "select * from PageVisit where 1=1{0}";
 
-        private string VDsql = " select pd.*,p.VisitID,p.Hits from PageVisitDetail  pd left join PageVisit p on p.VisitID=pd.VisitID where 1=1{0}";
+        private string VDsql = " select pd.*,p.PageName,p.Hits from PageVisitDetail  pd left join PageVisit p on p.VisitID=pd.VisitID where 1=1{0}";
         //private string Sql = "select * from(select  top 100 percent row_number()over(order by AddTime Desc, IsTop Desc) as PageVisitsIndex ,p.*,q.ClassName from PageVisit p left join mycms_class q on p.ClassId=q.Id where 1=1{0}) as T where 1=1{1}";
 
 

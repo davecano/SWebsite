@@ -70,7 +70,7 @@
 						</div>
 						<div class="form-group">
 							<span class="uuser"></span>
-                            <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control login_passwd"  TextMode="Password"  placeholder="µÇÂ¼ÃÜÂë"></asp:TextBox>
+                            <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control login_passwd"    placeholder="µÇÂ¼ÃÜÂë"></asp:TextBox>
 						</div>
                         <div class="form-group" style=" margin-bottom:26px;">
                             <div class="input-group">

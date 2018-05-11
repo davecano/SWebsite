@@ -613,6 +613,7 @@
     <Content Include="Manager\SysManage\OperateLog.aspx" />
     <Content Include="Manager\SysManage\OperateLogView.aspx" />
     <Content Include="Manager\SysManage\OperateManage.aspx" />
+    <Content Include="Manager\SysManage\PageVisitManage.aspx" />
     <Content Include="Manager\SysManage\RoleManage.aspx" />
     <Content Include="Manager\SysManage\RoleOperateManage.aspx" />
     <Content Include="Manager\SysManage\UserAdd.aspx" />
@@ -1410,6 +1411,13 @@
     </Compile>
     <Compile Include="Manager\SysManage\OperateManage.aspx.designer.cs">
       <DependentUpon>OperateManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\SysManage\PageVisitManage.aspx.cs">
+      <DependentUpon>PageVisitManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\SysManage\PageVisitManage.aspx.designer.cs">
+      <DependentUpon>PageVisitManage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manager\SysManage\RoleManage.aspx.cs">
       <DependentUpon>RoleManage.aspx</DependentUpon>
