@@ -30,7 +30,12 @@ namespace KBsiteframe.Dll
         {
             return db.Query<Notice>(string.Format(Vsql, q.GetCondition(true)));
         }
-     
+        public IList<Notice> GetNoticesTitleList()
+        {
+            string sql = @"select top(11) NoticeID,NoticeTitle,NoticeStatus,CreateUser,CreateDate,LastUpdateDate from Notice Order by LastUpdateDate desc";
+            return db.Query<Notice>(sql);
+        }
+        
         #endregion
 
 

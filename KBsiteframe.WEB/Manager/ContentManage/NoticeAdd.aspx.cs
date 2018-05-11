@@ -46,7 +46,7 @@ namespace KBsiteframe.Web.Manager.ContentManage
             n.NoticeContent = PubCom.CheckString(txtContent.Text.Trim());
             n.CreateUser = GetLogUserName();
             n.CreateDate=DateTime.Now;
-        
+            n.LastUpdateDate=DateTime.Now;
             
             if (bn.Insert(n) != 1)
             {

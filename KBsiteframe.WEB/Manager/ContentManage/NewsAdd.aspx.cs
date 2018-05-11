@@ -10,7 +10,8 @@ using System.Web.UI.WebControls;
 using KBsiteframe.Bll;
 using KBsiteframe.Model;
 using KBsiteframe.WEB.Comm;
-
+using SysBase.BLL;
+using SysBase.Model;
 using Z;
 
 namespace KBsiteframe.Web.Manager.ContentManage
@@ -39,7 +40,7 @@ namespace KBsiteframe.Web.Manager.ContentManage
         {
             New n = new New();
            BNew bn=new BNew();
-        
+           BSysOperateLog bsol=new BSysOperateLog();
             n.NewsID = bn.GetMaxID() + 1;
             n.IsTop = CbIstop.Checked;
             n.IsHot = CbIsHot.Checked;
@@ -70,8 +71,17 @@ namespace KBsiteframe.Web.Manager.ContentManage
             }
             else
             {
-             
+                bn.UploadValidate(pic_upload, lbl_pic, PicFilePath,  n.NewsID);
+                //// 插入日志 add
+                SysOperateLog log = new SysOperateLog();
+                log.LogID = StringHelper.getKey();
+                log.LogType = LogType.新闻信息.ToString();
+                log.OperateUser = GetLogUserName();
+                log.OperateDate = DateTime.Now;
+                log.LogOperateType = "新闻新增";
 
+                log.LogAfterObject = JsonHelper.Obj2Json(n);
+                bsol.Insert(log);
                 Message.ShowOKAndRedirect(this,"添加文章成功","NewsManage.aspx");
             }
         }

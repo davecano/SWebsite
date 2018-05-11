@@ -43,7 +43,11 @@ namespace KBsiteframe.Bll
         {
             return dd.GetDynamicsList(q);
         }
-  
+        public IList<Dynamic> GetDynamicsTitleList(DynamicType dt)
+        {
+            return dd.GetDynamicsTitleList(dt);
+        }
+        
         public Dynamic GetDynamicsByID(int newsid)
         {
             return dd.GetDynamicsById(newsid);

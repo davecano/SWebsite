@@ -43,7 +43,10 @@ namespace KBsiteframe.Bll
         {
             return dd.GetNoticesList(q);
         }
-  
+        public IList<Notice> GetNoticesTitleList()
+        {
+            return dd.GetNoticesTitleList();
+        }
         public Notice GetNoticesByID(int noticeid)
         {
             return dd.GetNoticesById(noticeid);

@@ -24,7 +24,7 @@ namespace KBsiteframe.Model
         public int? Views { get; set; }
         public bool? IsTop { get; set; }
         public bool? IsHot { get; set; }
-
-
+        public string NewsPicPath { get; set; }
+        
     }
 }

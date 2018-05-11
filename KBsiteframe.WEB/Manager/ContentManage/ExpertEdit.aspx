@@ -127,7 +127,7 @@
                 </div>
                   <div class="col-xs-12">
                     <div class="form-group">
-                        <label class="col-sm-2 align-right control-label no-padding-right">封皮图片</label>
+                        <label class="col-sm-2 align-right control-label no-padding-right">专家图片</label>
                         <div class="col-sm-3">
                             <asp:Image ID="ImgNews" runat="server" ImageUrl="~/images/nopic.gif" Width="160" Height="150" />
 

@@ -28,7 +28,7 @@ namespace KBsiteframe.Web.Manager.ContentManage
         BSysOperateLog bsol = new BSysOperateLog();
         private string ID = "";
 
-        private int newsId = int.Parse(Q("Id"));
+     
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -50,6 +50,8 @@ namespace KBsiteframe.Web.Manager.ContentManage
             if (n.IsTop != null) CbIstop.Checked = (bool)n.IsTop;
             if (n.IsHot != null) CbIsHot.Checked = (bool)n.IsHot;
             container.Text = n.NewsContent;
+            if(n.NewsPicPath!="")
+            ImgNews.ImageUrl = PicFilePathV + n.NewsPicPath;
         }
 
 
@@ -85,6 +87,8 @@ namespace KBsiteframe.Web.Manager.ContentManage
 
             else
             {
+                bn.UploadValidate(pic_upload, lbl_pic, PicFilePath, Utils.StrToInt(hfNewsID.Value, 0));
+
                 New n = bn.GetNewsByID(Utils.StrToInt(ID, 0));
                 SysOperateLog log = new SysOperateLog();
                 log.LogID = StringHelper.getKey();
@@ -95,7 +99,7 @@ namespace KBsiteframe.Web.Manager.ContentManage
                 log.LogBeforeObject = JsonHelper.Obj2Json(oldn);
                 log.LogAfterObject = JsonHelper.Obj2Json(n);
                 bsol.Insert(log);
-                Message.ShowOKAndRedirect(this, "更新文章成功", "NewsManage.aspx");
+                Message.ShowOKAndRedirect(this, "更新新闻成功", "NewsManage.aspx");
             }
 
 

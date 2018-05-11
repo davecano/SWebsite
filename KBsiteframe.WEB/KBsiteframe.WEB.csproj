@@ -1131,6 +1131,9 @@
   <ItemGroup>
     <Compile Include="Comm\Constants.cs" />
     <Compile Include="Comm\ImportData.cs" />
+    <Compile Include="Comm\VistorPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Comm\PageBase.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -1501,6 +1504,20 @@
     <Compile Include="Ueditor\net\App_Code\NotSupportedHandler.cs" />
     <Compile Include="Ueditor\net\App_Code\PathFormater.cs" />
     <Compile Include="Ueditor\net\App_Code\UploadHandler.cs" />
+    <Compile Include="Website\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website\Master\KBSiteframe.Master.cs">
+      <DependentUpon>KBSiteframe.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website\Master\KBSiteframe.Master.designer.cs">
+      <DependentUpon>KBSiteframe.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KBsiteframe.Bll\KBsiteframe.Bll.csproj">
@@ -1523,7 +1540,6 @@
   <ItemGroup>
     <Folder Include="Pub\" />
     <Folder Include="Upload\" />
-    <Folder Include="Website\" />
     <Folder Include="文档及其他\" />
   </ItemGroup>
   <ItemGroup>
@@ -1536,6 +1552,43 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="Website\Css\bootstrap.min.css" />
+    <Content Include="Website\Css\font-awesome.css" />
+    <Content Include="Website\Css\style.css" />
+    <Content Include="Website\Css\u10.css" />
+    <Content Include="Website\Image\bal-text.jpg" />
+    <Content Include="Website\Image\ball-da.png" />
+    <Content Include="Website\Image\ball-lun.png" />
+    <Content Include="Website\Image\head.jpg" />
+    <Content Include="Website\Image\head_bg_02.jpg" />
+    <Content Include="Website\Image\icon-1.png" />
+    <Content Include="Website\Image\icon-2.png" />
+    <Content Include="Website\Image\icon-3.png" />
+    <Content Include="Website\Image\icon-4.png" />
+    <Content Include="Website\Image\icon-5.jpg" />
+    <Content Include="Website\Image\icon_03.png" />
+    <Content Include="Website\Image\icon_11.jpg" />
+    <Content Include="Website\Image\jiantou_03.png" />
+    <Content Include="Website\Image\jiantou_06.png" />
+    <Content Include="Website\Image\list3_show_01.jpg" />
+    <Content Include="Website\Image\list4_show_01.jpg" />
+    <Content Include="Website\Image\list6_01.jpg" />
+    <Content Include="Website\Image\locate.png" />
+    <Content Include="Website\Image\pic.jpg" />
+    <Content Include="Website\Image\picture.png" />
+    <Content Include="Website\Image\picture_04.png" />
+    <Content Include="Website\Image\picture_07.png" />
+    <Content Include="Website\Image\picture_11.png" />
+    <Content Include="Website\Image\picture_14.png" />
+    <Content Include="Website\Image\picture_16.png" />
+    <Content Include="Website\Image\picture_22.jpg" />
+    <Content Include="Website\Image\suo.jpg" />
+    <Content Include="Website\Image\teacher.png" />
+    <Content Include="Website\Image\yanzheng.png" />
+    <Content Include="Website\index.aspx" />
+    <Content Include="Website\Js\bootstrap.js" />
+    <Content Include="Website\Js\jquery.js" />
+    <Content Include="Website\Master\KBSiteframe.Master" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

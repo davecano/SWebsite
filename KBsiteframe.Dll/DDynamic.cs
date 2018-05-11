@@ -30,7 +30,18 @@ namespace KBsiteframe.Dll
         {
             return db.Query<Dynamic>(string.Format(Vsql, q.GetCondition(true)));
         }
-     
+        public IList<Dynamic> GetDynamicsTitleList(DynamicType dt)
+          {
+            string sql = "";
+            sql = @"select top(11) DynamicID,Title,DynamicType,Uploader,SubTime,IsTop from Dynamic where DynamicType='" + dt.ToString() + "' order by istop desc,SubTime desc";
+            //if (dt==DynamicType.联盟动态)
+            // sql = @"select top(11) DynamicID,Title,DynamicType,Uploader,SubTime,IsTop from Dynamic where DynamicType='"+dt.ToString()+"' order by istop desc,SubTime desc";
+            //else if (dt == DynamicType.团队动态)
+            // sql = @"select top(11) DynamicID,Title,DynamicType,Uploader,SubTime,IsTop from Dynamic where DynamicType='" + dt.ToString() + "' order by istop desc,SubTime desc";
+            //else
+            //throw new Exception("DynamicType error");
+            return db.Query<Dynamic>(sql);
+        }
         #endregion
 
 

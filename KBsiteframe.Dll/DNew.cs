@@ -30,6 +30,12 @@ namespace KBsiteframe.Dll
         {
             return db.Query<New>(string.Format(Vsql, q.GetCondition(true)));
         }
+        public IList<New> GetNewsTitleList()
+        {//因content过大，过滤掉content
+            string sql = @"select top(11) NewsID,Title,Uploader,SubmitTime,Views,IsTop,IsHot,NewsPicPath from New order by  IsTop desc,IsHot desc";
+            return db.Query<New>(sql);
+        }
+        
         //public IList<New> GetNewsList(Query q1, Query q2)
         //{
         //    return db.Query<New>(string.Format(Sql, q1.GetCondition(true), q2.GetCondition(true)));

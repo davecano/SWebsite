@@ -401,8 +401,7 @@ namespace Z
         /// <returns></returns>
         public string GetCondition(bool useorderby)
         {
-            System.Text.RegularExpressions.Regex regex =
-                new System.Text.RegularExpressions.Regex(">=|>|<=|<|=");
+            Regex regex = new Regex(">=|>|<=|<|=");
             // return "";
             //构造查询条件
             StringBuilder where = new StringBuilder(512);

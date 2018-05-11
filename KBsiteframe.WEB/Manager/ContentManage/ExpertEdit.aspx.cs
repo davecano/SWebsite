@@ -47,6 +47,8 @@ namespace KBsiteframe.WEB.Manager.ContentManage
             txtESummary.Text = e.ESummary;
             dpIstop.SelectedValue = e.Istop != null && (bool)e.Istop ? "1" : "0";
             dpEIdentification.SelectedValue = e.EIdentification;
+            if (e.EPicPath != "")
+                ImgNews.ImageUrl = PicFilePathV + e.EPicPath;
         }
 
         void BindDropDownList()

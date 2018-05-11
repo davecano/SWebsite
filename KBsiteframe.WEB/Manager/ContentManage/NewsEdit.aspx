@@ -43,7 +43,20 @@
     <script type="text/javascript"> 
        function onFileChange(sender) { 
     document.getElementById("ImgNews").src = window.URL.createObjectURL(sender.files[0]);
-                                      } 
+       }
+       function CheckForm() {
+           var ret = true;
+
+
+           if ($.trim($("#txtTitle").val()) == "") {
+               layer.tips("请输入新闻标题", $("#txtTitle"), { guide: 1, time: 3 });
+               $("#txtTitle").focus();
+               return false;
+           }
+          
+
+           return ret;
+       }
    </script> 
 </head>
 <body>
@@ -68,6 +81,27 @@
                     
 				    </div>
                 </div>
+                    <div class="col-xs-12">
+                    <div class="form-group">
+                        <label class="col-sm-2 align-right control-label no-padding-right">专家图片</label>
+                        <div class="col-sm-3">
+                            <asp:Image ID="ImgNews" runat="server" ImageUrl="~/images/nopic.gif" Width="160" Height="150" />
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group">
+
+
+                        <div class="col-sm-3 col-sm-offset-2">
+                            <asp:FileUpload ID="pic_upload" runat="server" onchange="onFileChange(this);" /><asp:Label ID="lbl_pic" runat="server" Style="color: red">上传图片格式为.jpg, .gif, .bmp,.png,图片大小不得超过8M</asp:Label>
+                        </div>
+
+                    </div>
+                </div>
+   
                 <div class="col-xs-12">
                     <div class="form-group">
                          <label class="col-sm-2 align-right control-label no-padding-right">是否置顶</label>
@@ -112,7 +146,7 @@
                     &nbsp;
                     <input id="Reset1" class="btn btn-sm btn-warning" type="reset" value="清空" />
                     &nbsp;
-                    <cc1:ZButton ID="btnEdit"  CssClass="btn btn-sm btn-primary" runat="server" Text="修改" class="btn btn-sm btn-primary"  ModuleCode="NewsManage" Operate="修改" OnClick="btnEdit_OnClick"/>
+                    <cc1:ZButton ID="btnEdit"  CssClass="btn btn-sm btn-primary" runat="server" Text="修改" class="btn btn-sm btn-primary"  ModuleCode="NewsManage" Operate="修改" OnClientClick="return CheckForm();" OnClick="btnEdit_OnClick"/>
               
                 </div>
             </div>

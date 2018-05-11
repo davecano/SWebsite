@@ -67,69 +67,31 @@ namespace KBsiteframe.WEB.Comm
             return PubCom.CheckString(HttpContext.Current.Request.QueryString[name].Trim());
         }
 
-        #region 私有成员 
-
-        /// <summary>
-        ///     私有变量 页面所属的模块代码
-        /// </summary>
-        private string _ModuleCode = string.Empty;
-
-        /// <summary>
-        ///     进入页面需要的操作类型  默认的操作： OperateType.查看
-        /// </summary>
-        private PurOperate _Operate = PurOperate.查询;
-
-        /// <summary>
-        ///     返回页面
-        /// </summary>
-        private string _ReturnUrl = string.Empty;
-
-        /// <summary>
-        ///     序列化的查询条件
-        /// </summary>
-        private string _QueryCondition = "";
-
-        #endregion
+      
 
         #region 属性
 
         /// <summary>
         ///     设置模块代码，必须在子类中设置
         /// </summary>
-        protected string ModuleCode
-        {
-            set { _ModuleCode = value; }
-            get { return _ModuleCode; }
-        }
+        protected string ModuleCode { set; get; } = string.Empty;
 
         /// <summary>
         ///     设置 进入页面需要的操作类型
         /// </summary>
-        protected PurOperate PageOperate
-        {
-            set { _Operate = value; }
-            get { return _Operate; }
-        }
+        protected PurOperate PageOperate { set; get; } = PurOperate.查询;
 
         protected string NoPermissionUrl { set; get; } = "~/NoPermission.aspx";
 
         /// <summary>
         ///     返回页面
         /// </summary>
-        protected string ReturnUrl
-        {
-            get { return _ReturnUrl; }
-            set { _ReturnUrl = value; }
-        }
+        protected string ReturnUrl { get; set; } = string.Empty;
 
         /// <summary>
         ///     设置QueryCondition 加密串
         /// </summary>
-        protected string QueryCondition
-        {
-            get { return _QueryCondition; }
-            set { _QueryCondition = value; }
-        }
+        protected string QueryCondition { get; set; } = "";
 
         #endregion
 
@@ -313,7 +275,7 @@ namespace KBsiteframe.WEB.Comm
                 //跳转到登陆页面
                 NoLogin();
             }
-            if (!ValidatePageRight(_ModuleCode))
+            if (!ValidatePageRight(ModuleCode))
             {
                 //跳转到无权访问页面
                 NoPermission();
@@ -403,11 +365,11 @@ namespace KBsiteframe.WEB.Comm
                 var index = HttpContext.Current.Request.QueryString[Constants.QUERYSTRING_RETURN_URL].IndexOf(",");
                 if (index == -1)
                 {
-                    _ReturnUrl = HttpContext.Current.Request.QueryString[Constants.QUERYSTRING_RETURN_URL];
+                    ReturnUrl = HttpContext.Current.Request.QueryString[Constants.QUERYSTRING_RETURN_URL];
                 }
                 else
                 {
-                    _ReturnUrl = HttpContext.Current.Request.QueryString[Constants.QUERYSTRING_RETURN_URL].Substring(0,
+                    ReturnUrl = HttpContext.Current.Request.QueryString[Constants.QUERYSTRING_RETURN_URL].Substring(0,
                         index);
                 }
             }
@@ -417,8 +379,8 @@ namespace KBsiteframe.WEB.Comm
         /// </summary>
         public string SetQueryCondition<T>(T obj)
         {
-            _QueryCondition = StringHelper.ConvertObjectToString(obj);
-            return HttpUtility.UrlEncode(_QueryCondition);
+            QueryCondition = StringHelper.ConvertObjectToString(obj);
+            return HttpUtility.UrlEncode(QueryCondition);
         }
 
         private void GetQueryCondition()
@@ -426,7 +388,7 @@ namespace KBsiteframe.WEB.Comm
             if (HttpContext.Current.Request.QueryString[Constants.QUERYSTRING_QUERY_CONDITION] != null)
             {
                 var hashkey = HttpContext.Current.Request.QueryString[Constants.QUERYSTRING_QUERY_CONDITION];
-                _QueryCondition = hashkey;
+                QueryCondition = hashkey;
             }
         }
 
@@ -444,7 +406,7 @@ namespace KBsiteframe.WEB.Comm
             var isHaveRight = true;
             if (strModuleNo != "")
             {
-                isHaveRight = ValidateModuleRight(strModuleNo, _Operate);
+                isHaveRight = ValidateModuleRight(strModuleNo, PageOperate);
             }
             return isHaveRight;
         }

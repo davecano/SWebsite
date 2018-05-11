@@ -166,8 +166,7 @@ namespace KBsiteframe.WEB.Comm
                 //获取用户角色
                 var bur = new BUserRole();
 
-                var dt = new DataTable();
-                dt = bur.GetUserRoleByUserID(su.UserID);
+                DataTable dt = bur.GetUserRoleByUserID(su.UserID);
                 ac.UserRoleNames = new ArrayList();
                 ac.UserRoleIds = new ArrayList();
 

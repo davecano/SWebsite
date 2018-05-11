@@ -46,8 +46,10 @@
     <Compile Include="BLL\BSysCode.cs" />
     <Compile Include="BLL\BSysOperateLog.cs" />
     <Compile Include="BLL\BUser.cs" />
+    <Compile Include="BLL\BPageVisit.cs" />
     <Compile Include="DAL\DDepartment.cs" />
     <Compile Include="DAL\DMenu.cs" />
+    <Compile Include="DAL\DPageVisit.cs" />
     <Compile Include="DAL\DOperateLog.cs" />
     <Compile Include="DAL\DRole.cs" />
     <Compile Include="DAL\DSysCode.cs" />
@@ -56,6 +58,8 @@
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\Menu.cs" />
     <Compile Include="Model\OperateLog.cs" />
+    <Compile Include="Model\PageVisit.cs" />
+    <Compile Include="Model\PageVisitDetail.cs" />
     <Compile Include="Model\SysCode.cs" />
     <Compile Include="Model\SysDepartment.cs" />
     <Compile Include="Model\SysOperateLog.cs" />
