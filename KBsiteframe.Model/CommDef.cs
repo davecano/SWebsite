@@ -40,7 +40,7 @@ namespace KBsiteframe.Model
     /// </summary>
     public enum UserStatus
     {
-
+        未审核,
         审核中,
         审核通过,
         审核不通过

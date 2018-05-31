@@ -24,6 +24,10 @@ namespace KBsiteframe.WEB.Manager.ContentManage
             PageOperate = PurOperate.修改;
         }
         BTreatise bt = new BTreatise();
+      
+        BExpert be = new BExpert();
+        BProject bp = new BProject();
+        BMember bm = new BMember();
         BSysOperateLog bsol = new BSysOperateLog();
         private string treatiseID = "";
         protected void Page_Load(object sender, EventArgs e)
@@ -31,7 +35,57 @@ namespace KBsiteframe.WEB.Manager.ContentManage
             treatiseID = PubCom.Q("ID");
             if (!IsPostBack)
             {
+                BindDropdownList();
                 BindDetail();
+            }
+        }
+
+        private void BindDropdownList()
+        {
+
+            //绑定 专家，项目，联盟成员，团队成员
+            Query qe = Query.Build(new { SortFields = "ExpertID" });
+            Query qp = Query.Build(new { SortFields = "ProjectID" });
+            Query qm = Query.Build(new { SortFields = "MemberID" });
+            IList<Expert> elist = be.GetExpertsList(qe);
+            dpExpert.Items.Clear();
+            dpExpert.Items.Add(new ListItem("==请选择==", ""));
+            if (elist.Count > 0)
+            {
+                foreach (Expert e in elist)
+                {
+                    dpExpert.Items.Add(new ListItem(e.EName, e.ExpertID.ToString()));
+                }
+            }
+            IList<Project> plist = bp.GetProjectsList(qp);
+            dpProject.Items.Clear();
+            dpProject.Items.Add(new ListItem("==请选择==", ""));
+            if (plist.Count > 0)
+            {
+                foreach (Project p in plist)
+                {
+                    dpProject.Items.Add(new ListItem(p.ProjectName, p.ProjectID.ToString()));
+                }
+            }
+            IList<Member> lmlist = bm.GetMembersList(qm).Where(t => t.MemberType == MemberType.联盟成员.ToString()).ToList();
+            dpLm.Items.Clear();
+            dpLm.Items.Add(new ListItem("==请选择==", ""));
+            if (lmlist.Count > 0)
+            {
+                foreach (Member m in lmlist)
+                {
+                    dpLm.Items.Add(new ListItem(m.MemberName, m.MemberID.ToString()));
+                }
+            }
+            IList<Member> tdlist = bm.GetMembersList(qm).Where(t => t.MemberType == MemberType.团队成员.ToString()).ToList();
+            dpTd.Items.Clear();
+            dpTd.Items.Add(new ListItem("==请选择==", ""));
+            if (tdlist.Count > 0)
+            {
+                foreach (Member m in tdlist)
+                {
+                    dpTd.Items.Add(new ListItem(m.MemberName, m.MemberID.ToString()));
+                }
             }
         }
 

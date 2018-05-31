@@ -141,7 +141,19 @@ function delFileUpload($file, pageurl) {
         window.event.cancelBubble = true;
 }
 
-
+function ShowIframeNotClose(pagesrc) {
+    var pagewidth = "100%";
+    var pageheight = "100%";
+    $.layer({
+        type: 2,
+        border: [0],
+        title: false,
+        shadeClose: false,
+        closeBtn: false,
+        iframe: { src: pagesrc },
+        area: [pagewidth, pageheight]
+    });
+}
 //ajax封装
 function ajaxExistTwo(pageurl, senddata, $file, showmessage, errormessage) {
     $.ajax({

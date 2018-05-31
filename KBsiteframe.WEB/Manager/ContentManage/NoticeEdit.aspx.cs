@@ -39,7 +39,7 @@ namespace KBsiteframe.Web.Manager.ContentManage
             Notice n = bn.GetNoticesByID(Utils.StrToInt(hfNoticeID.Value, 0));
             txtTitle.Text = n.NoticeTitle;
             dpStatus.SelectedValue = n.NoticeStatus;
-            txtContent.Text = n.NoticeContent;
+            container.Text = n.NoticeContent;
         }
 
         BNotice bn=new BNotice();
@@ -52,7 +52,7 @@ namespace KBsiteframe.Web.Manager.ContentManage
             n.NoticeID = Utils.StrToInt(hfNoticeID.Value,0);
             n.NoticeTitle = PubCom.CheckString(txtTitle.Text.Trim());
             n.NoticeStatus = dpStatus.SelectedValue;
-            n.NoticeContent = PubCom.CheckString(txtContent.Text.Trim());
+            n.NoticeContent = container.Text;
             n.LastUpdateDate=DateTime.Now;
             
             if (bn.Update(n) != 1)

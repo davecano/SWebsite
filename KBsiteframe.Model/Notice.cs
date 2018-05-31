@@ -20,11 +20,11 @@ namespace KBsiteframe.Model
         public string NoticeContent { get; set; }
         public string NoticeStatus { get; set; }
         public string CreateUser { get; set; }
-        
+
         public DateTime? CreateDate { get; set; }
         public DateTime? LastUpdateDate { get; set; }
 
-     
+        public int? Views { get; set; }
 
     }
 }

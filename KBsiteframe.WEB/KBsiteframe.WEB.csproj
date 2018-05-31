@@ -632,6 +632,7 @@
     <Content Include="assets\font\FontAwesome.otf" />
     <Content Include="extdll\log4net.2.0.3\log4net.2.0.3.nupkg" />
     <Content Include="App_Themes\default\default.skin" />
+    <Content Include="SendMail.aspx" />
     <Content Include="Share\ImgCreator.aspx" />
     <Content Include="Share\Index.aspx" />
     <Content Include="Share\right.aspx" />
@@ -655,6 +656,14 @@
     <Content Include="images\top_table_leftbg-1.psd" />
     <Content Include="images\UserInfo.psd" />
     <Content Include="images\在线客服.psd" />
+    <Content Include="Website\index.html" />
+    <Content Include="Website\Js\js.js" />
+    <Content Include="Website\KbIntruoduce\knowledgeIndex.aspx" />
+    <Content Include="Website\KbIntruoduce\ShowArticle.aspx" />
+    <Content Include="Website\KbIntruoduce\ShowExpert.aspx" />
+    <Content Include="Website\ShowNews.aspx" />
+    <Content Include="Website\ShowNotice.aspx" />
+    <Content Include="Website\UserRegister.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\avatars\avatar.png" />
@@ -1469,6 +1478,13 @@
       <DependentUpon>NoPermission.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SendMail.aspx.cs">
+      <DependentUpon>SendMail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SendMail.aspx.designer.cs">
+      <DependentUpon>SendMail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Share\ImgCreator.aspx.cs">
       <DependentUpon>ImgCreator.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1519,12 +1535,54 @@
     <Compile Include="Website\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Website\KbIntruoduce\knowledgeIndex.aspx.cs">
+      <DependentUpon>knowledgeIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website\KbIntruoduce\knowledgeIndex.aspx.designer.cs">
+      <DependentUpon>knowledgeIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website\KbIntruoduce\ShowArticle.aspx.cs">
+      <DependentUpon>ShowArticle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website\KbIntruoduce\ShowArticle.aspx.designer.cs">
+      <DependentUpon>ShowArticle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website\KbIntruoduce\ShowExpert.aspx.cs">
+      <DependentUpon>ShowExpert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website\KbIntruoduce\ShowExpert.aspx.designer.cs">
+      <DependentUpon>ShowExpert.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Website\Master\KBSiteframe.Master.cs">
       <DependentUpon>KBSiteframe.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Website\Master\KBSiteframe.Master.designer.cs">
       <DependentUpon>KBSiteframe.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Website\ShowNews.aspx.cs">
+      <DependentUpon>ShowNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website\ShowNews.aspx.designer.cs">
+      <DependentUpon>ShowNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website\ShowNotice.aspx.cs">
+      <DependentUpon>ShowNotice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website\ShowNotice.aspx.designer.cs">
+      <DependentUpon>ShowNotice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website\UserRegister.aspx.cs">
+      <DependentUpon>UserRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website\UserRegister.aspx.designer.cs">
+      <DependentUpon>UserRegister.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -1562,6 +1620,7 @@
     </None>
     <Content Include="Website\Css\bootstrap.min.css" />
     <Content Include="Website\Css\font-awesome.css" />
+    <Content Include="Website\Css\lrtk.css" />
     <Content Include="Website\Css\style.css" />
     <Content Include="Website\Css\u10.css" />
     <Content Include="Website\Image\bal-text.jpg" />
@@ -1595,6 +1654,10 @@
     <Content Include="Website\Image\yanzheng.png" />
     <Content Include="Website\index.aspx" />
     <Content Include="Website\Js\bootstrap.js" />
+    <Content Include="Website\Js\coda-slider.1.1.1.pack.js" />
+    <Content Include="Website\Js\jquery-1.2.6.min.js" />
+    <Content Include="Website\Js\jquery-easing-1.3.pack.js" />
+    <Content Include="Website\Js\jquery-easing-compatibility.1.2.pack.js" />
     <Content Include="Website\Js\jquery.js" />
     <Content Include="Website\Master\KBSiteframe.Master" />
   </ItemGroup>

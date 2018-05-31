@@ -60,11 +60,11 @@
                $("#dpStatus").focus();
                return false;
            }
-           if ($.trim($("#txtContent").val()) == "") {
-               layer.tips("请输入内容", $("#txtContent"), { guide: 1, time: 3 });
-               $("#txtContent").focus();
-               return false;
-           }
+           //if ($.trim($("#txtContent").val()) == "") {
+           //    layer.tips("请输入内容", $("#txtContent"), { guide: 1, time: 3 });
+           //    $("#txtContent").focus();
+           //    return false;
+           //}
 
 
 
@@ -105,7 +105,7 @@
           
                 </div>
        
-                  <div class="col-xs-12">
+<%--                  <div class="col-xs-12">
             
                             <div class="form-group">
                         <label class="col-sm-2 align-right control-label no-padding-right">动态内容</label>
@@ -114,9 +114,21 @@
                      
 					    </div>
 				    </div>
-                </div>
+                </div>--%>
    
-                
+                      <div class="col-xs-12">
+
+                    <div class="form-group">
+                        <label class="col-sm-2 align-right control-label no-padding-right">动态内容</label>
+                        <div class="col-sm-8">
+                            <asp:TextBox ID="container" runat="server" TextMode="MultiLine" Width="100%" Height="400px" name="container" ClientIDMode="Static"></asp:TextBox>
+                            <script type="text/javascript">
+                                var ue = UE.getEditor('container');
+
+                            </script>
+                        </div>
+                    </div>
+                </div>
               
             </div>
             <div class="clearfix form-actions">

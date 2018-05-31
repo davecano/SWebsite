@@ -94,7 +94,7 @@
                               <th class="center ">公告状态</th>
                             <th class="center">标题</th>
                           
-                            <th class="center ">公告内容</th>
+                       <%--     <th class="center ">公告内容</th>--%>
 
                             <th class="center ">创建人</th>
                              <th class="center ">创建时间</th>

@@ -21,6 +21,7 @@ namespace KBsiteframe.WEB.Website
         BDynamic bd = new BDynamic();
         protected void Page_Load(object sender, EventArgs e)
         {
+            EventHandler += () => plLogin.Visible = true;
             if (!IsPostBack)
             {
 

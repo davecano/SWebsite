@@ -106,5 +106,29 @@ namespace KBsiteframe.Bll
                 return -3;
             }
         }
+
+
+        public void DownloadFile(string fileURL)
+        {
+       
+            if (File.Exists(fileURL))
+            {
+                //fileURL为带路径的文件全名
+
+                FileInfo fileInfo = new FileInfo(fileURL);
+                HttpContext.Current.Response.Clear();
+                HttpContext.Current.Response.AddHeader("content-disposition", "attachment;filename=" + HttpContext.Current.Server.UrlEncode(fileInfo.Name.ToString()));
+                HttpContext.Current.Response.AddHeader("content-length", fileInfo.Length.ToString());
+
+                HttpContext.Current.Response.ContentType = "application/pdf"; ;
+                HttpContext.Current.Response.ContentEncoding = System.Text.Encoding.Default;
+                HttpContext.Current.Response.WriteFile(fileURL);
+
+            }
+            else
+            {
+                
+            }
+        }
     }
 }

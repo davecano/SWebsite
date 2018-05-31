@@ -6,13 +6,14 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href="../Css/style.css" rel="stylesheet" type="text/css" />
+
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div id="header">
+<div id="header">
   <div class="head">
     <div class="logo"><a href="#">LOGO</a></div>
   </div>
@@ -20,13 +21,14 @@
 <div id="nav_all">
   <div class="nav">
     <ul>
-      <li class="active"><a href="index.html" target="_parent">首页</a></li>
-      <li> <a href="KbIntruoduce/list1.html" target="_parent">知识建构</a> </li>
+      <li class="active"><a href="/Website/index.aspx" target="_parent">首页</a></li>
+      <li> <a href="/Website/KbIntruoduce/knowledgeIndex.aspx" target="_parent">知识建构</a> </li>
       <li> <a href="Research/list2.html" target="_parent">研究项目</a> </li>
       <li> <a href="AcademicAlliance/list3.html" target="_parent">研究联盟</a> </li>
       <li> <a href="AcademicCommunication/list4.html" target="_parent">学术交流</a> </li>
       <li> <a href="AcademicResource/list5.html" target="_parent">学术资源</a> </li>
       <li> <a href="About/list6.html" target="_parent">关于我们</a> </li>
+       <li> <a href="#">English</a> </li>
     </ul>
   </div>
 </div>
@@ -35,9 +37,9 @@
         
         </asp:ContentPlaceHolder>
     </div>
-        <div id="list1_foot">
-  <div class="list1_foot_middle">
-    <div class="list1_banquan"> 苏ICP备：XXXXXXX号<br/>
+      <div id="foot">
+  <div class="foot_middle">
+    <div class="banquan"> 苏ICP备：XXXXXXX号<br/>
       地址：XXXXXXXXXXXXXXXXXXXXXXXXXXXXX </div>
   </div>
 </div>

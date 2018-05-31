@@ -55,11 +55,11 @@
                $("#txtTitle").focus();
                return false;
            }
-           if ($.trim($("#container").val()) == "") {
-               layer.tips("请输入内容", $("#container"), { guide: 1, time: 3 });
-               $("#container").focus();
-               return false;
-           }
+           //if ($.trim($("#container").val()) == "") {
+           //    layer.tips("请输入内容", $("#container"), { guide: 1, time: 3 });
+           //    $("#container").focus();
+           //    return false;
+           //}
 
 
 

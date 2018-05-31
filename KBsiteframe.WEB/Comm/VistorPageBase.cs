@@ -36,7 +36,23 @@ namespace KBsiteframe.WEB.Comm
         ///     资质提醒天数
         /// </summary>
         public string QualificationReminderDate = ConfigurationManager.AppSettings["QualificationReminderDate"];
-        
+
+        /// <summary>
+        /// SmtpServer 服务
+        /// </summary>
+        public string SmtpServer = ConfigurationManager.AppSettings["SmtpServer"];
+        /// <summary>
+        /// 发送方邮件账号
+        /// </summary>
+        public string MailServer = ConfigurationManager.AppSettings["MailServer"];
+        /// <summary>
+        /// 授权码
+        /// </summary>
+        public string MailPassword = ConfigurationManager.AppSettings["MailPassword"];
+        /// <summary>
+        /// 发送方用户名
+        /// </summary>
+        public string MailUserName = ConfigurationManager.AppSettings["MailUserName"];
         BPageVisit bv=new BPageVisit();
 
         public void Q(string name, out string param)
@@ -245,6 +261,13 @@ namespace KBsiteframe.WEB.Comm
             pd.IP = ip;
             pd.PageName = filename;
             bv.insert(pd);
+
+            if (!ValidateSession())
+            {
+                //显示未登录
+                EventHandler?.Invoke();
+
+            }
         }
 
         /// <summary>
@@ -290,6 +313,7 @@ namespace KBsiteframe.WEB.Comm
 
         #region 私有方法
 
+        public event Action EventHandler;
         /// <summary>
         ///     检查页面执行权限
         /// </summary>
@@ -297,7 +321,8 @@ namespace KBsiteframe.WEB.Comm
         {
             if (!ValidateSession())
             {
-                //跳转到登陆页面
+                //显示未注册
+           
               
             }
            

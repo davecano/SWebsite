@@ -43,7 +43,7 @@ namespace KBsiteframe.Web.Manager.ContentManage
             n.NoticeID = bn.GetMaxID() + 1;
             n.NoticeTitle = PubCom.CheckString(txtTitle.Text.Trim());
             n.NoticeStatus = dpStatus.SelectedValue;
-            n.NoticeContent = PubCom.CheckString(txtContent.Text.Trim());
+            n.NoticeContent = container.Text;
             n.CreateUser = GetLogUserName();
             n.CreateDate=DateTime.Now;
             n.LastUpdateDate=DateTime.Now;
