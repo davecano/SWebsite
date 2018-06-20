@@ -23,7 +23,7 @@ namespace KBsiteframe.WEB.Website.KbIntruoduce
             EventHandler += () =>
             {
                 ltmsg.Visible = true;
-                btndownload.Enabled = false;
+                lbdownload.Enabled = false;
             };
 
             if (!IsPostBack)
@@ -40,13 +40,15 @@ namespace KBsiteframe.WEB.Website.KbIntruoduce
             ltdate.Text = a.SubmitTime.ToString();
             ltkeyword.Text = a.Keyword;
             ltsummary.Text = a.Summary;
-            hfpath.Value = PicFilePathV + a.ArticlePath;
+            aimg.ImageUrl = PicFilePathV + a.ArticlePicPath;
         }
 
-        protected void btndownload_OnClick(object sender, EventArgs e)
+      
+
+        protected void lbdownload_OnClick(object sender, EventArgs e)
         {
-            ba.DownloadFile(hfpath.Value);
-            
+            string path = PicFilePathV + ba.GetArticlesByID(Utils.StrToInt(id, 0)).ArticlePath;
+            ba.DownloadFile(path);
         }
     }
 }

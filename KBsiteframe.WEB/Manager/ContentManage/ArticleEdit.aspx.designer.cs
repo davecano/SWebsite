@@ -67,6 +67,33 @@ namespace KBsiteframe.WEB.Manager.ContentManage {
         protected global::System.Web.UI.WebControls.Literal Literal2;
         
         /// <summary>
+        /// ImgNews 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image ImgNews;
+        
+        /// <summary>
+        /// pic_upload 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload pic_upload;
+        
+        /// <summary>
+        /// lbl_pic 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_pic;
+        
+        /// <summary>
         /// txtKryword 控件。
         /// </summary>
         /// <remarks>

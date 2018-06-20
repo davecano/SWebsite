@@ -103,6 +103,12 @@ namespace KBsiteframe.WEB.Manager.ContentManage
             p.OrgName = PubCom.CheckString(txtOrgName.Text.Trim());
             p.StartTime = DateTime.Parse(StarTime.Text.Trim());
             p.EndTime = DateTime.Parse(EndTime.Text.Trim());
+            string str= txtProjectStage.Text.Trim();
+            str = str.Replace("<", "&lt;");
+            str = str.Replace(">", "&gt;");
+            str = str.Replace(" ", "&nbsp;");
+            str = str.Replace("\r\n", "<br>");
+            p.ProjectStage = str;
             if (dpExpert.SelectedValue != "")
                 p.ExpertID = Utils.StrToInt(dpExpert.SelectedValue, 0);
             if (dpLm.SelectedValue != "")

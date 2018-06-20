@@ -22,6 +22,8 @@ namespace KBsiteframe.WEB.Website
 
         }
 
+
+
         protected void btnReg_OnClick(object sender, EventArgs e)
         {
             SysUser su = new SysUser();
@@ -30,7 +32,7 @@ namespace KBsiteframe.WEB.Website
             su.UserLoginName = txtUserName.Text.Trim();
             su.UserPassword = EncryptHelper.EncryptPassword(PubCom.CheckString(txtPsw.Text.Trim()), Constants.PassWordEncodeType);//默认密码
             su.Tel = txtPhone.Text.Trim();
-          
+
             su.RegDate = DateTime.Now;
             su.Phone = txtPhone.Text.Trim();
             su.IsMain = true;
@@ -46,17 +48,17 @@ namespace KBsiteframe.WEB.Website
             int rec = bu.Insert(su);
             if (rec == 1)
             {
-            
-            //为用户设置为vip角色，拥有自己的账号且有下载权限
-            bur.Insert(new SysUserRole() {RoleID = 1, UserID = su.UserID});
+
+                //为用户设置为vip角色，拥有自己的账号且有下载权限
+                bur.Insert(new SysUserRole() { RoleID = 1, UserID = su.UserID });
                 MailHelper.sendMail(SmtpServer, 1, MailServer, MailPassword, MailUserName, MailServer, txtMail.Text.Trim(),
                "subject", "body");
-                Message.ShowAndClose( "用户注册成功,系统已为您发送邮件，请查收");
+                Message.ShowAndClose("用户注册成功,系统已为您发送邮件，请查收");
             }
             else
             {
                 Message.ShowWrong(this, "添加失败");
             }
-}
+        }
     }
 }

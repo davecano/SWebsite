@@ -23,7 +23,7 @@
     <ul>
       <li class="active"><a href="/Website/index.aspx" target="_parent">首页</a></li>
       <li> <a href="/Website/KbIntruoduce/knowledgeIndex.aspx" target="_parent">知识建构</a> </li>
-      <li> <a href="Research/list2.html" target="_parent">研究项目</a> </li>
+      <li> <a href="/Website/KbIntruoduce/ProjectIndex.aspx" target="_parent">研究项目</a> </li>
       <li> <a href="AcademicAlliance/list3.html" target="_parent">研究联盟</a> </li>
       <li> <a href="AcademicCommunication/list4.html" target="_parent">学术交流</a> </li>
       <li> <a href="AcademicResource/list5.html" target="_parent">学术资源</a> </li>

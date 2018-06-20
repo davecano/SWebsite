@@ -21,7 +21,7 @@ namespace KBsiteframe.Model
 
 
         public string ProjectContent { get; set; }
-
+        public string ProjectStage { get; set; }
         public DateTime? StartTime { get; set; }
 
         public DateTime? EndTime { get; set; }

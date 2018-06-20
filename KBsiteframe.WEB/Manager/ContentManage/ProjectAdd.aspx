@@ -80,12 +80,16 @@
             
 
             if ($.trim($("#txtContent").val()) == "") {
-                layer.tips("请输入项目内容", $("#txtContent"), { guide: 1, time: 3 });
+                layer.tips("请输入项目简介", $("#txtContent"), { guide: 1, time: 3 });
                 $("#txtContent").focus();
                 return false;
             }
        
-
+            if ($.trim($("#txtProjectStage").val()) == "") {
+                layer.tips("请输入项目阶段内容", $("#txtProjectStage"), { guide: 1, time: 3 });
+                $("#txtProjectStage").focus();
+                return false;
+            }
             return ret;
         }
     </script>
@@ -146,15 +150,25 @@
 
                 <div class="col-xs-12">
                     <div class="form-group">
-                        <label class="col-sm-2 align-right control-label no-padding-right">项目内容</label>
+                        <label class="col-sm-2 align-right control-label no-padding-right">项目简介</label>
                         <div class="col-sm-8">
-                            <asp:TextBox ID="txtContent" runat="server" TextMode="MultiLine" Width="600px" Height="200px"></asp:TextBox>
+                            <asp:TextBox ID="txtContent" runat="server" TextMode="MultiLine" Width="600px" Height="100px"></asp:TextBox>
                             <asp:Literal ID="Literal4" runat="server" Text="&lt;font color=red&gt;*&lt;/font&gt;"></asp:Literal>
                         </div>
 
                     </div>
                 </div>
             
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label class="col-sm-2 align-right control-label no-padding-right">项目阶段(建议分阶段分别填写)</label>
+                        <div class="col-sm-8">
+                            <asp:TextBox ID="txtProjectStage" runat="server" TextMode="MultiLine" Width="600px" Height="200px"></asp:TextBox>
+                            <asp:Literal ID="Literal6" runat="server" Text="&lt;font color=red&gt;*&lt;/font&gt;"></asp:Literal>
+                        </div>
+
+                    </div>
+                </div>
         
                 <div class="col-xs-12">
                     <div class="form-group">

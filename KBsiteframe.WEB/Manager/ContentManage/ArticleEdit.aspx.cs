@@ -71,6 +71,7 @@ namespace KBsiteframe.WEB.Manager.ContentManage
             txtSummary.Text = a.Summary;
             txtPublication.Text = a.Publication;
             StarTime.Text = a.SubmitTime.ToString();
+            ImgNews.ImageUrl = PicFilePathV + a.ArticlePicPath;
         }
 
         void BindDropDownList()
@@ -179,7 +180,7 @@ namespace KBsiteframe.WEB.Manager.ContentManage
                 HttpFileCollection htf = Request.Files;
                ba.UploadFile(htf[0], PicFilePath, a.ArticleID);
 
-
+                ba.UploadValidate(pic_upload, lbl_pic, PicFilePath, a.ArticleID);
                 //// 插入日志
                 SysOperateLog log = new SysOperateLog();
                 log.LogID = StringHelper.getKey();

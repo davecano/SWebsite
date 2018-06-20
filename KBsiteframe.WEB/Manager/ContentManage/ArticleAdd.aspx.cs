@@ -141,8 +141,9 @@ namespace KBsiteframe.WEB.Manager.ContentManage
 
                 HttpFileCollection htf = Request.Files;
            
-             ret = ba.UploadFile(htf[0], PicFilePath, a.ArticleID);
-               
+              ret = ba.UploadFile(htf[0], PicFilePath, a.ArticleID);
+              ba.UploadValidate(pic_upload, lbl_pic, PicFilePath, a.ArticleID);
+
             }
        
             

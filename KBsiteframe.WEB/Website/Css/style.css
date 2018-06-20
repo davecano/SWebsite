@@ -826,22 +826,27 @@ input:focus {
 	padding-bottom: 30px;
 }
 .fenye_middle {
-	width: 220px;
-	height: auto;
-	margin: auto;
+  
+    text-align: center;
 }
-.fenye_left {
-	width: 54px;
-	height: 22px;
-	float: left;
+.fenye_middle li {
+    list-style-type: none;
+    width: auto;
+    display: inline-block;
 	font-size: 14px;
 	color: #2d88cf;
 	text-align: center;
 	border: 1px solid #ccc;
 	line-height: 22px;
+    padding: 4px 6px;
+    margin-left: 10px
 }
-.fenye_left a {
+.fenye_middle li a {
 	color: #2d88cf;
+}
+.fenye_middle li span {
+		color : red;
+     
 }
 .fenye_left1 {
 	width: 20px;
@@ -1868,7 +1873,7 @@ input:focus {
 	padding-top: 18px;
 }
 .list2_show-shang-title {
-	width: 66px;
+	width: 266px;
 	height: 22px;
 	margin: auto;
 	padding-top: 30px;
@@ -1892,6 +1897,8 @@ input:focus {
 	height: 543px;
 	padding-left: 23px;
 	float: left;
+    font-size: 1.2em;
+    line-height: 1.2em;
 }
 .jd-1 {
 	width: 86px;
@@ -1944,8 +1951,8 @@ input:focus {
 	font-size:14px;
 	text-align:center;
 	line-height:33px;
-
-	
+    clear: both;
+    margin-top: 10px;
 }
 .list2_show-pic-1 {
 	width: 245px;
@@ -1953,6 +1960,15 @@ input:focus {
 	background-repeat: no-repeat;
 	margin-top: 16px;
 }
+.list2_show-Article {
+	width: 245px;
+  
+	margin: 16px;
+}
+.list2_show-Article  ul li a{
+  color: #0000cd;
+}
+
 /*第一个页面结束*/
 
 .list3_show-address-text {
@@ -2148,11 +2164,14 @@ input:focus {
 	margin-top: 30px;
 }
 .last-title {
+    width: 300px;
 	color: #4d4d4d;
 	font-size: 14px;
 	padding-left: 28px;
 }
-.last-title span {
+.last-title span{
+ width: 100px;
+    border-radius: 5px; 
 	color: #ff0000;
 	font-size: 14px;
 }
@@ -2194,6 +2213,21 @@ input:focus {
 	margin: auto;
 	margin-top: 20px;
 }
+.pic_left {
+   float: left;
+    width: 400px;
+    height:400px
+}
+.content_right {
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    line-height: 40px;
+    vertical-align: middle;
+  	color: #4d4d4d;
+	font-size: 14px;
+    float: right
+}
 .list5_show_gj-biaozhu-left {
 	width: 468px;
 	height: 21px;
@@ -2207,7 +2241,7 @@ input:focus {
 	float: left;
 }
 .list5_show_gj-biaozhu2 {
-	width: 100px;
+	width: 145px;
 	height: 21px;
 	color: #4d4d4d;
 	font-size: 14px;
@@ -2215,15 +2249,16 @@ input:focus {
 }
 .list5_show_gj-biaozhu-right {
 	width: 416px;
-	height: 21px;
+	
 	float: right;
 }
 .list5_show_gj-biaozhu3 {
-	width: 150px;
+	width: 130px;
 	height: 21px;
+   	margin: auto;
 	color: #4d4d4d;
 	font-size: 14px;
-	float: right;
+  
 }
 .list5_show_gj-text {
 	width: 939px;
@@ -2234,6 +2269,12 @@ input:focus {
 	margin-top: 30px;
 	padding-bottom:30px;
 	margin-bottom:50px;
+}
+
+.Article_pic {
+  
+    margin: 10px auto;
+    text-align: center
 }
 /*第四个页面结束*/
 
@@ -2707,29 +2748,33 @@ input:focus {
 }
 /*登陆页面*/
 .dl-bg {
-	width: 100%;
+	/*width: 100%;
 	height: 898px;
 	background-image: url(../Image/dl-bg.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
-	float: left;
+	float: left;*/
+    width: 780px;
+    height: 500px;
+    background: #c1c2ff;
+    margin: auto;
 }
 .dl-logo {
-	width: 1000px;
-	height: 172px;
-	margin: auto;
+	width: 224px;
+	height:60px;
+	margin:10px auto;
 }
 .dl-logo-pic {
-	width: 224px;
+	width:224px;
 	height: 57px;
-	margin: auto;
+	margin: 10px auto;
 	background-image: url(../Image/dl-logo.jpg);
 	background-repeat: no-repeat;
-	margin-top: 150px;
+    padding: 10px;
 }
 .dl-mian {
-	width: 1000px;
-	height: 312px;
+	width: 780px;
+	height: 500px;
 	margin: auto;
 }
 .dl-biao {
@@ -2758,7 +2803,7 @@ input:focus {
 	position: relative;
 	bottom: 54px;
 	right: 43px;
-	background-image: url(../Image/dl-yan.jpg);
+	/*background-image: url(../Image/dl-yan.jpg);*/
 	background-repeat: no-repeat;
 }
 .dl-biao-table-input {
@@ -2780,7 +2825,7 @@ input:focus {
 	height: 44px;
 	float: left;
 }
-#dl-button {
+#btnReg {
 	width: 158px;
 	height: 40px;
 	border-radius: 8px;
@@ -2790,6 +2835,7 @@ input:focus {
 	font-family: '微软雅黑';
 	font-size: 16px;
 	margin-left: 88px;
+    text-align: center
 }
 .dl-foot {
 	width: 1000px;

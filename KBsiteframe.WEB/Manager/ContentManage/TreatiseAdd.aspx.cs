@@ -99,7 +99,12 @@ namespace KBsiteframe.WEB.Manager.ContentManage
             t.Author = PubCom.CheckString(txtauthor.Text.Trim());
             t.Publishing = PubCom.CheckString(txtPublishing.Text.Trim());
             t.Summary = PubCom.CheckString(txtsummary.Text.Trim());
-            t.Catalog = PubCom.CheckString(txtCatalog.Text.Trim());
+            string str = txtCatalog.Text.Trim();
+            str = str.Replace("<", "&lt;");
+            str = str.Replace(">", "&gt;");
+            str = str.Replace(" ", "&nbsp;");
+            str = str.Replace("\r\n", "<br>");
+            t.Catalog = str;
             if (dpExpert.SelectedValue != "")
                 t.ExpertID = Utils.StrToInt(dpExpert.SelectedValue, 0);
             if (dpLm.SelectedValue != "")

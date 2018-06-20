@@ -23,7 +23,7 @@ namespace KBsiteframe.Model
         public string Keyword { get; set; }
         public string Summary { get; set; }
         public string ArticlePath { get; set; }
-
+        public string ArticlePicPath { get; set; }
         public string LanguageType { get; set; }
 
         public int? Downloads { get; set; }

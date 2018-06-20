@@ -656,11 +656,21 @@
     <Content Include="images\top_table_leftbg-1.psd" />
     <Content Include="images\UserInfo.psd" />
     <Content Include="images\在线客服.psd" />
+    <Content Include="Website\AcademicAlliance\LMMemberIndex.aspx" />
     <Content Include="Website\index.html" />
     <Content Include="Website\Js\js.js" />
     <Content Include="Website\KbIntruoduce\knowledgeIndex.aspx" />
+    <Content Include="Website\KbIntruoduce\ProjectIndex.aspx" />
+    <Content Include="Website\KbIntruoduce\ShowAllTreatise.aspx" />
+    <Content Include="Website\KbIntruoduce\ShowAllArticle.aspx" />
+    <Content Include="Website\KbIntruoduce\ShowAllDynamic.aspx" />
+    <Content Include="Website\KbIntruoduce\ShowAllNotice.aspx" />
+    <Content Include="Website\KbIntruoduce\ShowAll.aspx" />
+    <Content Include="Website\KbIntruoduce\ShowTreatise.aspx" />
     <Content Include="Website\KbIntruoduce\ShowArticle.aspx" />
     <Content Include="Website\KbIntruoduce\ShowExpert.aspx" />
+    <Content Include="Website\KbIntruoduce\ShowProject.aspx" />
+    <Content Include="Website\ShowDynamic.aspx" />
     <Content Include="Website\ShowNews.aspx" />
     <Content Include="Website\ShowNotice.aspx" />
     <Content Include="Website\UserRegister.aspx" />
@@ -1528,6 +1538,13 @@
     <Compile Include="Ueditor\net\App_Code\NotSupportedHandler.cs" />
     <Compile Include="Ueditor\net\App_Code\PathFormater.cs" />
     <Compile Include="Ueditor\net\App_Code\UploadHandler.cs" />
+    <Compile Include="Website\AcademicAlliance\LMMemberIndex.aspx.cs">
+      <DependentUpon>LMMemberIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website\AcademicAlliance\LMMemberIndex.aspx.designer.cs">
+      <DependentUpon>LMMemberIndex.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Website\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1541,6 +1558,55 @@
     </Compile>
     <Compile Include="Website\KbIntruoduce\knowledgeIndex.aspx.designer.cs">
       <DependentUpon>knowledgeIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website\KbIntruoduce\ProjectIndex.aspx.cs">
+      <DependentUpon>ProjectIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website\KbIntruoduce\ProjectIndex.aspx.designer.cs">
+      <DependentUpon>ProjectIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website\KbIntruoduce\ShowAllTreatise.aspx.cs">
+      <DependentUpon>ShowAllTreatise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website\KbIntruoduce\ShowAllTreatise.aspx.designer.cs">
+      <DependentUpon>ShowAllTreatise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website\KbIntruoduce\ShowAllArticle.aspx.cs">
+      <DependentUpon>ShowAllArticle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website\KbIntruoduce\ShowAllArticle.aspx.designer.cs">
+      <DependentUpon>ShowAllArticle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website\KbIntruoduce\ShowAllDynamic.aspx.cs">
+      <DependentUpon>ShowAllDynamic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website\KbIntruoduce\ShowAllDynamic.aspx.designer.cs">
+      <DependentUpon>ShowAllDynamic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website\KbIntruoduce\ShowAllNotice.aspx.cs">
+      <DependentUpon>ShowAllNotice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website\KbIntruoduce\ShowAllNotice.aspx.designer.cs">
+      <DependentUpon>ShowAllNotice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website\KbIntruoduce\ShowAll.aspx.cs">
+      <DependentUpon>ShowAll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website\KbIntruoduce\ShowAll.aspx.designer.cs">
+      <DependentUpon>ShowAll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website\KbIntruoduce\ShowTreatise.aspx.cs">
+      <DependentUpon>ShowTreatise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website\KbIntruoduce\ShowTreatise.aspx.designer.cs">
+      <DependentUpon>ShowTreatise.aspx</DependentUpon>
     </Compile>
     <Compile Include="Website\KbIntruoduce\ShowArticle.aspx.cs">
       <DependentUpon>ShowArticle.aspx</DependentUpon>
@@ -1556,12 +1622,26 @@
     <Compile Include="Website\KbIntruoduce\ShowExpert.aspx.designer.cs">
       <DependentUpon>ShowExpert.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Website\KbIntruoduce\ShowProject.aspx.cs">
+      <DependentUpon>ShowProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website\KbIntruoduce\ShowProject.aspx.designer.cs">
+      <DependentUpon>ShowProject.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Website\Master\KBSiteframe.Master.cs">
       <DependentUpon>KBSiteframe.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Website\Master\KBSiteframe.Master.designer.cs">
       <DependentUpon>KBSiteframe.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Website\ShowDynamic.aspx.cs">
+      <DependentUpon>ShowDynamic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website\ShowDynamic.aspx.designer.cs">
+      <DependentUpon>ShowDynamic.aspx</DependentUpon>
     </Compile>
     <Compile Include="Website\ShowNews.aspx.cs">
       <DependentUpon>ShowNews.aspx</DependentUpon>

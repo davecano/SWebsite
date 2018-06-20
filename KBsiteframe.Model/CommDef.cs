@@ -10,6 +10,7 @@ namespace KBsiteframe.Model
     {
         //常量
         public static string FileBathPath = "ArticleFile";//文章上传文件的根目录
+        public static string ArticlePicBathPath = "ArticlePic";//文章上传图片的根目录
         public static string TreatiseBathPath = "TreatisePic";//专著上传图片的根目录
         public static string ExpertBathPath = "ExpertPic";//专家上传图片的根目录
         public static string NewsBathPath = "NewsPic";//新闻上传图片的根目录
@@ -96,8 +97,8 @@ namespace KBsiteframe.Model
     }
     public enum DynamicType
     {
-        联盟动态,
-        团队动态
+        联盟动态=1,
+        团队动态=2
     }
     public enum ExpertType
     {

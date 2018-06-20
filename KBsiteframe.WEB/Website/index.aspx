@@ -30,13 +30,14 @@
 
 
         function GetID(pagename,id) {
-            ShowIframeNotClose(pagename+".aspx?ID=" + id);
-
+            //ShowIframeNotClose(pagename+".aspx?ID=" + id);
+            window.open (pagename + ".aspx?ID=" + id);
             return false;
         }
 
         function Register() {
-            ShowIframe("用户注册", "UserRegister.aspx", '780px', '500px');
+            //ShowIframe("用户注册", "UserRegister.aspx", '780px', '600px');
+            ShowIframeNew("用户注册", "UserRegister.aspx", '780px', '600px');
             return false;
         }
     </script>
@@ -55,20 +56,20 @@
                                     <div class="panelContainer">
                                         <div class="panel" title="Panel 1">
                                             <div class="wrapper">
-                                                <a href="ShowNews.aspx?ID=<%=piclist?[0].NewsID %>">
-                                                    <img src="<%=piclist[0].NewsPicPath %>" alt="<%=piclist[0].Title %>"  ></a>
+                                                <a target="_blank" href="ShowNews.aspx?ID=<%=piclist?[0].NewsID %>">
+                                                    <img src="<%=piclist[0].NewsPicPath %>" alt="<%=piclist[0].Title %>"></a>
                                             </div>
                                         </div>
                                         <div class="panel" title="Panel 2">
                                             <div class="wrapper">
-                                                <a href="ShowNews.aspx?ID=<%=piclist?[1].NewsID %>" target="_blank">
+                                                <a  target="_blank" href="ShowNews.aspx?ID=<%=piclist?[1].NewsID %>" target="_blank">
                                                     <img src="<%=piclist[1].NewsPicPath %>" alt="<%=piclist[1].Title %>"></a>
                                             </div>
                                         </div>
                                         <div class="panel" title="Panel 3">
                                             <div class="wrapper">
-                                                <a href="ShowNews.aspx?ID=<%=piclist?[2].NewsID %>">
-                                                    <img src="<%=piclist[2].NewsPicPath %>" alt="<%=piclist[2].Title %>" class="floatLeft"></a>
+                                                <a  target="_blank" href="ShowNews.aspx?ID=<%=piclist?[2].NewsID %>">
+                                                    <img src="<%=piclist[2].NewsPicPath %>" alt="<%=piclist[2].Title %>"></a>
                                             </div>
                                         </div>
                                     </div>
@@ -93,13 +94,13 @@
                     <div class="home_content1_right">
                         <div class="home_content1_right_title">
                             <div class="home_news"><a href="#">新闻动态</a></div>
-                            <div class="home_more"><a href="#">MORE</a></div>
+                            <div class="home_more"><a href="KbIntruoduce/ShowAll.aspx">MORE</a></div>
                         </div>
                         <div class="home_content1_right_text_all">
                             <ul>
                                 <asp:Repeater runat="server" ID="rpNewList">
                                     <ItemTemplate>
-                                        <li><a href="javascript:GetID('ShowNews',<%#Eval("NewsID")%>);">•&nbsp;&nbsp;<%#Utils.CutString(Eval("Title"),37) %></a></li>
+                                        <li><a  target="_blank" href="javascript:GetID('ShowNews',<%#Eval("NewsID")%>);">•&nbsp;&nbsp;<%#Utils.CutString(Eval("Title"),37) %></a></li>
                                     </ItemTemplate>
                                 </asp:Repeater>
 
@@ -110,13 +111,13 @@
                 <div class="home_content1_right_all">
                     <div class="home_content1_right_title">
                         <div class="home_news"><a href="#">通知公告</a></div>
-                        <div class="home_more"><a href="#">MORE</a></div>
+                        <div class="home_more"><a href="KbIntruoduce/ShowAllNotice.aspx">MORE</a></div>
                     </div>
                     <div class="home_content1_right_text_all">
                         <ul>
                             <asp:Repeater runat="server" ID="rpNoticeList">
                                 <ItemTemplate>
-                                    <li><a href="javascript:GetID('ShowNotice',<%#Eval("NoticeID")%>);">•&nbsp;&nbsp;<%#Utils.CutString(Eval("NoticeTitle"),37) %></a></li>
+                                    <li><a  target="_blank" href="javascript:GetID('ShowNotice',<%#Eval("NoticeID")%>);">•&nbsp;&nbsp;<%#Utils.CutString(Eval("NoticeTitle"),37) %></a></li>
                                 </ItemTemplate>
                             </asp:Repeater>
 
@@ -128,13 +129,13 @@
                 <div class="home_content2_left">
                     <div class="home_content1_right_title">
                         <div class="home_news"><a href="#">联盟动态</a></div>
-                        <div class="home_more"><a href="#">MORE</a></div>
+                        <div class="home_more"><a href="KbIntruoduce/ShowAllDynamic.aspx?type=1">MORE</a></div>
                     </div>
                     <div class="home_content1_right_text_all">
                         <ul>
                             <asp:Repeater runat="server" ID="rpLMlist">
                                 <ItemTemplate>
-                                    <li><a href="#">•&nbsp;&nbsp;<%#Utils.CutString(Eval("Title"),37) %></a></li>
+                                    <li><a  target="_blank"  href="javascript:GetID('ShowDynamic',<%#Eval("DynamicID")%>);">•&nbsp;&nbsp;<%#Utils.CutString(Eval("Title"),37) %></a></li>
                                 </ItemTemplate>
                             </asp:Repeater>
 
@@ -167,13 +168,13 @@
                 <div class="home_content2_middle">
                     <div class="home_content1_right_title">
                         <div class="home_news"><a href="#">团队动态</a></div>
-                        <div class="home_more"><a href="#">MORE</a></div>
+                        <div class="home_more"><a href="KbIntruoduce/ShowAllDynamic.aspx?type=2">MORE</a></div>
                     </div>
                     <div class="home_content1_right_text_all">
                         <ul>
                             <asp:Repeater runat="server" ID="rpTDlist">
                                 <ItemTemplate>
-                                    <li><a href="#">•&nbsp;&nbsp;<%#Utils.CutString(Eval("Title"),37) %></a></li>
+                                    <li><a  target="_blank" href="javascript:GetID('ShowDynamic',<%#Eval("DynamicID")%>);">•&nbsp;&nbsp;<%#Utils.CutString(Eval("Title"),37) %></a></li>
                                 </ItemTemplate>
                             </asp:Repeater>
                         </ul>
@@ -202,7 +203,7 @@
                                 </div>
                                 <div class="home_content2_right_text">
                                     <div class="home_content2_right_text_one2">
-                                        <div class="home_content2_right_text_one2_left"><a href="javascript:Register();">用户注册</a></div>
+                                        <div class="home_content2_right_text_one2_left"><a  href="javascript:Register();">用户注册</a></div>
                                         <div class="home_content2_right_text_one2_right"><a href="../Login.aspx" target="_blank">管理员登录</a></div>
                                     </div>
                                 </div>

@@ -108,6 +108,19 @@ function ShowIframe(pagetitle, pagesrc, pagewidth, pageheight) {
         area: [pagewidth, pageheight]
     });
 }
+
+function ShowIframeNew(pagetitle, pagesrc, pagewidth, pageheight) {
+    $.layer({
+        type: 2,
+        fix: true,
+        title: pagetitle,
+        //offset:['80px','160px'],
+        maxmin: false,
+        iframe: { src: pagesrc, scrolling: 'no' },
+        area: [pagewidth, pageheight]
+        
+    });
+}
 function closeLayer(obj) {
     var allLayerIfms = $(".xubox_iframe", window.parent.document);//所有layer层 (可能嵌套打开了多个layer)
     var len = allLayerIfms.length;

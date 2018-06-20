@@ -43,11 +43,18 @@ namespace KBsiteframe.Bll
         {
             return dn.GetNewsList(q, pageindex, pagesize, out totalcount);
         }
+        public IList<New> GetNewsTitleList(Query q, int pageindex, int pagesize, out int totalcount)
+        {
+            return dn.GetNewsTitleList(q, pageindex, pagesize, out totalcount);
+        }
         public IList<New> GetNewsList(Query q)
         {
             return dn.GetNewsList(q);
         }
-
+        public IList<New> GetNewsTitleList(Query q)
+        {
+            return dn.GetNewsTitleList(q);
+        }
         public IList<New> GetNewsTitleList()
         {
             return dn.GetNewsTitleList();

@@ -7,6 +7,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>用户注册</title>
     <link rel="stylesheet" type="text/css" href="Css/style.css"/>
+<%--   javascript--%>
+        <script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+    <script type="text/javascript" src="Js/jquery-easing-1.3.pack.js"></script>
+    <script type="text/javascript" src="Js/jquery-easing-compatibility.1.2.pack.js"></script>
+    <script type="text/javascript" src="Js/coda-slider.1.1.1.pack.js"></script>
+    <script type="text/javascript" src="Js/js.js"></script>
+
+    <script type="text/javascript" src="Js/bootstrap.js"></script>
+    <script type="text/javascript" src="/js/layer/layer.min.js"></script>
+    <script type="text/javascript" src="/js/Common.js"></script>
         <script> 
         function CheckForm() {
             var ret = true;
@@ -76,7 +86,7 @@
 <div class="dl-biao-title">新用户注册</div>
 <div class="dl-biao-table">
 <div class="dl-biao-table-input">
-<div style="width: 362px;height: 400px;">
+<div style="width: 362px;height: 400px;margin: auto">
  <p>&nbsp;&nbsp;&nbsp;&nbsp;用户名:
     <%-- <input class="dl-input1" type="text" name="用户名">--%>
      <asp:TextBox runat="server" CssClass="dl-input1"  ID="txtUserName"></asp:TextBox>
@@ -112,7 +122,7 @@
  </div>
  <div class="dl-an">
 <%--<button type="button" id="dl-button">立即注册</button>--%>
-     <asp:Button runat="server" ID="btnReg" CssClass="dl-button-unique" Text="立即注册" OnClientClick="return CheckForm();" OnClick="btnReg_OnClick"/>
+     <asp:Button runat="server" ID="btnReg"  CssClass="dl-button"  Text="立即注册" OnClientClick="return CheckForm();" OnClick="btnReg_OnClick"/>
 </div>
 </div> 
 </div>

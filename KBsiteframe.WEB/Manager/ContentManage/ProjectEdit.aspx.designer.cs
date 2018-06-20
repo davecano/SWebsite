@@ -148,6 +148,24 @@ namespace KBsiteframe.WEB.Manager.ContentManage {
         protected global::System.Web.UI.WebControls.Literal Literal4;
         
         /// <summary>
+        /// txtProjectStage 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtProjectStage;
+        
+        /// <summary>
+        /// Literal6 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal Literal6;
+        
+        /// <summary>
         /// dpLm 控件。
         /// </summary>
         /// <remarks>

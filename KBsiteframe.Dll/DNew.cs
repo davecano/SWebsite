@@ -30,6 +30,16 @@ namespace KBsiteframe.Dll
         {
             return db.Query<New>(string.Format(Vsql, q.GetCondition(true)));
         }
+        public IList<New> GetNewsTitleList(Query q, int pageindex, int pagesize, out int totalcount)
+        {
+            string sql = @"select  NewsID,Title,Uploader,SubmitTime,Views,IsTop,IsHot,NewsPicPath from New where 1=1{0}";
+            return db.Query<New>(string.Format(sql, q.GetCondition(true)), pageindex, pagesize, out totalcount);
+        }
+        public IList<New> GetNewsTitleList(Query q)
+        {
+            string sql = @"select  NewsID,Title,Uploader,SubmitTime,Views,IsTop,IsHot,NewsPicPath from New where 1=1{0}";
+            return db.Query<New>(string.Format(sql, q.GetCondition(true)));
+        }
         public IList<New> GetNewsTitleList()
         {//因content过大，过滤掉content
             string sql = @"select top(11) NewsID,Title,Uploader,SubmitTime,Views,IsTop,IsHot,NewsPicPath from New order by  IsTop desc,IsHot desc";

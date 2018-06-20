@@ -37,7 +37,7 @@
                         </div>
                         <div class="list1_list_content2_right_text_all_right">
                             <ul>
-                                <li><%#Eval("SubmitTime") %></li>
+                                <li><%#Eval("SubmitTime","{0:yyyy-MM-dd}")%></li>
 
                             </ul>
                         </div>
