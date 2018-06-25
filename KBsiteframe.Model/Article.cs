@@ -30,6 +30,7 @@ namespace KBsiteframe.Model
         public int? Views { get; set; }
         public string Publication { get; set; }
         public string ArticleType { get; set; }
+        public bool? IsInternal { get; set; }
         public string Author { get; set; }
         /// <summary>
         /// 专家编号 用于成果列表

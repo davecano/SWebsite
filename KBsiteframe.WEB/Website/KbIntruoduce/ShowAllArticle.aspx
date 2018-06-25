@@ -44,7 +44,7 @@
                         <div class="list_text_content2_right_text_all">
                             <ul>
 
-                                <li><a target="_blank" href="javascript:GetID('../ShowArticle',<%#Eval("ArticleID")%>);">•&nbsp;&nbsp;<%#Utils.CutString(Eval("ArticleTitle"),37) %></a></li>
+                                <li><a target="_blank" href="javascript:GetID('ShowArticle',<%#Eval("ArticleID")%>);">•&nbsp;&nbsp;<%#Utils.CutString(Eval("ArticleTitle"),60) %></a></li>
                             </ul>
                         </div>
                         <div class="list_text_content2_right_text_all_right">

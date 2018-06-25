@@ -656,7 +656,10 @@
     <Content Include="images\top_table_leftbg-1.psd" />
     <Content Include="images\UserInfo.psd" />
     <Content Include="images\在线客服.psd" />
-    <Content Include="Website\AcademicAlliance\LMMemberIndex.aspx" />
+    <Content Include="Website\About\AboutIndex.aspx" />
+    <Content Include="Website\AcademicAlliance\MemberIndex.aspx" />
+    <Content Include="Website\AcademicAlliance\ShowMember.aspx" />
+    <Content Include="Website\AcademicCommunication\AcademicCommunicationIndex.aspx" />
     <Content Include="Website\index.html" />
     <Content Include="Website\Js\js.js" />
     <Content Include="Website\KbIntruoduce\knowledgeIndex.aspx" />
@@ -1538,12 +1541,33 @@
     <Compile Include="Ueditor\net\App_Code\NotSupportedHandler.cs" />
     <Compile Include="Ueditor\net\App_Code\PathFormater.cs" />
     <Compile Include="Ueditor\net\App_Code\UploadHandler.cs" />
-    <Compile Include="Website\AcademicAlliance\LMMemberIndex.aspx.cs">
-      <DependentUpon>LMMemberIndex.aspx</DependentUpon>
+    <Compile Include="Website\About\AboutIndex.aspx.cs">
+      <DependentUpon>AboutIndex.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Website\AcademicAlliance\LMMemberIndex.aspx.designer.cs">
-      <DependentUpon>LMMemberIndex.aspx</DependentUpon>
+    <Compile Include="Website\About\AboutIndex.aspx.designer.cs">
+      <DependentUpon>AboutIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website\AcademicAlliance\MemberIndex.aspx.cs">
+      <DependentUpon>MemberIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website\AcademicAlliance\MemberIndex.aspx.designer.cs">
+      <DependentUpon>MemberIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website\AcademicAlliance\ShowMember.aspx.cs">
+      <DependentUpon>ShowMember.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website\AcademicAlliance\ShowMember.aspx.designer.cs">
+      <DependentUpon>ShowMember.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website\AcademicCommunication\AcademicCommunicationIndex.aspx.cs">
+      <DependentUpon>AcademicCommunicationIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website\AcademicCommunication\AcademicCommunicationIndex.aspx.designer.cs">
+      <DependentUpon>AcademicCommunicationIndex.aspx</DependentUpon>
     </Compile>
     <Compile Include="Website\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>

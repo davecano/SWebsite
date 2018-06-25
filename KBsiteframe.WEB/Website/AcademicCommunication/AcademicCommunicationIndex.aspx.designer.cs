@@ -7,117 +7,81 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace KBsiteframe.WEB.Manager.ContentManage {
+namespace KBsiteframe.WEB.Website.AcademicCommunication {
     
     
-    public partial class TDMemberAdd {
+    public partial class AcademicCommunicationIndex {
         
         /// <summary>
-        /// form1 控件。
+        /// lttitle 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Literal lttitle;
         
         /// <summary>
-        /// ImgNews 控件。
+        /// hfaid 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ImgNews;
+        protected global::System.Web.UI.WebControls.HiddenField hfaid;
         
         /// <summary>
-        /// pic_upload 控件。
+        /// ltsummary 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload pic_upload;
+        protected global::System.Web.UI.WebControls.Literal ltsummary;
         
         /// <summary>
-        /// lbl_pic 控件。
+        /// rplist1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_pic;
+        protected global::System.Web.UI.WebControls.Repeater rplist1;
         
         /// <summary>
-        /// txtMName 控件。
+        /// lttitle2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMName;
+        protected global::System.Web.UI.WebControls.Literal lttitle2;
         
         /// <summary>
-        /// Literal7 控件。
+        /// hfaid2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Literal7;
+        protected global::System.Web.UI.WebControls.HiddenField hfaid2;
         
         /// <summary>
-        /// txtQualification 控件。
+        /// ltsummary2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtQualification;
+        protected global::System.Web.UI.WebControls.Literal ltsummary2;
         
         /// <summary>
-        /// txtPhone 控件。
+        /// rplist2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPhone;
-        
-        /// <summary>
-        /// txtMail 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMail;
-        
-        /// <summary>
-        /// Literal1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Literal1;
-        
-        /// <summary>
-        /// ttxOrgName 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ttxOrgName;
-        
-        /// <summary>
-        /// btnAdd 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::Z.ZButton btnAdd;
+        protected global::System.Web.UI.WebControls.Repeater rplist2;
     }
 }

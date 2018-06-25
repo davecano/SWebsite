@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Data;
+using System.IO;
+using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using KBsiteframe.Model;
 using SysBase.BLL;
 using SysBase.Model;
 
@@ -210,7 +214,8 @@ namespace KBsiteframe.WEB.Comm
             }
             return false;
         }
-
+        //插入图片
+   
         #endregion
     }
 }

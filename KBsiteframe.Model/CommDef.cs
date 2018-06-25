@@ -13,6 +13,7 @@ namespace KBsiteframe.Model
         public static string ArticlePicBathPath = "ArticlePic";//文章上传图片的根目录
         public static string TreatiseBathPath = "TreatisePic";//专著上传图片的根目录
         public static string ExpertBathPath = "ExpertPic";//专家上传图片的根目录
+        public static string MemberBathPath = "MemberPic";//专家上传图片的根目录
         public static string NewsBathPath = "NewsPic";//新闻上传图片的根目录
         public static string DocumentBathPath = "DocumentFile"; // 文档上传文件的根目录
         public static string InvoiceBathPath = "InvoiceFile"; // 文档上传文件的根目录

@@ -20,7 +20,8 @@
 
         function GetID(pagename) {
             var ID = getQueryString("ID");
-            window.location.href=pagename + ".aspx?ID=" + ID;
+           // 表明id 类型 type 1 = project ,2=expert,3=lmmember,4=tdmember
+            window.location.href=pagename + ".aspx?ID=" + ID+"&type=1";
 
             return false;
         }

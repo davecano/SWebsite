@@ -115,7 +115,7 @@ namespace KBsiteframe.WEB.Manager.ContentManage
 
             a.ArticleID = ba.GetMaxID() + 1;
             a.ArticleTitle = PubCom.CheckString(txtArticleTitle.Text.Trim());
-           
+            a.IsInternal = ckIsinternal.Checked;
             a.SubmitTime = DateTime.Parse(StarTime.Text.Trim());
             a.Publication = PubCom.CheckString(txtPublication.Text.Trim());
             a.Keyword = PubCom.CheckString(txtKryword.Text.Trim());

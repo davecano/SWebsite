@@ -72,6 +72,7 @@ namespace KBsiteframe.WEB.Manager.ContentManage
             txtPublication.Text = a.Publication;
             StarTime.Text = a.SubmitTime.ToString();
             ImgNews.ImageUrl = PicFilePathV + a.ArticlePicPath;
+            if (a.IsInternal != null) ckIsinternal.Checked = (bool) a.IsInternal;
         }
 
         void BindDropDownList()
@@ -153,7 +154,7 @@ namespace KBsiteframe.WEB.Manager.ContentManage
 
             a.ArticleID = Utils.StrToInt(hfArticleID.Value, 0);
             a.ArticleTitle = PubCom.CheckString(txtArticleTitle.Text.Trim());
-           
+            a.IsInternal = ckIsinternal.Checked;
             a.SubmitTime = DateTime.Parse(StarTime.Text.Trim());
             a.Publication = PubCom.CheckString(txtPublication.Text.Trim());
             a.Keyword = PubCom.CheckString(txtKryword.Text.Trim());

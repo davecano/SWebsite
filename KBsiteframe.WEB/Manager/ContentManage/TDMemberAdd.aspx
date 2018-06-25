@@ -98,6 +98,26 @@
                 </h1>
             </div>
             <div class="row show-grid">
+                   <div class="col-xs-12">
+                    <div class="form-group">
+                        <label class="col-sm-2 align-right control-label no-padding-right">成员图片</label>
+                        <div class="col-sm-3">
+                            <asp:Image ID="ImgNews" runat="server" ImageUrl="~/images/nopic.gif" Width="160" Height="150" />
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group">
+
+
+                        <div class="col-sm-3 col-sm-offset-2">
+                            <asp:FileUpload ID="pic_upload" runat="server" onchange="onFileChange(this);" /><asp:Label ID="lbl_pic" runat="server" Style="color: red">上传图片格式为.jpg, .gif, .bmp,.png,图片大小不得超过8M</asp:Label>
+                        </div>
+
+                    </div>
+                </div>
      <div class="col-xs-12">
                     <div class="form-group">
                         <label class="col-sm-2 align-right control-label no-padding-right">成员姓名</label>

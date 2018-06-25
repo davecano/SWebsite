@@ -36,8 +36,13 @@ left join  Member m2 on m2.MemberID= a.TdMemberID where 1=1{0}";
         }
 
         #endregion
-
-
+        public IList<Article> GetBriefArticlelist(Query q,int pagesize)
+        {
+            string sql = @"select top(" + pagesize +
+                         ") ArticleID,ArticleTitle,SubmitTime,Summary from article where 1=1{0}";
+            return db.Query<Article>(string.Format(sql, q.GetCondition(true)));
+        }
+         
 
         public int Insert(Article m)
         {

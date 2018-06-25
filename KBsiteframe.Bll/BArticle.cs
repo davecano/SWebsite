@@ -51,7 +51,12 @@ namespace KBsiteframe.Bll
         {
             return da.GetArticlesList(q);
         }
-  
+
+        public IList<Article> GetBriefArticlelist(Query q,int pagesize)
+        {
+            return da.GetBriefArticlelist(q,pagesize);
+        }
+
         public Article GetArticlesByID(int newsid)
         {
             return da.GetArticlesById(newsid);

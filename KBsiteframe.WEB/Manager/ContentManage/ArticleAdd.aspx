@@ -157,15 +157,20 @@
                 </div>
                 <div class="col-xs-12">
                     <div class="form-group">
-                        <label class="col-sm-2 align-right control-label no-padding-right">关键词</label>
+                        <label class="col-sm-1 align-right control-label no-padding-right">关键词</label>
 					    <div class="col-sm-3">
                             <asp:TextBox ID="txtKryword" runat="server"></asp:TextBox>
                             <asp:Literal ID="Literal3" runat="server" Text="&lt;font color=red&gt;*&lt;/font&gt;"></asp:Literal>
 					    </div>
-                        <label class="col-sm-2 align-right control-label no-padding-right">语言</label>
+                        <label class="col-sm-1 align-right control-label no-padding-right">语言</label>
 					    <div class="col-sm-3">
                        <asp:DropDownList ID="dpLanguage" runat="server" ></asp:DropDownList>
                             <asp:Literal ID="Literal4" runat="server" Text="&lt;font color=red&gt;*&lt;/font&gt;"></asp:Literal>
+					    </div>
+                             <label class="col-sm-1 align-right control-label no-padding-right">国内</label>
+					    <div class="col-sm-3">
+                     <asp:CheckBox runat="server" ID="ckIsinternal"/>
+                         
 					    </div>
 				    </div>
                 </div>

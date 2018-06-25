@@ -46,6 +46,8 @@ namespace KBsiteframe.WEB.Manager.ContentManage
             txtPhone.Text = m.Phone;
             txtQualification.Text = m.Qualification;
             ttxOrgName.Text = m.Organization;
+            if (m.MemberPic != "")
+                ImgNews.ImageUrl = PicFilePathV + m.MemberPic;
         }
 
 
@@ -64,7 +66,8 @@ namespace KBsiteframe.WEB.Manager.ContentManage
             Member mold = bm.GetMembersByID(Utils.StrToInt(hfMemberID.Value, 0));
             if (bm.Update(m) == 1)
             {
-              
+                //插入图片
+                bm.UploadValidate(pic_upload, lbl_pic, PicFilePath, m.MemberID, BMember.RoleType.联盟成员);
                 //// 插入日志 add
                 SysOperateLog log = new SysOperateLog();
                 log.LogID = StringHelper.getKey();

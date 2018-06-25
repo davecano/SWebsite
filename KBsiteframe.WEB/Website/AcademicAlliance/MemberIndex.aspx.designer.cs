@@ -10,7 +10,7 @@
 namespace KBsiteframe.WEB.Website.AcademicAlliance {
     
     
-    public partial class LMMemberIndex {
+    public partial class MemberIndex {
         
         /// <summary>
         /// rplist 控件。
