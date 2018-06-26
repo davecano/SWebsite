@@ -37,7 +37,7 @@ namespace KBsiteframe.Dll
         }
         public IList<New> GetNewsTitleList(Query q)
         {
-            string sql = @"select  NewsID,Title,Uploader,SubmitTime,Views,IsTop,IsHot,NewsPicPath from New where 1=1{0}";
+            string sql = @"select  NewsID,Title,Uploader,SubmitTime,Views,IsTop,IsHot,NewsPicPath,summary from New where 1=1{0}";
             return db.Query<New>(string.Format(sql, q.GetCondition(true)));
         }
         public IList<New> GetNewsTitleList()

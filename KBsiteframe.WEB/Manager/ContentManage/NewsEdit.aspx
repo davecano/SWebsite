@@ -116,7 +116,15 @@
 				    </div>
                 </div>
         
-         
+               <div class="col-xs-12">
+                    <div class="form-group">
+                        <label class="col-sm-2 align-right control-label no-padding-right">新闻简介(用于前台展示)</label>
+					    <div class="col-sm-8">
+                            <asp:TextBox ID="txtsummary" runat="server" TextMode="MultiLine"  Width="100%" Height="200px"></asp:TextBox>
+					    </div>
+                       
+				    </div>
+                </div>
                   <div class="col-xs-12">
                     <div class="form-group">
                         <label class="col-sm-2 align-right control-label no-padding-right">新闻内容</label>

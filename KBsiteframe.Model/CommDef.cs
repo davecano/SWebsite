@@ -98,19 +98,25 @@ namespace KBsiteframe.Model
     }
     public enum DynamicType
     {
-        联盟动态=1,
-        团队动态=2
+        联盟动态 = 1,
+        团队动态 = 2
     }
     public enum ExpertType
     {
         普通专家 = 1,
         成员进盟 = 2,
-        校内专家=3
+        校内专家 = 3
     }
     public enum NoticeType
     {
         未过期,
         已过期,
         禁用
+    }
+    public enum NewsType
+    {
+        国内新闻 = 1,
+        国际新闻 = 2,
+        国际会议 = 3
     }
 }

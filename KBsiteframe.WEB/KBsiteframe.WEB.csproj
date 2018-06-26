@@ -660,6 +660,7 @@
     <Content Include="Website\AcademicAlliance\MemberIndex.aspx" />
     <Content Include="Website\AcademicAlliance\ShowMember.aspx" />
     <Content Include="Website\AcademicCommunication\AcademicCommunicationIndex.aspx" />
+    <Content Include="Website\AcademicResource\AcademicResourceIndex.aspx" />
     <Content Include="Website\index.html" />
     <Content Include="Website\Js\js.js" />
     <Content Include="Website\KbIntruoduce\knowledgeIndex.aspx" />
@@ -1568,6 +1569,13 @@
     </Compile>
     <Compile Include="Website\AcademicCommunication\AcademicCommunicationIndex.aspx.designer.cs">
       <DependentUpon>AcademicCommunicationIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website\AcademicResource\AcademicResourceIndex.aspx.cs">
+      <DependentUpon>AcademicResourceIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website\AcademicResource\AcademicResourceIndex.aspx.designer.cs">
+      <DependentUpon>AcademicResourceIndex.aspx</DependentUpon>
     </Compile>
     <Compile Include="Website\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>

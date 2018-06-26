@@ -25,6 +25,8 @@ namespace KBsiteframe.Model
         public bool? IsTop { get; set; }
         public bool? IsHot { get; set; }
         public string NewsPicPath { get; set; }
+        public string summary { get; set; }
+
         
     }
 }

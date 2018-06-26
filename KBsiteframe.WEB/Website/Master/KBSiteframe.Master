@@ -25,8 +25,8 @@
       <li> <a href="/Website/KbIntruoduce/knowledgeIndex.aspx" target="_parent">知识建构</a> </li>
       <li> <a href="/Website/KbIntruoduce/ProjectIndex.aspx" target="_parent">研究项目</a> </li>
       <li> <a href="/Website/AcademicAlliance/MemberIndex.aspx" target="_parent">研究联盟</a> </li>
-      <li> <a href="AcademicCommunication/list4.html" target="_parent">学术交流</a> </li>
-      <li> <a href="AcademicResource/list5.html" target="_parent">学术资源</a> </li>
+      <li> <a href="/Website/AcademicCommunication/AcademicCommunicationIndex.aspx" target="_parent">学术交流</a> </li>
+      <li> <a href="AcademicResource/AcademicResourceIndex.aspx" target="_parent">学术资源</a> </li>
       <li> <a href="About/list6.html" target="_parent">关于我们</a> </li>
        <li> <a href="#">English</a> </li>
     </ul>

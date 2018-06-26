@@ -47,6 +47,7 @@ namespace KBsiteframe.Web.Manager.ContentManage
             New n = bn.GetNewsByID(Utils.StrToInt(ID, 0));
             txtTitle.Text = n.Title;
             txtauthor.Text = n.Uploader;
+            txtsummary.Text = n.summary;
             if (n.IsTop != null) CbIstop.Checked = (bool)n.IsTop;
             if (n.IsHot != null) CbIsHot.Checked = (bool)n.IsHot;
             container.Text = n.NewsContent;
@@ -75,6 +76,7 @@ namespace KBsiteframe.Web.Manager.ContentManage
                 NewsID = Utils.StrToInt(hfNewsID.Value, 0),
                 Title = PubCom.CheckString(txtTitle.Text.Trim()),
                 NewsContent = container.Text,
+                summary = PubCom.CheckString(txtsummary.Text.Trim()),
                 Uploader = txtauthor.Text.Trim(),
                 SubmitTime = DateTime.Now,
                 IsHot = CbIsHot.Checked,

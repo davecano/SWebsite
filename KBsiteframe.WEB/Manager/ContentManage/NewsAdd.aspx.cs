@@ -49,7 +49,7 @@ namespace KBsiteframe.Web.Manager.ContentManage
             //n.SavePath = "details" + DateTime.Now.Year + "_" + DateTime.Now.Month + "/" +DateTime.Now.Day;
             n.Uploader = PubCom.CheckString(txtauthor.Text.Trim());
             n.Title = PubCom.CheckString(txtTitle.Text.Trim());
-          
+            n.summary = PubCom.CheckString(txtsummary.Text.Trim());
             //string PicUrl = "";
             //if (UploadValidate(out PicUrl))
             //{
