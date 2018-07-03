@@ -41,7 +41,10 @@ namespace KBsiteframe.Model
         /// 动态成员编号 用于成果列表
         /// </summary>
         public int? TdMemberID { get; set; }
-
+        /// <summary>
+        ///普通成员编号 用于成果列表
+        /// </summary>
+        public int? StuMemberID { get; set; }
         [Ignore]
         public string EName { get; set; }
       

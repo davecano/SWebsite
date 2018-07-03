@@ -31,6 +31,15 @@ namespace KBsiteframe.Web.Manager.ContentManage {
         protected global::System.Web.UI.WebControls.TextBox txtTitle;
         
         /// <summary>
+        /// dpstatictype 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dpstatictype;
+        
+        /// <summary>
         /// ImgNews 控件。
         /// </summary>
         /// <remarks>
@@ -74,6 +83,15 @@ namespace KBsiteframe.Web.Manager.ContentManage {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox CbIsHot;
+        
+        /// <summary>
+        /// dpNewstype 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dpNewstype;
         
         /// <summary>
         /// txtsummary 控件。

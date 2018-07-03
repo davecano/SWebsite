@@ -577,6 +577,9 @@
     <Content Include="Login.aspx" />
     <Content Include="Manager\ContentManage\ExpertEdit.aspx" />
     <Content Include="Manager\ContentManage\ExpertAdd.aspx" />
+    <Content Include="Manager\ContentManage\StuMemberAdd.aspx" />
+    <Content Include="Manager\ContentManage\StuMemberEdit.aspx" />
+    <Content Include="Manager\ContentManage\StuMemberManage.aspx" />
     <Content Include="Manager\ContentManage\NoticeEdit.aspx" />
     <Content Include="Manager\ContentManage\NoticeAdd.aspx" />
     <Content Include="Manager\ContentManage\LMMemberAdd.aspx" />
@@ -1182,6 +1185,27 @@
     </Compile>
     <Compile Include="Manager\ContentManage\ExpertAdd.aspx.designer.cs">
       <DependentUpon>ExpertAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ContentManage\StuMemberAdd.aspx.cs">
+      <DependentUpon>StuMemberAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\StuMemberAdd.aspx.designer.cs">
+      <DependentUpon>StuMemberAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ContentManage\StuMemberEdit.aspx.cs">
+      <DependentUpon>StuMemberEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\StuMemberEdit.aspx.designer.cs">
+      <DependentUpon>StuMemberEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ContentManage\StuMemberManage.aspx.cs">
+      <DependentUpon>StuMemberManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ContentManage\StuMemberManage.aspx.designer.cs">
+      <DependentUpon>StuMemberManage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manager\ContentManage\NoticeEdit.aspx.cs">
       <DependentUpon>NoticeEdit.aspx</DependentUpon>

@@ -70,7 +70,7 @@ namespace KBsiteframe.Bll
         {
             return de.GetMaxID();
         }
-        public bool UploadValidate(FileUpload pic_upload, Label lbl_pic, string UploadBasePath,int ID, RoleType roletype)
+        public bool UploadValidate(FileUpload pic_upload, Label lbl_pic, string UploadBasePath,int ID, MemberType membertype)
         {
             string SavePath = DateTime.Now.Year + "_" + DateTime.Now.Month + "/" + DateTime.Now.Day;
             Boolean fileOk, res = false;
@@ -87,15 +87,17 @@ namespace KBsiteframe.Bll
                     if (pic_upload.PostedFile.ContentLength < 8192000)
                     {
                         string path = "";
-                        switch (roletype)
+                        switch (membertype)
                         {
-                            case RoleType.团队成员:
+                            case MemberType.团队成员:
                                 path = ModelConstants.MemberBathPath + "/TDMember/" + SavePath + "/";
                                 break;
-                            case RoleType.联盟成员:
+                            case MemberType.联盟成员:
                                 path = ModelConstants.MemberBathPath + "/LMMember/" + SavePath + "/";
                                 break;
-
+                            case MemberType.普通学生:
+                                path = ModelConstants.MemberBathPath + "/StuMember/" + SavePath + "/";
+                                break;
                         }
 
 
@@ -181,10 +183,6 @@ namespace KBsiteframe.Bll
             return Convert.ToBase64String(buff);
         }
 
-        public enum RoleType
-        {
-            联盟成员 = 1,
-            团队成员 = 2
-        }
+      
     }
 }

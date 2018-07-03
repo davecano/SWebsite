@@ -7,7 +7,7 @@
 <div id="address">
   <div class="address-zong">
     <div class="address-icon"><img src="image/locate.png" /></div>
-    <div class="list5_show_gj-address-text">当前位置：首页 / 栏目名称</div>
+    <div class="list5_show_gj-address-text"><a href="#">当前位置：首页 / 栏目名称</a></div>
   </div>
 </div>
 <!--/当前位置结束-->

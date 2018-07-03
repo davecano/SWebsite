@@ -83,6 +83,17 @@ namespace KBsiteframe.WEB.Manager.ContentManage
                     dpTd.Items.Add(new ListItem(m.MemberName, m.MemberID.ToString()));
                 }
             }
+            //新添加的博士啊，硕士啊
+            IList<Member> stulist = bm.GetMembersList(qm).Where(t => t.MemberType == MemberType.普通学生.ToString()).ToList();
+            dpstu.Items.Clear();
+            dpstu.Items.Add(new ListItem("==请选择==", ""));
+            if (stulist.Count > 0)
+            {
+                foreach (Member m in stulist)
+                {
+                    dpstu.Items.Add(new ListItem(m.MemberName, m.MemberID.ToString()));
+                }
+            }
         }
 
 
@@ -113,7 +124,9 @@ namespace KBsiteframe.WEB.Manager.ContentManage
                 t.TdMemberID = Utils.StrToInt(dpTd.SelectedValue, 0);
             if (dpProject.SelectedValue != "")
                 t.ProjectID = Utils.StrToInt(dpProject.SelectedValue, 0);
+            if (dpstu.SelectedValue != "")
 
+                t.StuMemberID = Utils.StrToInt(dpstu.SelectedValue, 0);
             if (bt.Insert(t) == 1)
             {
                 bt.UploadValidate(pic_upload, lbl_pic, PicFilePath, savepath, t.TreatiseID);

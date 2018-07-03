@@ -22,14 +22,28 @@
 
         });
 
+        function GetID(pagename, type) {
+            var ID;
+            // 表明id 类型 type 1 = project ,2=expert,3=lmmember,4=tdmember,5代表国内,6代表国外
+            if (type == 1)
+                ID = $("#ContentPlaceHolder1_hfnew1").val();
+            else if (type == 2)
+                ID = $("#ContentPlaceHolder1_hfnew2").val();
+            else if (type == 3)
+                ID = $("#ContentPlaceHolder1_hfnew3").val();
+            else if (type == 4)
+                ID = $("#ContentPlaceHolder1_hfnew4").val();
+            window.location.href = pagename + ".aspx?ID=" + ID;
 
+            return false;
+        }
         function ShowMore() {
 
             var rec = parseInt($("#ContentPlaceHolder1_hfrec").val());
             var picpathv = $("#ContentPlaceHolder1_hfPicFilePathV").val();
 
             var pageindex = $(".list1_content3_neirong_text").length + 1;
-            alert("rec:" + rec + "pageindex:" + pageindex);
+          
             if (rec <= pageindex * 4) {
 
                 $("#ContentPlaceHolder1_showmore").hide();
@@ -80,7 +94,7 @@
             <div class="list1_daohang">
                 <div class="list1_icon">
                     <img src="../image/locate.png" /></div>
-                <div class="list1_text">当前位置：<a href="../index.html">首页</a> / <a href="list1.html">知识建构</a></div>
+                <div class="list1_text">当前位置：<a href="../index.aspx">首页</a> / <a href="#">知识建构</a></div>
             </div>
             <div class="list1_content1_neirong">
                 <div class="list1_content1_neirong_title">
@@ -89,11 +103,11 @@
                         <img src="../image/picture_07.png" /></div>
                 </div>
                 <div class="list1_content1_neirong_text">
-                    <div class="list1_content1_neirong_text_one"><a href="list1_show_shouduan.html">
+                    <div class="list1_content1_neirong_text_one"><asp:HiddenField runat="server" ID="hfnew2"/><a href="javascript:GetID('../ShowNews',2);">
                         <img src="../image/picture_11.png" /></a></div>
-                    <div class="list1_content1_neirong_text_one"><a href="list1_show_guandian.html">
+                    <div class="list1_content1_neirong_text_one"> <asp:HiddenField runat="server" ID="hfnew3"/><a href="javascript:GetID('../ShowNews',3);">
                         <img src="../image/picture_14.png" /></a></div>
-                    <div class="list1_content1_neirong_text_one1"><a href="list1_show_shequ.html">
+                    <div class="list1_content1_neirong_text_one1"> <asp:HiddenField runat="server" ID="hfnew4"/><a href="javascript:GetID('../ShowNews',4);">
                         <img src="../image/picture_16.png" /></a></div>
                 </div>
             </div>
@@ -107,9 +121,11 @@
         </div>
         <div class="list1_content2_neirong_text">
             <div class="list1_content2_neirong_text_middle">
-                <div class="list1_content2_neirong_text_jianjie"><a href="list1_list_show.html">4月10日，江苏省学前教育学会第三次会员代表大会在南京召开。省教育厅副厅长朱卫国出席会议并讲话，省民政厅领导及中国学前教育研究会理事长虞永平到会致辞，全省各地的学前教育学会会员代表和相关理事单位成员共计300多人参加了会议。大会选举产生了省学前教育学会新一届领导班子，张建明当选为学会会长李运生、顾爱军、郑英舜、封留才、杜悦艳、王薇、崔利玲当选副会长，殷雅竹当选秘书长。朱卫国代表省教育厅充分肯定了学会自2007年12月20日成立以来开展的工作及取得的成绩。这10年，是我省学前教育加快发展、成果丰硕的十年，是省学前教育学会从无到有、蓬勃发展的十年...</a></div>
+                <div class="list1_content2_neirong_text_jianjie"><asp:Literal runat="server" ID="ltjgsummary"></asp:Literal>
+                    <asp:HiddenField runat="server" ID="hfnew1"/>
+                </div>
                 <div class="list1_more">
-                    <div class="list1_more_middle"><a href="list1_list_show.html">MORE</a></div>
+                    <div class="list1_more_middle"><a href="javascript:GetID('../ShowNews',1);">MORE</a></div>
                 </div>
             </div>
         </div>

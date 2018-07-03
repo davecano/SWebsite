@@ -161,7 +161,7 @@
                         </div>
                         <label class="col-sm-1 align-right control-label no-padding-right">语言</label>
                         <div class="col-sm-3">
-                            <asp:DropDownList ID="dpLanguage" runat="server" CssClass="form-control"></asp:DropDownList>
+                            <asp:DropDownList ID="dpLanguage" runat="server" ></asp:DropDownList>
                             <asp:Literal ID="Literal4" runat="server" Text="&lt;font color=red&gt;*&lt;/font&gt;"></asp:Literal>
                         </div>
                         <label class="col-sm-1 align-right control-label no-padding-right">国内</label>
@@ -211,47 +211,52 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12">
+            <div class="col-xs-12">
                     <div class="form-group">
                         <%-- <label class="col-sm-2 align-right control-label no-padding-right">作者</label>
 					    <div class="col-sm-3">
-                            <asp:TextBox ID="txtAuthor" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtAuthor" runat="server"></asp:TextBox>
                               <asp:Literal ID="Literal7" runat="server" Text="&lt;font color=red&gt;*&lt;/font&gt;"></asp:Literal>
 					    </div>--%>
                         <label class="col-sm-2 align-right control-label no-padding-right">联盟成员</label>
                         <div class="col-sm-3">
-                            <asp:DropDownList runat="server" ID="dpLm" CssClass="form-control" />
+                            <asp:DropDownList runat="server" ID="dpLm" />
                         </div>
                         <label class="col-sm-2 align-right control-label no-padding-right">团队成员</label>
                         <div class="col-sm-3">
-                            <asp:DropDownList runat="server" ID="dpTd" CssClass="form-control" />
+                            <asp:DropDownList runat="server" ID="dpTd" />
                         </div>
                     </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <%-- <label class="col-sm-2 align-right control-label no-padding-right">作者</label>
+					    <div class="col-sm-3">
+                            <asp:TextBox ID="txtAuthor" runat="server"></asp:TextBox>
+                              <asp:Literal ID="Literal7" runat="server" Text="&lt;font color=red&gt;*&lt;/font&gt;"></asp:Literal>
+					    </div>--%>
+                        <label class="col-sm-2 align-right control-label no-padding-right">普通学生</label>
+                        <div class="col-sm-3">
+                            <asp:DropDownList runat="server" ID="dpstu" />
+                        </div>
 
-                    <div class="col-xs-12">
-                        <div class="form-group">
-                            <label class="col-sm-2 align-right control-label no-padding-right">文章原件：</label>
-                            <div class="col-sm-10" style="vertical-align: middle;">
-                                <span class="red">可以上传单个pdf文件,文件大小不超过3M</span>
-                            </div>
+                    </div>
+
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label class="col-sm-2 align-right control-label no-padding-right">文章原件：</label>
+                        <div class="col-sm-10" style="vertical-align: middle;">
+                            <span class="red">可以上传单个pdf文件,文件大小不超过3M</span>
                         </div>
                     </div>
-                    <div class="col-xs-12">
-                        <div class="form-group">
-                            <label class="col-sm-2 align-right control-label no-padding-right"></label>
-                            <div class="col-sm-8">
-                                <input type="file" name="FileUpload1" id="FileUpload1" class="multi" accept="pdf" />
-                                <div class="MultiFile-list" id="FileUpload1_wrap_list">
-                                  
-
-                                        <div class="MultiFile-label" data-value="<%=GetArticlepath %>" onclick="showOrdown($(this))">
-                                            <div class='MultiFile-view pdf_bg' style='background-image: url(/Upload/)' title="<%=GetTitle %>"></div>
-                                            <a class="MultiFile-remove" href="javascript:void(0)" data-value="<%=GetArticleID %>" onclick="delFileUpload($(this),'ArticleEdit.aspx')"></a>
-                                            <span class="MultiFile-title" title="<%=GetTitle %>"><%=GetTitle %></span>
-                                        </div>
-
-                                </div>
-                            </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label class="col-sm-2 align-right control-label no-padding-right"></label>
+                        <div class="col-sm-8">
+                            <input type="file" name="FileUpload1" id="FileUpload1" class="multi" accept="pdf" />
+                            <div class="MultiFile-list" id="FileUpload1_wrap_list"></div>
                         </div>
                     </div>
                 </div>

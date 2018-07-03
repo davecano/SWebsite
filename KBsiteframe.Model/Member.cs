@@ -25,6 +25,7 @@ namespace KBsiteframe.Model
 
         public string Organization { get; set; }
         public string MemberPic { get; set; }
+        public string Grade { get; set; }
         
 
     }

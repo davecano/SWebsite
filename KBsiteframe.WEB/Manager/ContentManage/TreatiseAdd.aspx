@@ -192,6 +192,22 @@
                             <asp:TextBox ID="txtAuthor" runat="server"></asp:TextBox>
                               <asp:Literal ID="Literal7" runat="server" Text="&lt;font color=red&gt;*&lt;/font&gt;"></asp:Literal>
 					    </div>--%>
+                        <label class="col-sm-2 align-right control-label no-padding-right">普通学生</label>
+                        <div class="col-sm-3">
+                            <asp:DropDownList runat="server" ID="dpstu" />
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <%-- <label class="col-sm-2 align-right control-label no-padding-right">作者</label>
+					    <div class="col-sm-3">
+                            <asp:TextBox ID="txtAuthor" runat="server"></asp:TextBox>
+                              <asp:Literal ID="Literal7" runat="server" Text="&lt;font color=red&gt;*&lt;/font&gt;"></asp:Literal>
+					    </div>--%>
                         <label class="col-sm-2 align-right control-label no-padding-right">联盟成员</label>
                         <div class="col-sm-3">
                             <asp:DropDownList runat="server" ID="dpLm" />

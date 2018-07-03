@@ -35,6 +35,7 @@ namespace KBsiteframe.Web.Manager.ContentManage
             ID = PubCom.Q("ID");
             if (!IsPostBack)
             {
+                Utils.BindDropDownList(typeof(NewsType), dpNewstype, "");
                 hfNewsID.Value = ID;
                 BindDropDownList();
                 BindContent();
@@ -48,6 +49,8 @@ namespace KBsiteframe.Web.Manager.ContentManage
             txtTitle.Text = n.Title;
             txtauthor.Text = n.Uploader;
             txtsummary.Text = n.summary;
+            dpNewstype.SelectedValue = n.NewsType;
+            dpstatictype.SelectedValue = n.StaticType;
             if (n.IsTop != null) CbIstop.Checked = (bool)n.IsTop;
             if (n.IsHot != null) CbIsHot.Checked = (bool)n.IsHot;
             container.Text = n.NewsContent;
@@ -59,7 +62,8 @@ namespace KBsiteframe.Web.Manager.ContentManage
 
         private void BindDropDownList()
         {
-
+            Utils.BindDropDownList(typeof(NewsType), dpNewstype, "");
+            Utils.BindDropDownList(typeof(StaticType), dpstatictype, "");
         }
 
 
@@ -80,7 +84,10 @@ namespace KBsiteframe.Web.Manager.ContentManage
                 Uploader = txtauthor.Text.Trim(),
                 SubmitTime = DateTime.Now,
                 IsHot = CbIsHot.Checked,
-                IsTop = CbIstop.Checked
+                IsTop = CbIstop.Checked,
+                NewsType = dpNewstype.SelectedValue,
+                StaticType = dpstatictype.SelectedValue
+
             }) != 1)
 
 

@@ -7,10 +7,10 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace KBsiteframe.Web.Manager.ContentManage {
+namespace KBsiteframe.WEB.Manager.ContentManage {
     
     
-    public partial class NewsEdit {
+    public partial class StuMemberEdit {
         
         /// <summary>
         /// form1 控件。
@@ -22,31 +22,13 @@ namespace KBsiteframe.Web.Manager.ContentManage {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// hfNewsID 控件。
+        /// hfMemberID 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfNewsID;
-        
-        /// <summary>
-        /// txtTitle 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTitle;
-        
-        /// <summary>
-        /// dpstatictype 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dpstatictype;
+        protected global::System.Web.UI.WebControls.HiddenField hfMemberID;
         
         /// <summary>
         /// ImgNews 控件。
@@ -76,66 +58,84 @@ namespace KBsiteframe.Web.Manager.ContentManage {
         protected global::System.Web.UI.WebControls.Label lbl_pic;
         
         /// <summary>
-        /// CbIstop 控件。
+        /// txtMName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CbIstop;
+        protected global::System.Web.UI.WebControls.TextBox txtMName;
         
         /// <summary>
-        /// CbIsHot 控件。
+        /// Literal7 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CbIsHot;
+        protected global::System.Web.UI.WebControls.Literal Literal7;
         
         /// <summary>
-        /// dpNewstype 控件。
+        /// txtQualification 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dpNewstype;
+        protected global::System.Web.UI.WebControls.TextBox txtQualification;
         
         /// <summary>
-        /// txtsummary 控件。
+        /// dpgrade 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtsummary;
+        protected global::System.Web.UI.WebControls.DropDownList dpgrade;
         
         /// <summary>
-        /// container 控件。
+        /// txtPhone 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox container;
+        protected global::System.Web.UI.WebControls.TextBox txtPhone;
         
         /// <summary>
-        /// txtauthor 控件。
+        /// txtMail 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtauthor;
+        protected global::System.Web.UI.WebControls.TextBox txtMail;
         
         /// <summary>
-        /// btnEdit 控件。
+        /// Literal1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::Z.ZButton btnEdit;
+        protected global::System.Web.UI.WebControls.Literal Literal1;
+        
+        /// <summary>
+        /// ttxOrgName 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ttxOrgName;
+        
+        /// <summary>
+        /// btnAdd 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::Z.ZButton btnAdd;
     }
 }

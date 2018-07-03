@@ -8,7 +8,7 @@
             <div class="list1_list_daohang">
                 <div class="list1_list_icon">
                     <img src="../image/locate.png" /></div>
-                <div class="list1_list_text">当前位置：<a href="../index.html">首页</a> / <a href="list1.html">知识建构</a> / <a href="list1.html">知识建构专家</a></div>
+                <div class="list1_list_text">当前位置：<a href="../index.html">首页</a> / <a href="../KbIntruoduce/knowledgeIndex.aspx">知识建构</a> / <a href="#">知识建构专家</a></div>
             </div>
             <div class="list1_list_content1">
                 <div class="list1_list_content1_first">

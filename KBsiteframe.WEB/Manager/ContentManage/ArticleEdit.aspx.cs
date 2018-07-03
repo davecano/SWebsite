@@ -60,6 +60,8 @@ namespace KBsiteframe.WEB.Manager.ContentManage
 
             if (a.TdMemberID != null || a.TdMemberID != 0)
                 dpTd.SelectedValue = a.TdMemberID.ToString();
+            if (a.StuMemberID != null || a.StuMemberID != 0)
+                dpstu.SelectedValue = a.StuMemberID.ToString();
 
             dpArticleType.SelectedValue = a.ArticleType;
             dpLanguage.SelectedValue = a.LanguageType;
@@ -72,6 +74,7 @@ namespace KBsiteframe.WEB.Manager.ContentManage
             txtPublication.Text = a.Publication;
             StarTime.Text = a.SubmitTime.ToString();
             ImgNews.ImageUrl = PicFilePathV + a.ArticlePicPath;
+            ckIsinternal.Checked = a.IsInternal ?? false;
             if (a.IsInternal != null) ckIsinternal.Checked = (bool) a.IsInternal;
         }
 
@@ -145,6 +148,17 @@ namespace KBsiteframe.WEB.Manager.ContentManage
                     dpTd.Items.Add(new ListItem(m.MemberName, m.MemberID.ToString()));
                 }
             }
+            //新添加的博士啊，硕士啊
+            IList<Member> stulist = bm.GetMembersList(qm).Where(t => t.MemberType == MemberType.普通学生.ToString()).ToList();
+            dpstu.Items.Clear();
+            dpstu.Items.Add(new ListItem("==请选择==", ""));
+            if (stulist.Count > 0)
+            {
+                foreach (Member m in stulist)
+                {
+                    dpstu.Items.Add(new ListItem(m.MemberName, m.MemberID.ToString()));
+                }
+            }
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
@@ -173,6 +187,9 @@ namespace KBsiteframe.WEB.Manager.ContentManage
             if (dpTd.SelectedValue != "")
 
                 a.TdMemberID = Utils.StrToInt(dpTd.SelectedValue, 0);
+            if (dpstu.SelectedValue != "")
+
+                a.StuMemberID = Utils.StrToInt(dpstu.SelectedValue, 0);
             int rec= ba.Update(a);
         
             if (rec == 1)

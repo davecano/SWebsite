@@ -42,7 +42,7 @@
             <div class="address-icon">
                 <img src="../image/locate.png" />
             </div>
-            <div class="list3_show-address-text">当前位置：<a href="../index.html">首页</a> / <a href="list3.html">研究联盟</a></div>
+            <div class="list3_show-address-text">当前位置：<a href="../index.html">首页</a> / <a href="#">研究联盟</a></div>
         </div>
     </div>
     <!--/当前位置结束-->

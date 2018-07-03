@@ -88,13 +88,15 @@ namespace KBsiteframe.Model
         团队动态信息,
         团队成员信息,
         联盟成员信息,
+        普通学生信息,
         公告信息
     }
 
     public enum MemberType
     {
         联盟成员,
-        团队成员
+        团队成员,
+        普通学生
     }
     public enum DynamicType
     {
@@ -118,5 +120,13 @@ namespace KBsiteframe.Model
         国内新闻 = 1,
         国际新闻 = 2,
         国际会议 = 3
+    }
+
+    public enum StaticType
+    {
+        知识建构理论=1,
+        关于手段=2,
+        关于观点=3,
+        关于社区=4
     }
 }

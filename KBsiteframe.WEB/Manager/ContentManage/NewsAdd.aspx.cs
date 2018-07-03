@@ -28,7 +28,8 @@ namespace KBsiteframe.Web.Manager.ContentManage
         {
             if (!IsPostBack)
             {
-           
+                Utils.BindDropDownList(typeof(NewsType), dpNewstype, "");
+                Utils.BindDropDownList(typeof(StaticType), dpstatictype, "");
                 //Lbtime.Text = DateTime.Now.ToString("yyyy-MM-dd");
             }
         }
@@ -50,6 +51,8 @@ namespace KBsiteframe.Web.Manager.ContentManage
             n.Uploader = PubCom.CheckString(txtauthor.Text.Trim());
             n.Title = PubCom.CheckString(txtTitle.Text.Trim());
             n.summary = PubCom.CheckString(txtsummary.Text.Trim());
+            n.NewsType = dpNewstype.SelectedValue;
+            n.StaticType = dpstatictype.SelectedValue;
             //string PicUrl = "";
             //if (UploadValidate(out PicUrl))
             //{

@@ -8,11 +8,11 @@
 <div class="list2_content_middle">
 <div class="list2_daohang">
   <div class="list2_icon"><img src="../image/locate.png" /></div>
-  <div class="list2_text">当前位置：<a href="../index.html">首页</a> / <a href="list2.html">研究项目</a></div>
+  <div class="list2_text">当前位置：<a href="../index.aspx">首页</a> / <a href="#">研究项目</a></div>
 </div> 
 <div class="list2_content1">
   <div class="list2_content1_first">
-   <div class="list2_content1_first_shang"><a href="list2_show.html">•&nbsp;&nbsp;项目名称标题</a></div>
+   <div class="list2_content1_first_shang"><a href="#">•&nbsp;&nbsp;项目名称标题</a></div>
   
     </div>
   </div>

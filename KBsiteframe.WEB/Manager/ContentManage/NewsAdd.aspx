@@ -86,7 +86,11 @@
                         <div class="col-sm-3">
                             <asp:TextBox ID="txtTitle" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
-
+                            <label class="col-sm-1 align-right control-label no-padding-right">静态类别（知识建构）</label>
+                        <div class="col-sm-3">
+                       <asp:DropDownList runat="server" ID="dpstatictype"/>
+                           
+                        </div>
                     </div>
                 </div>
                 <div class="col-xs-12">
@@ -112,15 +116,19 @@
 
                 </div>
                 <div class="col-xs-12">
-                    <label class="col-sm-2 align-right control-label no-padding-right">是否置顶</label>
+                    <label class="col-sm-1 align-right control-label no-padding-right">是否置顶</label>
                     <div class="col-sm-3 checkbox">
                         <asp:CheckBox ID="CbIstop" runat="server" />
                     </div>
-                    <label class="col-sm-2 align-right control-label no-padding-right">是否热门</label>
+                    <label class="col-sm-1 align-right control-label no-padding-right">是否热门</label>
                     <div class="col-sm-3 checkbox">
                         <asp:CheckBox ID="CbIsHot" runat="server" />
                     </div>
-                      
+                         <label class="col-sm-1 align-right control-label no-padding-right">类别</label>
+                        <div class="col-sm-3">
+                       <asp:DropDownList runat="server" ID="dpNewstype"/>
+                           
+                        </div>
                 </div>
                    <div class="col-xs-12">
                     <div class="form-group">

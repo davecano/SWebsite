@@ -55,7 +55,7 @@
                 $("#DpProjectPeriod").focus();
                 return false;
             }
-        
+
             if ($.trim($("#txtName").val()) == "") {
                 layer.tips("请输入项目名称", $("#txtName"), { guide: 1, time: 3 });
                 $("#txtName").focus();
@@ -66,7 +66,7 @@
                 $("#txtOrgName").focus();
                 return false;
             }
-            
+
             if ($.trim($("#StarTime").val()) == "") {
                 layer.tips("请选择开始时间", $("#StarTime"), { guide: 1, time: 3 });
                 $("#StarTime").focus();
@@ -77,14 +77,14 @@
                 $("#EndTime").focus();
                 return false;
             }
-            
+
 
             if ($.trim($("#txtContent").val()) == "") {
                 layer.tips("请输入项目简介", $("#txtContent"), { guide: 1, time: 3 });
                 $("#txtContent").focus();
                 return false;
             }
-       
+
             if ($.trim($("#txtProjectStage").val()) == "") {
                 layer.tips("请输入项目阶段内容", $("#txtProjectStage"), { guide: 1, time: 3 });
                 $("#txtProjectStage").focus();
@@ -104,18 +104,18 @@
                 </h1>
             </div>
             <div class="row show-grid">
-     <div class="col-xs-12">
+                <div class="col-xs-12">
                     <div class="form-group">
                         <label class="col-sm-2 align-right control-label no-padding-right">项目阶段</label>
                         <div class="col-sm-3">
-                          <asp:DropDownList runat="server" ID="DpProjectPeriod"/>
+                            <asp:DropDownList runat="server" ID="DpProjectPeriod" />
                             <asp:Literal ID="Literal7" runat="server" Text="&lt;font color=red&gt;*&lt;/font&gt;"></asp:Literal>
                         </div>
-                          <label class="col-sm-2 align-right control-label no-padding-right">所属专家</label>
+                        <label class="col-sm-2 align-right control-label no-padding-right">所属专家</label>
                         <div class="col-sm-3">
                             <asp:DropDownList runat="server" ID="dpExpert" />
                         </div>
-                      
+
                     </div>
                 </div>
                 <div class="col-xs-12">
@@ -136,12 +136,12 @@
                     <div class="form-group">
                         <label class="col-sm-2 align-right  control-label no-padding-right">开始时间</label>
                         <div class="col-sm-3">
-                              <asp:TextBox ID="StarTime" Width="120px" class="Wdate" runat="server" name="ExeCuteDateStart" onFocus="var EndTime=$dp.$('EndTime'); WdatePicker({el:'StarTime',onpicked:function(){EndTime.focus();},vel:'EndTime', maxDate:'%y-%M-%d'})" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="StarTime" Width="120px" class="Wdate" runat="server" name="ExeCuteDateStart" onFocus="var EndTime=$dp.$('EndTime'); WdatePicker({el:'StarTime',onpicked:function(){EndTime.focus();},vel:'EndTime', maxDate:'%y-%M-%d'})" CssClass="form-control"></asp:TextBox>
                             <asp:Literal ID="Literal2" runat="server" Text="&lt;font color=red&gt;*&lt;/font&gt;"></asp:Literal>
                         </div>
                         <label class="col-sm-2 align-right control-label no-padding-right">结束时间</label>
                         <div class="col-sm-3">
-                           <asp:TextBox runat="server" name="ExecuteDateEnd" type="text" Width="120px" class="Wdate" ID="EndTime" onFocus="WdatePicker({minDate:'#F{$dp.$D(\'StarTime\',{d:0});}',startDate:'#F{$dp.$D(\'StarTime\',{d:365});}',alwaysUseStartDate:true})" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox runat="server" name="ExecuteDateEnd" type="text" Width="120px" class="Wdate" ID="EndTime" onFocus="WdatePicker({minDate:'#F{$dp.$D(\'StarTime\',{d:0});}',startDate:'#F{$dp.$D(\'StarTime\',{d:365});}',alwaysUseStartDate:true})" CssClass="form-control"></asp:TextBox>
                             <asp:Literal ID="Literal3" runat="server" Text="&lt;font color=red&gt;*&lt;/font&gt;"></asp:Literal>
                         </div>
                     </div>
@@ -158,7 +158,7 @@
 
                     </div>
                 </div>
-            
+
                 <div class="col-xs-12">
                     <div class="form-group">
                         <label class="col-sm-2 align-right control-label no-padding-right">项目阶段(建议分阶段分别填写)</label>
@@ -169,10 +169,10 @@
 
                     </div>
                 </div>
-        
+
                 <div class="col-xs-12">
                     <div class="form-group">
-                     
+
                         <label class="col-sm-2 align-right control-label no-padding-right">联盟成员</label>
                         <div class="col-sm-3">
                             <asp:DropDownList runat="server" ID="dpLm" />
@@ -184,7 +184,22 @@
                     </div>
 
                 </div>
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <%-- <label class="col-sm-2 align-right control-label no-padding-right">作者</label>
+					    <div class="col-sm-3">
+                            <asp:TextBox ID="txtAuthor" runat="server"></asp:TextBox>
+                              <asp:Literal ID="Literal7" runat="server" Text="&lt;font color=red&gt;*&lt;/font&gt;"></asp:Literal>
+					    </div>--%>
+                        <label class="col-sm-2 align-right control-label no-padding-right">普通学生</label>
+                        <div class="col-sm-3">
+                            <asp:DropDownList runat="server" ID="dpstu" />
+                        </div>
 
+                    </div>
+
+
+                </div>
             </div>
             <div class="clearfix form-actions">
                 <div class="col-md-offset-5 col-md-12">

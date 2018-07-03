@@ -67,7 +67,7 @@ namespace KBsiteframe.WEB.Manager.ContentManage
             if (bm.Update(m) == 1)
             {
                 //插入图片
-                bm.UploadValidate(pic_upload, lbl_pic, PicFilePath, m.MemberID, BMember.RoleType.联盟成员);
+                bm.UploadValidate(pic_upload, lbl_pic, PicFilePath, m.MemberID,MemberType.联盟成员);
                 //// 插入日志 add
                 SysOperateLog log = new SysOperateLog();
                 log.LogID = StringHelper.getKey();

@@ -42,6 +42,10 @@ namespace KBsiteframe.Model
         /// </summary>
         public int? TdMemberID { get; set; }
         /// <summary>
+        ///普通成员编号 用于成果列表
+        /// </summary>
+        public int? StuMemberID { get; set; }
+        /// <summary>
         /// 项目编号 此文章是否属于某个项目
         /// </summary>
         public int? ProjectID { get; set; }

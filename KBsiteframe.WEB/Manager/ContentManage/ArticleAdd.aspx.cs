@@ -63,7 +63,7 @@ namespace KBsiteframe.WEB.Manager.ContentManage
                     dpLanguage.Items.Add(new ListItem(sc.CodeText, sc.CodeValue));
                 }
             }
-            //绑定 专家，项目，联盟成员，团队成员
+            //绑定 专家，项目，联盟成员，团队成员，普通学生
             Query qe=Query.Build(new {SortFields="ExpertID"});
             Query qp = Query.Build(new { SortFields = "ProjectID" });
             Query qm = Query.Build(new { SortFields = "MemberID" });
@@ -107,6 +107,18 @@ namespace KBsiteframe.WEB.Manager.ContentManage
                     dpTd.Items.Add(new ListItem(m.MemberName, m.MemberID.ToString()));
                 }
             }
+            //新添加的博士啊，硕士啊
+            IList<Member> stulist = bm.GetMembersList(qm).Where(t => t.MemberType == MemberType.普通学生.ToString()).ToList();
+            dpstu.Items.Clear();
+            dpstu.Items.Add(new ListItem("==请选择==", ""));
+            if (stulist.Count > 0)
+            {
+                foreach (Member m in stulist)
+                {
+                    dpstu.Items.Add(new ListItem(m.MemberName, m.MemberID.ToString()));
+                }
+            }
+            
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
@@ -134,6 +146,9 @@ namespace KBsiteframe.WEB.Manager.ContentManage
             if (dpTd.SelectedValue != "")
 
                 a.TdMemberID = Utils.StrToInt(dpTd.SelectedValue, 0);
+            if (dpstu.SelectedValue != "")
+
+                a.StuMemberID = Utils.StrToInt(dpstu.SelectedValue, 0);
             int rec= ba.Insert(a);
             int ret = 0;
             if (rec == 1)

@@ -6,7 +6,7 @@
 <div id="address">
 	<div class="address-zong">
 		<div class="address-icon"><img src="../image/locate.png" /></div>
-		<div class="list5_show_gj-address-text">当前位置：<a href="../index.html">首页</a> / <a href="list1.html">知识建构</a> / <a href="list1_show_guandian.html">关于观点</a></div>
+		<div class="list5_show_gj-address-text">当前位置：<a href="../index.html">首页</a> / <a href="../KbIntruoduce/knowledgeIndex.aspx">知识建构</a> / <a href="#">关于观点</a></div>
 	</div>
 </div>
 <!--/当前位置结束-->

@@ -34,7 +34,7 @@
         <div class="list_text_content_middle">
             <div class="list_text_daohang">
                 <div class="list_text_icon">
-                    <img src="image/locate.png" /></div>
+                    <img src="../image/locate.png" /></div>
                 <div class="list_text_text"><a href="#">当前位置：首页 / 栏目名称</a></div>
             </div>
             <div class="list_text_content2">

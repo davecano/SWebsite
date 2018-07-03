@@ -13,6 +13,51 @@ namespace KBsiteframe.WEB.Website.KbIntruoduce {
     public partial class knowledgeIndex {
         
         /// <summary>
+        /// hfnew2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfnew2;
+        
+        /// <summary>
+        /// hfnew3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfnew3;
+        
+        /// <summary>
+        /// hfnew4 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfnew4;
+        
+        /// <summary>
+        /// ltjgsummary 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltjgsummary;
+        
+        /// <summary>
+        /// hfnew1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfnew1;
+        
+        /// <summary>
         /// rplist_new 控件。
         /// </summary>
         /// <remarks>

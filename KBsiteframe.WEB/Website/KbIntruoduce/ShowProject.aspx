@@ -35,7 +35,7 @@
         <div class="address-zong">
             <div class="address-icon">
                 <img src="../image/locate.png" /></div>
-            <div class="list2_show-address-text">当前位置：<a href="../index.html">首页</a> / <a href="list2.html">研究项目 </a></div>
+            <div class="list2_show-address-text">当前位置：<a href="../index.html">首页</a> / <a href="#">研究项目 </a></div>
         </div>
     </div>
     <!--/当前位置结束-->

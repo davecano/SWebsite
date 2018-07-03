@@ -1095,13 +1095,13 @@ input:focus {
 .list3_content1 {
 	width: 100%;
 	height: auto;
-
+    clear: both;
 	margin-top: 60px;
 }
 .list3_content1_first {
     width: 80%;
 	height: auto;
-      margin: 40px auto;
+    margin: 40px auto;
 
 }
 .list3_content1_first_one {
@@ -2468,24 +2468,30 @@ input:focus {
 	margin: auto;
 }
 .list6_list-show-content-shang {
-	width: 1000px;
+	width: 90%;
 	height: 450px;
+  
 }
 .list6_list-show-shang-1 {
 	width: 1000px;
 	height: 260px;
 	float:left;
-	border-bottom:1px solid #ccc;
+	
 }
 .list6_list-show-shang-22{
 	width: 1000px;
 	height: 200px;
 	float:left;
 }
+.list6_list-show-shang {
+    width:90%;
+    height: 200px;
+    
+}
 .list6_list-show-shang-1-left {
 	width: 497px;
 	height: 200px;
-	float: left;
+	float: left
 }
 .list6_list-show-shang-1-right {
 	width: 497px;
@@ -2498,9 +2504,10 @@ input:focus {
 	float: right;
 }
 .list6_list-show-pic {
-	width: 242px;
+	width: 50%;
 	height: 200px;
-	float: left;
+    text-align: center;
+    float: left;
 }
 .list6_list-show-picture {
 	width: 238px;
@@ -2517,21 +2524,22 @@ input:focus {
 	color: #464646;
 }
 .list6_list-show-new {
-	width: 246px;
+    width: 242px;
 	height: auto;
-	float: right;
+   float: right
+     
 }
 .list6_list-show-new ul {
 	width: 100%;
 	height: auto;
-	float: left;
+	
 	padding: 0;
 	margin: 0;
 }
 .list6_list-show-new ul li {
 	width: 100%;
 	height: auto;
-	float: left;
+
 	font-size: 14px;
 	color: #676666;
 	line-height: 28px;

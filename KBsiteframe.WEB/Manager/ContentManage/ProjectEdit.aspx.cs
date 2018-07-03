@@ -65,6 +65,8 @@ namespace KBsiteframe.WEB.Manager.ContentManage
 
             if (p.TdMemberID != null || p.TdMemberID != 0)
                 dpTd.SelectedValue = p.TdMemberID.ToString();
+            if (p.StuMemberID != null || p.StuMemberID != 0)
+                dpstu.SelectedValue = p.StuMemberID.ToString();
         }
 
         void BindDropDownList()
@@ -116,6 +118,17 @@ namespace KBsiteframe.WEB.Manager.ContentManage
                     dpTd.Items.Add(new ListItem(m.MemberName, m.MemberID.ToString()));
                 }
             }
+            //新添加的博士啊，硕士啊
+            IList<Member> stulist = bm.GetMembersList(qm).Where(t => t.MemberType == MemberType.普通学生.ToString()).ToList();
+            dpstu.Items.Clear();
+            dpstu.Items.Add(new ListItem("==请选择==", ""));
+            if (stulist.Count > 0)
+            {
+                foreach (Member m in stulist)
+                {
+                    dpstu.Items.Add(new ListItem(m.MemberName, m.MemberID.ToString()));
+                }
+            }
         }
 
 
@@ -147,6 +160,9 @@ namespace KBsiteframe.WEB.Manager.ContentManage
             if (dpTd.SelectedValue != "")
                 p.TdMemberID = Utils.StrToInt(dpTd.SelectedValue, 0);
 
+            if (dpstu.SelectedValue != "")
+
+                p.StuMemberID = Utils.StrToInt(dpstu.SelectedValue, 0);
 
             if (bp.Update(p) == 1)
             {
