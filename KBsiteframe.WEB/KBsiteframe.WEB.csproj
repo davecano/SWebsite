@@ -645,7 +645,6 @@
     <Content Include="Ueditor\net\config.json" />
     <Content Include="Ueditor\net\controller.ashx" />
     <Content Include="Ueditor\net\README.md" />
-    <Content Include="Ueditor\net\upload\image\20170824\6363918941210006983706997.jpgimageView&amp;thumbnail=550x0" />
     <Content Include="Ueditor\third-party\jquery-1.10.2.min.map" />
     <Content Include="Ueditor\third-party\video-js\font\vjs.eot" />
     <Content Include="Ueditor\third-party\video-js\font\vjs.ttf" />
@@ -1035,23 +1034,6 @@
     <Content Include="Ueditor\net\Bin\Newtonsoft.Json.pdb" />
     <Content Include="Ueditor\net\Bin\Newtonsoft.Json.xml" />
     <Content Include="Ueditor\net\net.sln" />
-    <Content Include="Ueditor\net\upload\image\20170824\6363918919368279927578354.jpeg" />
-    <Content Include="Ueditor\net\upload\image\20170824\6363918919370880079335016.jpeg" />
-    <Content Include="Ueditor\net\upload\image\20170824\6363918919372980197862434.jpeg" />
-    <Content Include="Ueditor\net\upload\image\20170824\6363918919376380395320924.jpeg" />
-    <Content Include="Ueditor\net\upload\image\20170824\6363918919378380503848342.jpeg" />
-    <Content Include="Ueditor\net\upload\image\20170824\6363918919379780587077587.jpeg" />
-    <Content Include="Ueditor\net\upload\image\20170824\6363918919381380675605004.jpeg" />
-    <Content Include="Ueditor\net\upload\image\20170824\6363918919383080778834249.jpeg" />
-    <Content Include="Ueditor\net\upload\image\20170824\6363918919386580974820157.jpeg" />
-    <Content Include="Ueditor\net\upload\image\20170824\6363918919388981113347575.jpeg" />
-    <Content Include="Ueditor\net\upload\image\20170824\6363918919391381259806065.jpeg" />
-    <Content Include="Ueditor\net\upload\image\20170824\6363918919393381368333483.jpeg" />
-    <Content Include="Ueditor\net\upload\image\20170824\6363918919396781551090145.jpeg" />
-    <Content Include="Ueditor\net\upload\image\20170824\6363918919398781674319391.jpeg" />
-    <Content Include="Ueditor\net\upload\image\20170824\6363918932632619418934215.gif" />
-    <Content Include="Ueditor\net\upload\image\20170824\6363918946133826968796438.jpg" />
-    <Content Include="Ueditor\net\upload\image\20170824\6363918951057822373816952.jpg" />
     <Content Include="Ueditor\themes\default\css\ueditor.css" />
     <Content Include="Ueditor\themes\default\css\ueditor.min.css" />
     <Content Include="Ueditor\themes\default\dialogbase.css" />
@@ -1765,6 +1747,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pub\" />
+    <Folder Include="Ueditor\net\upload\image\" />
     <Folder Include="Upload\" />
     <Folder Include="文档及其他\" />
   </ItemGroup>
@@ -1772,6 +1755,7 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <None Include="Properties\PublishProfiles\IISconfig.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
