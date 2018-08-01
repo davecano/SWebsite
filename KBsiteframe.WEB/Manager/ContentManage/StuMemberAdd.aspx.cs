@@ -58,7 +58,7 @@ namespace KBsiteframe.WEB.Manager.ContentManage
             m.Email = PubCom.CheckString(txtMail.Text.Trim());
             m.Organization = PubCom.CheckString(ttxOrgName.Text.Trim());
             m.Qualification = PubCom.CheckString(txtQualification.Text.Trim());
-            m.Grade = dpgrade.SelectedValue;
+            m.Grade =Utils.ObjToInt(dpgrade.SelectedValue,0) ;
            
 
             if (bm.Insert(m) == 1)

@@ -7,10 +7,10 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace KBsiteframe.WEB.Website.AcademicAlliance {
+namespace KBsiteframe.WEB.Website.About {
     
     
-    public partial class MemberIndex {
+    public partial class ShowAllExperts {
         
         /// <summary>
         /// rplist 控件。

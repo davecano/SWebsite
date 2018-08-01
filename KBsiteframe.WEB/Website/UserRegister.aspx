@@ -8,17 +8,18 @@
     <title>用户注册</title>
     <link rel="stylesheet" type="text/css" href="Css/style.css"/>
 <%--   javascript--%>
-        <script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+        <script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="Js/jquery-easing-1.3.pack.js"></script>
     <script type="text/javascript" src="Js/jquery-easing-compatibility.1.2.pack.js"></script>
     <script type="text/javascript" src="Js/coda-slider.1.1.1.pack.js"></script>
     <script type="text/javascript" src="Js/js.js"></script>
+      <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript" src="Js/bootstrap.js"></script>
     <script type="text/javascript" src="/js/layer/layer.min.js"></script>
     <script type="text/javascript" src="/js/Common.js"></script>
         <script> 
-        function CheckForm() {
+            function CheckForm() {
+                alert('a');
             var ret = true;
             if ($.trim($("#txtUserName").val()) == "") {
                 layer.tips("请输入用户名", $("#txtUserName"), { guide: 1, time: 3 });
@@ -105,7 +106,7 @@
     <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 密码:&nbsp;
  <%--  <input class="dl-input1" type="text" name="密码">--%>
-     <asp:TextBox runat="server" ID="txtPsw" CssClass="dl-input1"></asp:TextBox>
+     <asp:TextBox runat="server" ID="txtPsw" CssClass="dl-input1" TextMode="Password"></asp:TextBox>
    <br>
    <br>
    确认密码:&nbsp; 

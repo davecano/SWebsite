@@ -94,6 +94,15 @@ namespace KBsiteframe.WEB.Manager.ContentManage {
         protected global::Z.ZButton ZButton2;
         
         /// <summary>
+        /// zbTop 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::Z.ZButton zbTop;
+        
+        /// <summary>
         /// rplist 控件。
         /// </summary>
         /// <remarks>

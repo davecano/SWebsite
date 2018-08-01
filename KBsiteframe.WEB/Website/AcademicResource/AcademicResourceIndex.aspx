@@ -127,25 +127,25 @@
                     <div class="list5_content_wh_right_neirong">
                         <div class="list5_content_wh_right_neirong_one">
                             <div class="list5_mulu">
-                                <div class="list5_tool"><a href="list5_show_gj.html">工具一</a></div>
+                                <div class="list5_tool"><a href="#">工具一</a></div>
                                 <div class="list5_icon1"></div>
                             </div>
                         </div>
                         <div class="list5_content_wh_right_neirong_one">
                             <div class="list5_mulu">
-                                <div class="list5_tool"><a href="list5_show_gj.html">工具二</a></div>
+                                <div class="list5_tool"><a href="#">工具二</a></div>
                                 <div class="list5_icon1"></div>
                             </div>
                         </div>
                         <div class="list5_content_wh_right_neirong_one">
                             <div class="list5_mulu">
-                                <div class="list5_tool"><a href="list5_show_gj.html">工具三</a></div>
+                                <div class="list5_tool"><a href="#">工具三</a></div>
                                 <div class="list5_icon1"></div>
                             </div>
                         </div>
                         <div class="list5_content_wh_right_neirong_one">
                             <div class="list5_mulu">
-                                <div class="list5_tool"><a href="list5_show_gj.html">工具四</a></div>
+                                <div class="list5_tool"><a href="#">工具四</a></div>
                                 <div class="list5_icon1"></div>
                             </div>
                         </div>

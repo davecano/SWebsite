@@ -43,6 +43,18 @@ function DeleteConfirm(tablename, showmessage) {
     }
     return ret;
 }
+//判断是否为数字
+function checkIsNum($test) {
+    var Decimal_partten = /^([-]|[0-9])[0-9]*$/;
+    if ($test.val() == "") return true;
+    if (!Decimal_partten.test($test.val())) {
+        layer.tips("只能填写数字", $test, { guide: 1, time: 3 });
+        $test.focus();
+        return false;
+    } else {
+        return true;
+    }
+}
 function DeleteConfirm(tablename, showmessage,showmessage2) {
     var ret = false;
     if ($("#" + tablename).find('input[name*="select"][type="checkbox"]:checked').length != 1) {
@@ -114,6 +126,7 @@ function ShowIframeNew(pagetitle, pagesrc, pagewidth, pageheight) {
         type: 2,
         fix: true,
         title: pagetitle,
+        
         //offset:['80px','160px'],
         maxmin: false,
         iframe: { src: pagesrc, scrolling: 'no' },

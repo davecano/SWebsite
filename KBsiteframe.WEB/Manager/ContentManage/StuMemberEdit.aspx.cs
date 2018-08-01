@@ -56,7 +56,7 @@ namespace KBsiteframe.WEB.Manager.ContentManage
             txtPhone.Text = m.Phone;
             txtQualification.Text = m.Qualification;
             ttxOrgName.Text = m.Organization;
-            dpgrade.SelectedValue = m.Grade;
+            dpgrade.SelectedValue = m.Grade.ToString();
             if (m.MemberPic != "")
                 ImgNews.ImageUrl = PicFilePathV + m.MemberPic;
         }
@@ -72,7 +72,7 @@ namespace KBsiteframe.WEB.Manager.ContentManage
             m.Email = PubCom.CheckString(txtMail.Text.Trim());
             m.Organization = PubCom.CheckString(ttxOrgName.Text.Trim());
             m.Qualification = PubCom.CheckString(txtQualification.Text.Trim());
-            m.Grade = dpgrade.SelectedValue;
+            Utils.ObjToInt(dpgrade.SelectedValue, 0);
 
             Member mold = bm.GetMembersByID(Utils.StrToInt(hfMemberID.Value, 0));
             if (bm.Update(m) == 1)

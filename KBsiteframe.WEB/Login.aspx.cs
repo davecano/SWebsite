@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using KBsiteframe.Model;
 using KBsiteframe.WEB.Comm;
 using SysBase.Model;
 using Z;
@@ -62,7 +63,7 @@ namespace KBsiteframe.WEB
                 txtImg.Focus();
                 return;
             }
-
+            
 
             SysUser su = bu.GetUserByUserLoginName(PubCom.CheckString(txtUserName.Text.ToString().ToLower()));
             if (su == null) su = bu.GetUserByTel(PubCom.CheckString(txtUserName.Text.ToString().ToLower()));
@@ -76,10 +77,25 @@ namespace KBsiteframe.WEB
 
             if (su.UserPassword == Z.EncryptHelper.EncryptPassword(txtPassword.Text.Trim(), Constants.PassWordEncodeType))
             {
-
-                if (su.IsUse == true)
+                if(su.UserType==UserType.访客.ToString())
+                {
+                    Message.ShowWrong(this, "您的账号为访客账号！");
+                    txtImg.Text = "";
+                }
+                else if (su.UserStatus != UserStatus.审核通过.ToString())
                 {
 
+                    Message.ShowWrong(this, "您的账号不是审核通过状态！请与管理员联系！");
+                    txtImg.Text = "";
+                }
+                else if (su.IsUse == false)
+                {
+
+                    Message.ShowWrong(this, "您的账号已经被禁用！请与管理员联系！");
+                    txtImg.Text = "";
+                }
+                else
+                {
 
                     //可以登陆
                     if (PubCom.login(su, PubCom.CheckString(txtUserName.Text.ToString().ToLower()), txtPassword.Text.Trim()))
@@ -91,11 +107,6 @@ namespace KBsiteframe.WEB
                         Message.ShowWrong(this, "用户名或密码错误");
                         txtImg.Text = "";
                     }
-                }
-                else
-                {
-                    Message.ShowWrong(this, "您的账号已经被禁用！请与管理员联系！");
-                    txtImg.Text = "";
                 }
 
             }

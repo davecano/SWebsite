@@ -25,17 +25,17 @@ namespace KBsiteframe.WEB.Manager.ContentManage
 
 
 
-       
+
         BSysOperateLog bsol = new BSysOperateLog();
-      
+
         BExpert be = new BExpert();
-      
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 BindDropDownList();
-                  BindingList();
+                BindingList();
             }
         }
         void BindDropDownList()
@@ -49,16 +49,16 @@ namespace KBsiteframe.WEB.Manager.ContentManage
         {
             Query qm = Query.Build(new { SortFields = "IsTop, Sort" });
 
-            
+
             string Name = PubCom.CheckString(txtExpertName.Text.Trim());
             if (Title != "")
                 qm.Add("EName", Name);
             string country = PubCom.CheckString(txtCountry.Text.Trim());
             if (country != "")
                 qm.Add("ECountry", country);
-           
-              if(dpIsTop.SelectedValue!="")
-                  qm.Append(dpIsTop.SelectedValue == "0" ? "IsTop=0" : "IsTop=1 or IsTop is null");
+
+            if (dpIsTop.SelectedValue != "")
+                qm.Append(dpIsTop.SelectedValue == "0" ? "IsTop=0" : "IsTop=1 or IsTop is null");
 
             int ret = 0;
             rplist.DataSource = be.GetExpertsList(qm, AspNetPager1.CurrentPageIndex, AspNetPager1.PageSize, out ret);
@@ -116,7 +116,7 @@ namespace KBsiteframe.WEB.Manager.ContentManage
                     bsol.Insert(log);
                     Message.ShowOK(this, "删除专家成功!");
                 }
-            
+
 
                 else
                     Message.ShowWrong(this, "删除专家失败");
@@ -134,11 +134,11 @@ namespace KBsiteframe.WEB.Manager.ContentManage
                 {
                     if (!string.IsNullOrEmpty(key[i]))
                     {
-                       
-                        int expertid = Utils.StrToInt(key[i],0);
-                       int sort=Utils.StrToInt((rplist.Items[i].FindControl("txtsort") as TextBox).Text,0) ;
+
+                        int expertid = Utils.StrToInt(key[i], 0);
+                        int sort = Utils.StrToInt((rplist.Items[i].FindControl("txtsort") as TextBox).Text, 0);
                         Expert olde = be.GetExpertsByID(expertid);
-                      int rec=  be.Update(new Expert()
+                        int rec = be.Update(new Expert()
                         {
                             ExpertID = expertid,
                             Istop = true,
@@ -165,13 +165,13 @@ namespace KBsiteframe.WEB.Manager.ContentManage
                             bsol.Insert(log);
                         }
                     }
-                     
-                    }
+
+                }
 
                 Message.ShowOKAndReflashOfDelete(this, "设置置顶专家成功！", "zbquery");
             }
-               
-            }
-        
+
+        }
+
     }
 }

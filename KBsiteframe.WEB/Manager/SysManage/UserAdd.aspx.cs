@@ -96,6 +96,7 @@ namespace KBsiteframe.Web.Manager.SysManage
             su.IsMain = true;
             su.Email = txtMail.Text.Trim();
             su.IsUse = true;
+            su.UserType = UserType.普通管理员.ToString();
             su.UserStatus = UserStatus.审核通过.ToString();
             
             if (bu.GetUserByUserLoginName(su.UserLoginName) != null)

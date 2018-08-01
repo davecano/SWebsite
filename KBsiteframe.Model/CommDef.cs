@@ -48,6 +48,14 @@ namespace KBsiteframe.Model
         审核不通过
     }
     /// <summary>
+    /// 用户类型
+    /// </summary>
+    public enum UserType
+    {
+      访客,
+     普通管理员
+      }
+    /// <summary>
     /// 审核状态
     /// </summary>
     public enum ExaminStatus
@@ -128,5 +136,12 @@ namespace KBsiteframe.Model
         关于手段=2,
         关于观点=3,
         关于社区=4
+    }
+
+    public enum Qualification
+    {
+       
+        博士,
+        硕士
     }
 }

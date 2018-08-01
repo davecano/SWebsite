@@ -49,6 +49,15 @@ namespace KBsiteframe.WEB.Website.About {
         protected global::System.Web.UI.WebControls.Literal ltsummary1;
         
         /// <summary>
+        /// hfeid1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfeid1;
+        
+        /// <summary>
         /// rplist1 控件。
         /// </summary>
         /// <remarks>
@@ -92,6 +101,15 @@ namespace KBsiteframe.WEB.Website.About {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal ltsummary2;
+        
+        /// <summary>
+        /// hfeid2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfeid2;
         
         /// <summary>
         /// rplist2 控件。
@@ -139,6 +157,15 @@ namespace KBsiteframe.WEB.Website.About {
         protected global::System.Web.UI.WebControls.Literal ltsummary3;
         
         /// <summary>
+        /// hfeid3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfeid3;
+        
+        /// <summary>
         /// rplist3 控件。
         /// </summary>
         /// <remarks>
@@ -184,6 +211,15 @@ namespace KBsiteframe.WEB.Website.About {
         protected global::System.Web.UI.WebControls.Literal ltsummary4;
         
         /// <summary>
+        /// hfeid4 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfeid4;
+        
+        /// <summary>
         /// rplist4 控件。
         /// </summary>
         /// <remarks>
@@ -191,5 +227,23 @@ namespace KBsiteframe.WEB.Website.About {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rplist4;
+        
+        /// <summary>
+        /// rpstulist 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rpstulist;
+        
+        /// <summary>
+        /// AspNetPager1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::Z.AspNetPager AspNetPager1;
     }
 }

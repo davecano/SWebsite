@@ -118,11 +118,11 @@ namespace KBsiteframe.Bll
 
         public void DownloadFile(string fileURL)
         {
-       
+            fileURL = HttpContext.Current.Server.MapPath(fileURL);
             if (File.Exists(fileURL))
             {
                 //fileURL为带路径的文件全名
-
+               
                 FileInfo fileInfo = new FileInfo(fileURL);
                 HttpContext.Current.Response.Clear();
                 HttpContext.Current.Response.AddHeader("content-disposition", "attachment;filename=" + HttpContext.Current.Server.UrlEncode(fileInfo.Name.ToString()));

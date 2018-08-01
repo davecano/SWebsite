@@ -47,6 +47,7 @@ namespace KBsiteframe.Bll
         }
         #endregion
 
+      
 
         /// <summary>
         /// 根据条件查询所有菜单
@@ -61,7 +62,11 @@ namespace KBsiteframe.Bll
         {
             return de.GetMembersList(q);
         }
-  
+        public IList<Member> GetMembersListByGrade( int pageindex, int pagesize, out int totalcount)
+        {
+            return de.GetMembersListByGrade(pageindex,pagesize,out totalcount);
+        }
+
         public Member GetMembersByID(int newsid)
         {
             return de.GetMembersById(newsid);

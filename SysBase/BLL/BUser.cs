@@ -271,6 +271,12 @@ namespace SysBase.BLL
         {
             return dur.GetUserRoleByUserID(UserID);
         }
+
+        public IList<SysUserRole> GetVistorUserID()
+        {
+            return dur.GetVistorUserID();
+        }
+
         public SysUserRole GetUserRoleModeByUserID(string UserID)
         {
             IList<SysUserRole> isur=dur.GetUserRoleModeByUserID(UserID);

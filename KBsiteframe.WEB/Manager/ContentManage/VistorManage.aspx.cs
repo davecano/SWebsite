@@ -12,19 +12,18 @@ using SysBase.Model;
 
 using Z;
 
-namespace KBsiteframe.Web.Manager.SysManage
+namespace KBsiteframe.Web.Manager.ContentManage
 {
-    public partial class UserManage : PageBase
+    public partial class VistorManage : PageBase
     {
-        public UserManage()
+        public VistorManage()
         {
             ModuleCode = "UserManage";
             PageOperate = PurOperate.查询;
         }
-
+        BUserRole bur = new BUserRole();
         BUser bu = new BUser();
         BRole br = new BRole();
-     
         BSysOperateLog bsol = new BSysOperateLog();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -38,7 +37,7 @@ namespace KBsiteframe.Web.Manager.SysManage
 
         void BindRole()
         {
-            IList<SysRole> lso = br.GetRoleList(Query.Build(new { SortFields = "RoleID" }));
+            IList<SysRole> lso = br.GetRoleList(Query.Build(new {SortFields = "RoleID"}));
             dpUserRole.Items.Clear();
             dpUserRole.Items.Add(new ListItem("全部", "全部"));
             foreach (SysRole sr in lso)
@@ -49,10 +48,11 @@ namespace KBsiteframe.Web.Manager.SysManage
 
         void BindList()
         {
-            Query q = Query.Build(new { SortFields = "Regdate desc" });
-            q.Add("UserStatus", UserStatus.审核通过.ToString());
-            //访客只有角色1的权限 ,所以在SysUserRole中找role=1的 userid
-            q.Add("UserType", UserType.普通管理员.ToString());
+            Query q = Query.Build(new {SortFields = "Regdate desc"});
+            //q.Add("UserStatus", UserStatus.审核通过.ToString());
+            
+            q.In("UserID", bur.GetVistorUserID().Select(p => p.UserID).Distinct().ToArray());
+            q.Add("UserType", UserType.访客.ToString());  
             string username = PubCom.CheckString(txtUserName.Text.Trim());
             if (username != "")
             {
@@ -95,7 +95,7 @@ namespace KBsiteframe.Web.Manager.SysManage
             log.LogAfterObject = JsonHelper.Obj2Json<string>(q.GetCondition(true));
             bsol.Insert(log);
         }
-        
+
         protected void zbquery_Click(object sender, EventArgs e)
         {
             AspNetPager1.CurrentPageIndex = 1;
@@ -128,7 +128,7 @@ namespace KBsiteframe.Web.Manager.SysManage
             }
             else
             {
-                  
+
                 if (bu.Delete(key) == 1)
                 {
                     // 插入日志
@@ -158,8 +158,9 @@ namespace KBsiteframe.Web.Manager.SysManage
         {
             string key = PubCom.GetRepeaterKey(rplist, "cbselect");
             SysUser su = bu.GetUserByUserID(key);
-            string newpsw = EncryptHelper.EncryptPassword(Constants.DefaultPassword, Constants.PassWordEncodeType);//默认密码
-            if (bu.Update(new SysUser() { UserID = key, UserPassword = newpsw }) == 1) 
+            string newpsw = EncryptHelper.EncryptPassword(Constants.DefaultPassword, Constants.PassWordEncodeType);
+                //默认密码
+            if (bu.Update(new SysUser() {UserID = key, UserPassword = newpsw}) == 1)
             {
                 // 插入日志
                 SysOperateLog log = new SysOperateLog();
@@ -170,9 +171,9 @@ namespace KBsiteframe.Web.Manager.SysManage
                 log.OperateUser = GetLogUserName();
                 log.OperateDate = DateTime.Now;
                 log.LogOperateType = "密码重置";
-                log.LogBeforeObject = JsonHelper.Obj2Json<string>("[原密码：]"+su.UserPassword);
+                log.LogBeforeObject = JsonHelper.Obj2Json<string>("[原密码：]" + su.UserPassword);
                 log.LogAfterObject = JsonHelper.Obj2Json<string>("[新密码：]" + newpsw);
-                bsol.Insert(log);
+                var a = bsol.Insert(log);
                 Message.ShowOKAndReflash(this, "重置成功，重置密码为：" + Constants.DefaultPassword, "zbquery");
             }
             else
@@ -196,12 +197,12 @@ namespace KBsiteframe.Web.Manager.SysManage
                 SysUser su = bu.GetUserByUserID(key);
                 if (su != null)
                 {
-                    
-                    ret = bu.Update(new SysUser() { UserID = su.UserID, IsUse = !su.IsUse });
+
+                    ret = bu.Update(new SysUser() {UserID = su.UserID, IsUse = !su.IsUse});
 
                 }
 
-                if ((bool)su.IsUse == true)
+                if ((bool) su.IsUse == true)
                 {
                     use = "禁用";
                     nouse = "启用";
@@ -236,20 +237,68 @@ namespace KBsiteframe.Web.Manager.SysManage
             }
         }
 
-        protected void ZButton7_Click(object sender, EventArgs e)
-        {
-            string key = PubCom.GetRepeaterKey(rplist, "cbselect");
 
-            Response.Redirect("UserOperateEdit.aspx?ID=" + EncryptHelper.Encode(key));
-        }
 
         public string BindIsUse(object isuse)
         {
-            if ((bool)isuse == true)
+            if ((bool) isuse == true)
                 return "<font color=blue>启用</font>";
             else
                 return "<font color=red>禁用</font>";
 
+        }
+
+
+        protected void zbsbmit_OnClick(object sender, EventArgs e)
+        {
+
+            // 获取当前点击的发送按钮
+            ZButton zb = (ZButton)sender;
+
+            // 获取该按钮
+            string userID = zb.CommandArgument;
+            int ret;
+            SysUser su = bu.GetUserByUserID(userID);
+            string oldstatus = su.UserStatus;
+            if (su != null)
+            {
+             ret = bu.Update(new SysUser() { UserID = su.UserID, UserStatus = UserStatus.审核通过.ToString() });
+
+                if (ret == 1)
+                {
+                    SysOperateLog log = new SysOperateLog();
+                    log.LogID = StringHelper.getKey();
+                    log.LogType = LogType.帐户信息.ToString();
+                    log.LogObjectID = su.UserID;
+                    log.LogObjectName = "[" + su.UserLoginName + "]" + su.UserName;
+                    log.OperateUser = GetLogUserName();
+                    log.OperateDate = DateTime.Now;
+                    log.LogOperateType = "审核";
+                    log.LogBeforeObject = JsonHelper.Obj2Json<string>("[原状态：]" + oldstatus);
+                    log.LogAfterObject = JsonHelper.Obj2Json<string>("[新状态：]" + su.UserStatus);
+               
+                    bsol.Insert(log);
+                    Message.ShowOKAndReflash(this,"已经审核通过", "zbquery");
+                }
+                else
+                {
+                    Message.ShowWrong(this, "系统错误");
+                }
+            }
+        }
+
+        protected void rplist_OnItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+            {
+              HiddenField userid = e.Item.FindControl("hfuserid") as HiddenField;
+                ZButton zbsbmit=e.Item.FindControl("zbsbmit") as ZButton;
+                SysUser su = bu.GetUserByUserID(userid.Value);
+                if (su.UserStatus == UserStatus.审核通过.ToString())
+                {
+                    zbsbmit.Visible = false;
+                }
+            }
         }
     }
 }

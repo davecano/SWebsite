@@ -130,7 +130,7 @@
                                     <td class="center">
                                         <input type="checkbox" value='<%#Eval("ExpertID") %>' id="cbselect" name="cbselect"  runat="server" />
                                     </td>
-                                      <td class="center"><asp:TextBox runat="server" ID="txtsort" Text='<%#Eval("Sort") %>'></asp:TextBox></td>
+                                      <td class="center"><asp:TextBox runat="server" ID="txtsort" Text='<%#Eval("Sort") %>' onblur='checkIsNum($(this))'></asp:TextBox></td>
                                     <td class="center"><%#Eval("EName") %></td>
                                     
                                     <td class="center"><%#Eval("ECountry") %></td>

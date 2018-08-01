@@ -38,6 +38,7 @@ namespace KBsiteframe.WEB.Website
             su.IsMain = true;
             su.Email = txtMail.Text.Trim();
             su.IsUse = true;
+            su.UserType = UserType.访客.ToString();
             su.UserStatus = UserStatus.未审核.ToString();
             if (bu.GetUserByUserLoginName(su.UserLoginName) != null)
             {
@@ -52,7 +53,7 @@ namespace KBsiteframe.WEB.Website
                 //为用户设置为vip角色，拥有自己的账号且有下载权限
                 bur.Insert(new SysUserRole() { RoleID = 1, UserID = su.UserID });
                 MailHelper.sendMail(SmtpServer, 1, MailServer, MailPassword, MailUserName, MailServer, txtMail.Text.Trim(),
-               "subject", "body");
+                Subject, Content);
                 Message.ShowAndClose("用户注册成功,系统已为您发送邮件，请查收");
             }
             else

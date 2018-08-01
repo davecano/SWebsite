@@ -53,6 +53,15 @@ namespace KBsiteframe.WEB.Comm
         /// 发送方用户名
         /// </summary>
         public string MailUserName = ConfigurationManager.AppSettings["MailUserName"];
+        /// <summary>
+        /// 主题
+        /// </summary>
+        public string Subject = ConfigurationManager.AppSettings["Subject"];
+        /// <summary>
+        /// 内容
+        /// </summary>
+        public string Content = ConfigurationManager.AppSettings["Content"];
+
         BPageVisit bv=new BPageVisit();
 
         public void Q(string name, out string param)

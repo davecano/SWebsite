@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Website/Master/KBSiteframe.Master" AutoEventWireup="true" CodeBehind="MemberIndex.aspx.cs" Inherits="KBsiteframe.WEB.Website.AcademicAlliance.MemberIndex" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Website/Master/KBSiteframe.Master" AutoEventWireup="true" CodeBehind="StuMemberIndex.aspx.cs" Inherits="KBsiteframe.WEB.Website.About.StuMemberIndex" %>
 
 <%@ Register TagPrefix="webdiyer" Namespace="Z" Assembly="AspNetPager" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -76,7 +76,7 @@
                                     <div class="list3_content1_first_one_left_text_shang">联盟成员:<%#Eval("MemberName") %></div>
                                     <div class="list3_content1_first_one_left_text_xia">
                                         所在机构:<%#Eval("Organization")%><br />学历:<%#Eval("Qualification") %><br />联系方式:<%#Eval("Phone") %></div>
-                                    <div class="list3_chakan"><a href='ShowMember.aspx?ID=<%#Eval("MemberID") %>'>【查看详细】</a></div>
+                                    <div class="list3_chakan"><a href='../AcademicAlliance/ShowMember.aspx?ID=<%#Eval("MemberID") %>'>【查看详细】</a></div>
                                 </div>
                             </div>
                         </div> 

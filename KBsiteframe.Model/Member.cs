@@ -25,8 +25,11 @@ namespace KBsiteframe.Model
 
         public string Organization { get; set; }
         public string MemberPic { get; set; }
-        public string Grade { get; set; }
-        
-
+        public int? Grade { get; set; }
+        public int? Sort { get; set; }
+        [Ignore]
+        public string PHD { get; set; }
+        [Ignore]
+        public string Graduate { get; set; }
     }
 }

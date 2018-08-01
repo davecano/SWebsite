@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Website/Master/KBSiteframe.Master" AutoEventWireup="true" CodeBehind="MemberIndex.aspx.cs" Inherits="KBsiteframe.WEB.Website.AcademicAlliance.MemberIndex" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Website/Master/KBSiteframe.Master" AutoEventWireup="true" CodeBehind="ShowAllExperts.aspx.cs" Inherits="KBsiteframe.WEB.Website.About.ShowAllExperts" %>
 
 <%@ Register TagPrefix="webdiyer" Namespace="Z" Assembly="AspNetPager" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -65,21 +65,24 @@
                     <div class="text-center">
                         <asp:Repeater runat="server" ID="rplist">
                             <ItemTemplate>
-                   
-                                  <div class=" margin_bottom_16 list3_content_custom_member_content" >
-                            <div class="list3_content1_first_one">
-                                <div class="list3_content1_first_one_left_picture">
-                                    <div class="list3_picture">
-                                             <img width="206px" height="134px" src='<%#PicFilePathV+Eval("MemberPic") %> '/></div>
+
+                                <div class=" margin_bottom_16 list3_content_custom_member_content">
+                                    <div class="list3_content1_first_one">
+                                        <div class="list3_content1_first_one_left_picture">
+                                            <div class="list3_picture">
+                                                <img width="206px" height="134px" src='<%#PicFilePathV+Eval("EPicPath") %> ' />
+                                            </div>
+                                        </div>
+                                        <div class="list3_content1_first_one_left_text">
+                                            <div class="list3_content1_first_one_left_text_shang">专家名:<%#Eval("EName") %></div>
+                                            <div class="list3_content1_first_one_left_text_xia">
+                                                国籍:<%#Eval("ECountry")%><br />
+                                                专家类型:<%#Eval("EIdentification") %><br />
+                                            </div>
+                                            <div class="list3_chakan"><a href='../KbIntruoduce/ShowExpert.aspx?ID=<%#Eval("ExpertID") %>'>【查看详细】</a></div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="list3_content1_first_one_left_text">
-                                    <div class="list3_content1_first_one_left_text_shang">联盟成员:<%#Eval("MemberName") %></div>
-                                    <div class="list3_content1_first_one_left_text_xia">
-                                        所在机构:<%#Eval("Organization")%><br />学历:<%#Eval("Qualification") %><br />联系方式:<%#Eval("Phone") %></div>
-                                    <div class="list3_chakan"><a href='ShowMember.aspx?ID=<%#Eval("MemberID") %>'>【查看详细】</a></div>
-                                </div>
-                            </div>
-                        </div> 
                             </ItemTemplate>
                         </asp:Repeater>
 

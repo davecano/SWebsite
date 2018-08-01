@@ -127,5 +127,53 @@ namespace KBsiteframe.WEB.Manager.ContentManage
             }
             BindingList();
         }
+
+        protected void zbTop_OnClick(object sender, EventArgs e)
+        {
+            string[] key = PubCom.GetRepeaterKeyList(rplist, "cbselect");
+            if (key.Length > 0)
+            {
+                for (int i = 0; i < key.Length; i++)
+                {
+                    if (!string.IsNullOrEmpty(key[i]))
+                    {
+
+                        int memberid = Utils.StrToInt(key[i], 0);
+                        int sort = Utils.StrToInt((rplist.Items[i].FindControl("txtsort") as TextBox).Text, 0);
+                        Member olde = bm.GetMembersByID(memberid);
+                        int rec = bm.Update(new Member()
+                        {
+                            MemberID = memberid,
+                         
+                            Sort = sort
+                        });
+                        if (rec != 1)
+                        {
+                            Message.ShowWrong(this, "设置显示学生失败！请重试");
+                            return;
+                        }
+                        else
+                        {
+                            // 插入日志  update
+
+                            Member m2 = bm.GetMembersByID(memberid);
+                            SysOperateLog log = new SysOperateLog();
+                            log.LogID = StringHelper.getKey();
+                            log.LogType = LogType.普通学生信息.ToString();
+                            log.OperateUser = GetLogUserName();
+                            log.OperateDate = DateTime.Now;
+                            log.LogOperateType = "学生是否前端显示";
+                            log.LogBeforeObject = JsonHelper.Obj2Json(olde);
+                            log.LogAfterObject = JsonHelper.Obj2Json(m2);
+                            bsol.Insert(log);
+                        }
+                    }
+
+                }
+
+                Message.ShowOKAndReflashOfDelete(this, "设置学生前端显示成功！", "zbquery");
+            }
+
+        }
     }
 }

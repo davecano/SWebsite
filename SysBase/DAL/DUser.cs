@@ -188,6 +188,13 @@ namespace SysBase.DAL
             param[0] = new SqlParameter("@UserID", UserID);
             return db.ExecuteTable(CommandType.Text, sql, param);
         }
+
+        public IList<SysUserRole> GetVistorUserID()
+        {
+            string sql = @"select * from SysUserRole where RoleID=1";
+            return db.Query<SysUserRole>(sql);
+        }
+
         public IList<SysUserRole> GetUserRoleModeByUserID(string UserID)
         {
             string sql = "select a.*,b.RoleName from  SysUserRole a,SysRole b where a.RoleID=b.RoleID and a.UserID=@0";

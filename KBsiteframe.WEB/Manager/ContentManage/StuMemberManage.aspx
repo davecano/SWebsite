@@ -81,10 +81,11 @@
                 </div>
             </div>
             <div class="panel-footer align-center">
-                <cc1:ZButton ID="zbquery" runat="server" Text="查询" ModuleCode="TDMemberManage" OnClick="zbquery_OnClick" Operate="查询" CssClass="btn btn-sm btn-primary" />
+                <cc1:ZButton ID="zbquery" runat="server" Text="查询" ModuleCode="StuMemberManage" OnClick="zbquery_OnClick" Operate="查询" CssClass="btn btn-sm btn-primary" />
                 &nbsp;
-                <cc1:ZButton ID="ZButton2" runat="server" Text="新增" ModuleCode="TDMemberManage" OnClick="ZButton2_OnClick" Operate="添加" CssClass="btn btn-sm btn-primary" />
-
+                <cc1:ZButton ID="ZButton2" runat="server" Text="新增" ModuleCode="StuMemberManage" OnClick="ZButton2_OnClick" Operate="添加" CssClass="btn btn-sm btn-primary" />
+                  &nbsp;
+                <cc1:ZButton ID="zbTop" runat="server" Text="设置前端显示学生" ModuleCode="StuMemberManage" OnClick="zbTop_OnClick" Operate="修改" CssClass="btn btn-sm btn-primary" />
             </div>
         </div>
         <div class="row">
@@ -93,6 +94,7 @@
                     <thead>
                         <tr class="table-header">
                             <th class="center col-sm-1">选</th>
+                             <th >学生显示</th>
                                 <th class="center">届</th>
                             <th class="center">成员姓名</th>
 
@@ -110,9 +112,11 @@
                         <asp:Repeater ID="rplist" runat="server" OnItemCommand="rplist_OnItemCommand">
                             <ItemTemplate>
                                  <tr >
-                                    <td class="center">
-                                        <input type="checkbox" value='<%#Eval("MemberID") %>' id="cbselect" name="cbselect" onclick="Change(event, 'tlist');" runat="server" />
+                                
+                                      <td class="center">
+                                        <input type="checkbox" value='<%#Eval("MemberID") %>' id="cbselect" name="cbselect"  runat="server" />
                                     </td>
+                                      <td class="center"><asp:TextBox runat="server" ID="txtsort" Text='<%#Eval("Sort") %>' onblur='checkIsNum($(this))'></asp:TextBox></td>
                                        <td class="center"><%#Eval("Grade") %></td>
                                     <td class="center"><%#Eval("MemberName") %></td>
                                             <td class="center"><%#Eval("Phone") %></td>
@@ -121,8 +125,8 @@
                                             <td class="center"><%#Eval("Organization")%></td>
                                  
                                     <td class="center">
-                                        <cc1:ZLinkButton ID="zlbj" CommandName="bj" runat="server" CommandArgument='<%#Eval("MemberID") %>' ModuleCode="TDMemberManage" Operate="修改" CssClass="btn btn-primary btn-sm">修改</cc1:ZLinkButton>
-                                        <cc1:ZLinkButton ID="zlsc" CommandName="sc" runat="server" CommandArgument='<%#Eval("MemberID") %>' OnClientClick="return confirm('确定要删除吗？');" ModuleCode="TDMemberManage" Operate="删除" CssClass="btn btn-danger btn-sm">删除</cc1:ZLinkButton>
+                                        <cc1:ZLinkButton ID="zlbj" CommandName="bj" runat="server" CommandArgument='<%#Eval("MemberID") %>' ModuleCode="StuMemberManage" Operate="修改" CssClass="btn btn-primary btn-sm">修改</cc1:ZLinkButton>
+                                        <cc1:ZLinkButton ID="zlsc" CommandName="sc" runat="server" CommandArgument='<%#Eval("MemberID") %>' OnClientClick="return confirm('确定要删除吗？');" ModuleCode="StuMemberManage" Operate="删除" CssClass="btn btn-danger btn-sm">删除</cc1:ZLinkButton>
                                     </td>
                                 </tr>
                             </ItemTemplate>

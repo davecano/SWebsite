@@ -1,201 +1,346 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿
+
+
+<!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>网站名称</title>
-<link href="css/style.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="Css/lrtk.css"/>
-<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
-<script type="text/javascript" src="js/jquery-easing-1.3.pack.js"></script>
-<script type="text/javascript" src="js/jquery-easing-compatibility.1.2.pack.js"></script>
-<script type="text/javascript" src="js/coda-slider.1.1.1.pack.js"></script>
-<script type="text/javascript" src="js/js.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="Css/style.css" rel="stylesheet" type="text/css" />
+    <title>
+
+    </title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>首页</title>
+
+    <link rel="stylesheet" type="text/css" href="Css/lrtk.css" />
+    <link href="Css/bootstrap.min.css" rel="stylesheet" />
+
+
+
+    <script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="Js/jquery-easing-1.3.pack.js"></script>
+    <script type="text/javascript" src="Js/jquery-easing-compatibility.1.2.pack.js"></script>
+    <script type="text/javascript" src="Js/coda-slider.1.1.1.pack.js"></script>
+    <script type="text/javascript" src="Js/js.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="/js/layer/layer.min.js"></script>
+    <script type="text/javascript" src="/js/Common.js"></script>
+    <script>
+        $(document).ready(function () {
+            //$("#ZButton2").click(function () {
+            //    ShowIframe("添加字典信息", "CodeAdd.aspx", '780px', '500px');
+            //    return false;
+            //});
+
+        });
+
+
+        function GetID(pagename,id) {
+            //ShowIframeNotClose(pagename+".aspx?ID=" + id);
+            window.open (pagename + ".aspx?ID=" + id);
+            return false;
+        }
+
+        function Register() {
+            //ShowIframe("用户注册", "UserRegister.aspx", '780px', '600px');
+            ShowIframeNew("用户注册", "UserRegister.aspx", '780px', '600px');
+            return false;
+        }
+    </script>
+
 </head>
 <body>
-<iframe frameboder="0" scrolling="no" width="100%" height="167" style="border:none;padding:0px;margin:0px;" src="top.html"></iframe>
-<div id="home_content_all">
-	<div class="home_content">
-		<div class="home_content1">
-			<div class="home_content1_left">
-				<div class="home_content1_left_picture">
-					<!-- 代码 开始 -->
-					<div id="page-wrap">
-						<div class="slider-wrap">
-							<div id="main-photo-slider" class="csw">
-								<div class="panelContainer">
-									<div class="panel" title="Panel 1">
-										<div class="wrapper"><a href="show.html"><img src="Image/big-1.jpg"  alt="temp" /></a></div>
-									</div>
-									<div class="panel" title="Panel 2">
-										<div class="wrapper"><a href="show.html"><img src="Image/big-2.jpg"  alt="temp" /></a></div>
-									</div>
-									<div class="panel" title="Panel 3">
-										<div class="wrapper"><a href="show.html"><img src="Image/big-3.jpg"  alt="scotch egg" class="floatLeft"/></a></div>
-									</div>
-								</div>
-							</div>
-							<a href="#1" class="cross-link active-thumb"><img src="Image/small-1.jpg" class="nav-thumb" alt="temp-thumb" /></a>
-							<div id="movers-row">
-								<div><a href="#2" class="cross-link"><img src="Image/small-2.jpg" class="nav-thumb" alt="temp-thumb" /></a></div>
-								<div><a href="#3" class="cross-link"><img src="Image/small-3.jpg" class="nav-thumb" alt="temp-thumb" /></a></div>
-							</div>
-						</div>
-						<!-- 代码 结束 -->
-					</div>
-				</div>
-				<div class="home_content1_right">
-					<div class="home_content1_right_title">
-						<div class="home_news"><a href="list.html">新闻动态</a></div>
-						<div class="home_more"><a href="list.html">MORE</a></div>
-					</div>
-					<div class="home_content1_right_text_all">
-						<ul>
-							<li>•&nbsp;&nbsp;<a href="show.html">2018年江苏高校“青蓝工程”培养对象名...</a></li>
-							<li>•&nbsp;&nbsp;<a href="show.html">2018年江苏省乡村教师培养奖励计划人选...</a></li>
-							<li>•&nbsp;&nbsp;<a href="show.html">省教育厅办公室省财政厅办公室关于报送</a></li>
-							<li>•&nbsp;&nbsp;<a href="show.html">省教育厅关于做好“2017江苏省大学</a></li>
-							<li>•&nbsp;&nbsp;<a href="show.html">2017年江苏省学生体质健康监测结果</a></li>
-							<li>•&nbsp;&nbsp;<a href="show.html">第三届全国基础教育信息化应用展示江苏获..</a></li>
-							<li>•&nbsp;&nbsp;<a href="show.html">第三届全国基础教育信息化应用展示江苏获..</a></li>
-							<li>•&nbsp;&nbsp;<a href="show.html">江苏职业教育40年座谈会在连云港举行</a></li>
-							<li>•&nbsp;&nbsp;<a href="show.html">江苏高校协同创新中心发展规划专家审核论...</a></li>
-							<li>•&nbsp;&nbsp;<a href="show.html">省委教育工委举办第三十期全省高校院..</a></li>
-							<li>•&nbsp;&nbsp;<a href="show.html">省教育厅召开党组巡察工作协调会</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="home_content1_right_all">
-				<div class="home_content1_right_title">
-					<div class="home_news"><a href="list.html">通知公告</a></div>
-					<div class="home_more"><a href="list.html">MORE</a></div>
-				</div>
-				<div class="home_content1_right_text_all">
-					<ul>
-						<li>•&nbsp;&nbsp;<a href="show.html">2018年江苏高校“青蓝工程”培养对象名...</a></li>
-						<li>•&nbsp;&nbsp;<a href="show.html">2018年江苏省乡村教师培养奖励计划人选...</a></li>
-						<li>•&nbsp;&nbsp;<a href="show.html">省教育厅办公室省财政厅办公室关于报送</a></li>
-						<li>•&nbsp;&nbsp;<a href="show.html">省教育厅关于做好“2017江苏省大学</a></li>
-						<li>•&nbsp;&nbsp;<a href="show.html">2017年江苏省学生体质健康监测结果</a></li>
-						<li>•&nbsp;&nbsp;<a href="show.html">第三届全国基础教育信息化应用展示江苏获..</a></li>
-						<li>•&nbsp;&nbsp;<a href="show.html">第三届全国基础教育信息化应用展示江苏获..</a></li>
-						<li>•&nbsp;&nbsp;<a href="show.html">江苏职业教育40年座谈会在连云港举行</a></li>
-						<li>•&nbsp;&nbsp;<a href="show.html">江苏高校协同创新中心发展规划专家审核论...</a></li>
-						<li>•&nbsp;&nbsp;<a href="show.html">省委教育工委举办第三十期全省高校院..</a></li>
-						<li>•&nbsp;&nbsp;<a href="show.html">省教育厅召开党组巡察工作协调会</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="home_content2">
-			<div class="home_content2_left">
-				<div class="home_content1_right_title">
-					<div class="home_news"><a href="list.html">联盟动态</a></div>
-					<div class="home_more"><a href="list.html">MORE</a></div>
-				</div>
-				<div class="home_content2_left_xia">
-					<div class="home_content2_left_xia_one">
-						<div class="home_content2_left_xia_one_left"><img src="image/bal-text.jpg" /></div>
-						<div class="home_content2_left_xia_one_right">
-							<div class="home_content2_left_xia_one_right_shang"><a href="show.html">全省高校武装部部长培训班</a></div>
-							<div class="home_content2_left_xia_one_right_xia"><a href="show.html">4月23日至25日，省教育厅、省军区战备建设局、省军区动员局...</a></div>
-						</div>
-					</div>
-					<div class="home_content2_left_xia_one">
-						<div class="home_content2_left_xia_one_left"><img src="image/bal-text.jpg" /></div>
-						<div class="home_content2_left_xia_one_right">
-							<div class="home_content2_left_xia_one_right_shang"><a href="show.html">全省高校武装部部长培训班</a></div>
-							<div class="home_content2_left_xia_one_right_xia"><a href="show.html">4月23日至25日，省教育厅、省军区战备建设局、省军区动员局...</a></div>
-						</div>
-					</div>
-					<div class="home_content2_left_xia_one">
-						<div class="home_content2_left_xia_one_left"><img src="image/bal-text.jpg" /></div>
-						<div class="home_content2_left_xia_one_right">
-							<div class="home_content2_left_xia_one_right_shang"><a href="show.html">全省高校武装部部长培训班</a></div>
-							<div class="home_content2_left_xia_one_right_xia"><a href="show.html">4月23日至25日，省教育厅、省军区战备建设局、省军区动员局...</a></div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="home_content2_middle">
-				<div class="home_content1_right_title">
-					<div class="home_news"><a href="list.html">团队动态</a></div>
-					<div class="home_more"><a href="list.html">MORE</a></div>
-				</div>
-				<div class="home_content1_right_text_all">
-					<ul>
-						<li>•&nbsp;&nbsp;<a href="show.html">2018年江苏高校“青蓝工程”培养对象名...</a></li>
-						<li>•&nbsp;&nbsp;<a href="show.html">2018年江苏省乡村教师培养奖励计划人选...</a></li>
-						<li>•&nbsp;&nbsp;<a href="show.html">省教育厅办公室省财政厅办公室关于报送</a></li>
-						<li>•&nbsp;&nbsp;<a href="show.html">省教育厅关于做好“2017江苏省大学</a></li>
-						<li>•&nbsp;&nbsp;<a href="show.html">2017年江苏省学生体质健康监测结果</a></li>
-						<li>•&nbsp;&nbsp;<a href="show.html">第三届全国基础教育信息化应用展示江苏获..</a></li>
-						<li>•&nbsp;&nbsp;<a href="show.html">第三届全国基础教育信息化应用展示江苏获..</a></li>
-						<li>•&nbsp;&nbsp;<a href="show.html">江苏职业教育40年座谈会在连云港举行</a></li>
-						<li>•&nbsp;&nbsp;<a href="show.html">江苏高校协同创新中心发展规划专家审核论...</a></li>
-						<li>•&nbsp;&nbsp;<a href="show.html">省委教育工委举办第三十期全省高校院..</a></li>
-						<li>•&nbsp;&nbsp;<a href="show.html">省教育厅召开党组巡察工作协调会</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="home_content2_right">
-				<form action="" method="get">
-					<div class="home_content2_right_title">用户登录</div>
-					<div class="home_content2_right_text">
-					<div class="home_content2_right_text">
-						<div class="home_content2_right_text_one">
-							<input type="text" value="" placeholder="请输入用户名"/>
-						</div>
-					</div>
-					<div class="home_content2_right_text">
-						<div class="home_content2_right_text_one">
-							<input type="text" value="" placeholder="请输入密码"/>
-						</div>
-						<div class="home_content2_right_text">
-							<div class="home_content2_right_text_one1">
-								<input type="text" value="" placeholder="请输入验证码"/>
-								<div class="home_content2_icon"><img src="image/yanzheng.png" /></div>
-							</div>
-							<div class="home_content2_right_text">
-								<div class="home_content2_right_text_one2">
-									<div class="home_content2_right_text_one2_left"><a href="login/forgot.html">记住密码</a></div>
-									<div class="home_content2_right_text_one2_right"><a href="login/login.html">用户注册</a></div>
-								</div>
-							</div>
-							<div class="home_content2_right_text">
-								<div class="home_content2_right_text_one2">
-									<div class="home_login"><a href="#">登录</a></div>
-									<div class="home_clear"><a href="#">清除</a></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-</div>
-<div id="friend">
-	<div class="friend_middle">
-		<div class="freind_left">友情链接:</div>
-		<div class="freind_right">
-			<form action="" method="get">
-				<select name="友情链接一"style="width:272px;height:25px;">
-					<option>友情链接一</option>
-					<option selected="selected">友情链接一</option>
-				</select>
-				<select name="友情链接二"  id="seclect"style="width:272px;height:25px;">
-					<option>友情链接二</option>
-					<option selected="selected">友情链接二</option>
-				</select>
-				<select name="友情链接三" id="seclect"style="width:272px;height:25px;">
-					<option>友情链接三</option>
-					<option selected="selected">友情链接三</option>
-				</select>
-			</form>
-		</div>
-	</div>
-</div>
-<iframe frameboder="0" scrolling="no" width="100%" height="78" style="border:none;padding:0px;margin:0px;" src="foot.html"></iframe>
+    <form method="post" action="./index.aspx" id="form1">
+        <div class="aspNetHidden">
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+        </div>
+
+        <div id="header">
+            <div class="head">
+                <div class="logo"><a href="#">LOGO</a></div>
+            </div>
+        </div>
+        <div id="nav_all">
+            <div class="nav">
+                <ul>
+                    <li class="active"><a href="/Website/index.aspx" target="_parent">首页</a></li>
+                    <li> <a href="/Website/KbIntruoduce/knowledgeIndex.aspx" target="_parent">知识建构</a> </li>
+                    <li> <a href="/Website/KbIntruoduce/ProjectIndex.aspx" target="_parent">研究项目</a> </li>
+                    <li> <a href="/Website/AcademicAlliance/MemberIndex.aspx" target="_parent">研究联盟</a> </li>
+                    <li> <a href="/Website/AcademicCommunication/AcademicCommunicationIndex.aspx" target="_parent">学术交流</a> </li>
+                    <li> <a href="/Website/AcademicResource/AcademicResourceIndex.aspx" target="_parent">学术资源</a> </li>
+                    <li> <a href="/Website/About/AboutIndex.aspx" target="_parent">关于我们</a> </li>
+                    <li> <a href="#">English</a> </li>
+                </ul>
+            </div>
+        </div>
+        <div>
+
+            <div id="home_content_all">
+                <div class="home_content">
+                    <div class="home_content1">
+                        <div class="home_content1_left">
+                            <div class="home_content1_left_picture">
+                                <!-- 代码 开始 -->
+                                <div id="page-wrap">
+
+
+                                    <div class="slider-wrap">
+                                        <div id="main-photo-slider" class="csw">
+                                            <div class="panelContainer">
+                                                <div class="panel" title="Panel 1">
+                                                    <div class="wrapper"><a href="show.html"><img src="Image/big-1.jpg" alt="temp" /></a></div>
+                                                </div>
+                                                <div class="panel" title="Panel 2">
+                                                    <div class="wrapper"><a href="show.html"><img src="Image/big-2.jpg" alt="temp" /></a></div>
+                                                </div>
+                                                <div class="panel" title="Panel 3">
+                                                    <div class="wrapper"><a href="show.html"><img src="Image/big-3.jpg" alt="scotch egg" class="floatLeft" /></a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="#1" class="cross-link active-thumb"><img src="Image/small-1.jpg" class="nav-thumb" alt="temp-thumb" /></a>
+                                        <div id="movers-row">
+                                            <div><a href="#2" class="cross-link"><img src="Image/small-2.jpg" class="nav-thumb" alt="temp-thumb" /></a></div>
+                                            <div><a href="#3" class="cross-link"><img src="Image/small-3.jpg" class="nav-thumb" alt="temp-thumb" /></a></div>
+                                        </div>
+                                    </div>
+                                    <!-- 代码 结束 -->
+                                </div>
+                            </div>
+
+                            <div class="home_content1_right">
+                                <div class="home_content1_right_title">
+                                    <div class="home_news"><a href="#">新闻动态</a></div>
+                                    <div class="home_more"><a href="KbIntruoduce/ShowAll.aspx">MORE</a></div>
+                                </div>
+                                <div class="home_content1_right_text_all">
+                                    <ul>
+
+                                        <li><a target="_blank" href="javascript:GetID('ShowNews',1);">•&nbsp;&nbsp;天宫一号目标飞行器已再入大气层</a></li>
+
+                                        <li><a target="_blank" href="javascript:GetID('ShowNews',3);">•&nbsp;&nbsp;习近平引领中国经济“新”“高”“度”</a></li>
+
+                                        <li><a target="_blank" href="javascript:GetID('ShowNews',12);">•&nbsp;&nbsp;天宫一号目标飞行器已再入大气层</a></li>
+
+                                        <li><a target="_blank" href="javascript:GetID('ShowNews',11);">•&nbsp;&nbsp;天宫一号目标飞行器已再入大气层</a></li>
+
+                                        <li><a target="_blank" href="javascript:GetID('ShowNews',10);">•&nbsp;&nbsp;天宫一号目标飞行器已再入大气层</a></li>
+
+                                        <li><a target="_blank" href="javascript:GetID('ShowNews',9);">•&nbsp;&nbsp;天宫一号目标飞行器已再入大气层</a></li>
+
+                                        <li><a target="_blank" href="javascript:GetID('ShowNews',8);">•&nbsp;&nbsp;天宫一号目标飞行器已再入大气层</a></li>
+
+                                        <li><a target="_blank" href="javascript:GetID('ShowNews',7);">•&nbsp;&nbsp;天宫一号目标飞行器已再入大气层</a></li>
+
+                                        <li><a target="_blank" href="javascript:GetID('ShowNews',6);">•&nbsp;&nbsp;天宫一号目标飞行器已再入大气层</a></li>
+
+                                        <li><a target="_blank" href="javascript:GetID('ShowNews',5);">•&nbsp;&nbsp;天宫一号目标飞行器已再入大气层</a></li>
+
+                                        <li><a target="_blank" href="javascript:GetID('ShowNews',4);">•&nbsp;&nbsp;天宫一号目标飞行器已再入大气层</a></li>
+
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="home_content1_right_all">
+                            <div class="home_content1_right_title">
+                                <div class="home_news"><a href="#">通知公告</a></div>
+                                <div class="home_more"><a href="KbIntruoduce/ShowAllNotice.aspx">MORE</a></div>
+                            </div>
+                            <div class="home_content1_right_text_all">
+                                <ul>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowNotice',12);">•&nbsp;&nbsp;方正国际2015校园招聘</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowNotice',11);">•&nbsp;&nbsp;方正国际2015校园招聘</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowNotice',10);">•&nbsp;&nbsp;方正国际2015校园招聘</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowNotice',9);">•&nbsp;&nbsp;方正国际2015校园招聘</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowNotice',8);">•&nbsp;&nbsp;方正国际2015校园招聘</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowNotice',7);">•&nbsp;&nbsp;方正国际2015校园招聘</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowNotice',6);">•&nbsp;&nbsp;方正国际2015校园招聘</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowNotice',5);">•&nbsp;&nbsp;方正国际2015校园招聘</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowNotice',4);">•&nbsp;&nbsp;方正国际2015校园招聘</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowNotice',3);">•&nbsp;&nbsp;方正国际2015校园招聘</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowNotice',2);">•&nbsp;&nbsp;方正国际2015校园招聘</a></li>
+
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home_content2">
+                        <div class="home_content2_left">
+                            <div class="home_content1_right_title">
+                                <div class="home_news"><a href="#">联盟动态</a></div>
+                                <div class="home_more"><a href="KbIntruoduce/ShowAllDynamic.aspx?type=1">MORE</a></div>
+                            </div>
+                            <div class="home_content1_right_text_all">
+                                <ul>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowDynamic',1);">•&nbsp;&nbsp;清明忆先烈 习近平这样传承“红色基因”</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowDynamic',29);">•&nbsp;&nbsp;清明忆先烈 习近平这样传承“红色基因”</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowDynamic',27);">•&nbsp;&nbsp;清明忆先烈 习近平这样传承“红色基因”</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowDynamic',25);">•&nbsp;&nbsp;清明忆先烈 习近平这样传承“红色基因”</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowDynamic',23);">•&nbsp;&nbsp;清明忆先烈 习近平这样传承“红色基因”</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowDynamic',21);">•&nbsp;&nbsp;清明忆先烈 习近平这样传承“红色基因”</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowDynamic',19);">•&nbsp;&nbsp;清明忆先烈 习近平这样传承“红色基因”</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowDynamic',17);">•&nbsp;&nbsp;清明忆先烈 习近平这样传承“红色基因”</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowDynamic',15);">•&nbsp;&nbsp;清明忆先烈 习近平这样传承“红色基因”</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowDynamic',13);">•&nbsp;&nbsp;清明忆先烈 习近平这样传承“红色基因”</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowDynamic',11);">•&nbsp;&nbsp;清明忆先烈 习近平这样传承“红色基因”</a></li>
+
+
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="home_content2_middle">
+                            <div class="home_content1_right_title">
+                                <div class="home_news"><a href="#">团队动态</a></div>
+                                <div class="home_more"><a href="KbIntruoduce/ShowAllDynamic.aspx?type=2">MORE</a></div>
+                            </div>
+                            <div class="home_content1_right_text_all">
+                                <ul>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowDynamic',24);">•&nbsp;&nbsp;英国朴茨茅斯大学足球代表团来我校开展校…</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowDynamic',22);">•&nbsp;&nbsp;英国朴茨茅斯大学足球代表团来我校开展校…</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowDynamic',20);">•&nbsp;&nbsp;英国朴茨茅斯大学足球代表团来我校开展校…</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowDynamic',18);">•&nbsp;&nbsp;英国朴茨茅斯大学足球代表团来我校开展校…</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowDynamic',16);">•&nbsp;&nbsp;英国朴茨茅斯大学足球代表团来我校开展校…</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowDynamic',14);">•&nbsp;&nbsp;英国朴茨茅斯大学足球代表团来我校开展校…</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowDynamic',12);">•&nbsp;&nbsp;英国朴茨茅斯大学足球代表团来我校开展校…</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowDynamic',10);">•&nbsp;&nbsp;英国朴茨茅斯大学足球代表团来我校开展校…</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowDynamic',8);">•&nbsp;&nbsp;英国朴茨茅斯大学足球代表团来我校开展校…</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowDynamic',6);">•&nbsp;&nbsp;英国朴茨茅斯大学足球代表团来我校开展校…</a></li>
+
+                                    <li><a target="_blank" href="javascript:GetID('ShowDynamic',4);">•&nbsp;&nbsp;英国朴茨茅斯大学足球代表团来我校开展校…</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="ContentPlaceHolder1_plLogin">
+
+                            <div class="home_content2_right">
+                                <div>
+                                    <div class="home_content2_right_title">用户登录</div>
+
+                                    <div class="home_content2_right_text">
+                                        <div class="home_content2_right_text_one">
+                                            <input type="text" value="" placeholder="请输入用户名" />
+                                        </div>
+                                    </div>
+                                    <div class="home_content2_right_text">
+                                        <div class="home_content2_right_text_one">
+                                            <input type="text" value="" placeholder="请输入密码" />
+                                        </div>
+                                        <div class="home_content2_right_text">
+                                            <div class="home_content2_right_text_one1">
+                                                <input type="text" value="" placeholder="请输入验证码" />
+                                                <div class="home_content2_icon">
+                                                    <img src="image/yanzheng.png" />
+                                                </div>
+                                            </div>
+                                            <div class="home_content2_right_text">
+                                                <div class="home_content2_right_text_one2">
+                                                    <div class="home_content2_right_text_one2_left"><a href="javascript:Register();">用户注册</a></div>
+                                                    <div class="home_content2_right_text_one2_right"><a href="../Login.aspx" target="_blank">管理员登录</a></div>
+                                                </div>
+                                            </div>
+                                            <div class="home_content2_right_text">
+                                                <div class="home_content2_right_text_one2">
+                                                    <div class="home_login"><a href="#">登录</a></div>
+                                                    <div class="home_clear"><a href="#">清除</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div id="friend">
+                <div class="friend_middle">
+                    <div class="freind_left">友情链接:</div>
+                    <div class="freind_right">
+
+                        <select name="教育信息网站" style="width: 272px; height: 25px;">
+                            <option>教育信息网站</option>
+                            <option selected="selected">教育信息网站</option>
+                        </select>
+                        <select name="教育咨询网站" id="seclect" style="width: 272px; height: 25px;">
+                            <option>教育咨询网站</option>
+                            <option selected="selected">教育咨询网站</option>
+                        </select>
+                        <select name="教育协会网站" id="seclect" style="width: 272px; height: 25px;">
+                            <option>教育协会网站</option>
+                            <option selected="selected">教育协会网站</option>
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div id="foot">
+            <div class="foot_middle">
+                <div class="banquan">
+                    苏ICP备：XXXXXXX号<br />
+                    地址：XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                </div>
+            </div>
+        </div>
+
+        <div class="aspNetHidden">
+
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="AA2F74F2" />
+        </div>
+    </form>
+
+    <!-- Visual Studio Browser Link -->
+    <script type="application/json" id="__browserLink_initializationData">
+        {"appName":"Chrome","requestId":"aba0d3437e8243079da26ca3f8e1b66e"}
+    </script>
+    <script type="text/javascript" src="http://localhost:10068/84016e982730409ab0e3ef5dfb4feab7/browserLink" async="async"></script>
+    <!-- End Browser Link -->
+
 </body>
 </html>

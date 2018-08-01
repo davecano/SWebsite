@@ -608,6 +608,7 @@
     <Content Include="Manager\ContentManage\NewsAdd.aspx" />
     <Content Include="Manager\ContentManage\NewsEdit.aspx" />
     <Content Include="Manager\ContentManage\NewsManage.aspx" />
+    <Content Include="Manager\SysManage\UserManage.aspx" />
     <Content Include="Manager\SysManage\CodeAdd.aspx" />
     <Content Include="Manager\SysManage\CodeManage.aspx" />
     <Content Include="Manager\SysManage\CodeUpdate.aspx" />
@@ -620,7 +621,7 @@
     <Content Include="Manager\SysManage\RoleManage.aspx" />
     <Content Include="Manager\SysManage\RoleOperateManage.aspx" />
     <Content Include="Manager\SysManage\UserAdd.aspx" />
-    <Content Include="Manager\SysManage\UserManage.aspx" />
+    <Content Include="Manager\ContentManage\VistorManage.aspx" />
     <Content Include="Manager\SysManage\UserOperateEdit.aspx" />
     <Content Include="Manager\SysManage\UserUpdate.aspx" />
     <Content Include="NoPermission.aspx" />
@@ -660,6 +661,8 @@
     <Content Include="images\UserInfo.psd" />
     <Content Include="images\在线客服.psd" />
     <Content Include="Website\About\AboutIndex.aspx" />
+    <Content Include="Website\About\StuMemberIndex.aspx" />
+    <Content Include="Website\About\ShowAllExperts.aspx" />
     <Content Include="Website\AcademicAlliance\MemberIndex.aspx" />
     <Content Include="Website\AcademicAlliance\ShowMember.aspx" />
     <Content Include="Website\AcademicCommunication\AcademicCommunicationIndex.aspx" />
@@ -1403,6 +1406,13 @@
     <Compile Include="Manager\ContentManage\NewsManage.aspx.designer.cs">
       <DependentUpon>NewsManage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Manager\SysManage\UserManage.aspx.cs">
+      <DependentUpon>UserManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\SysManage\UserManage.aspx.designer.cs">
+      <DependentUpon>UserManage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Manager\SysManage\CodeAdd.aspx.cs">
       <DependentUpon>CodeAdd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1487,12 +1497,12 @@
     <Compile Include="Manager\SysManage\UserAdd.aspx.designer.cs">
       <DependentUpon>UserAdd.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Manager\SysManage\UserManage.aspx.cs">
-      <DependentUpon>UserManage.aspx</DependentUpon>
+    <Compile Include="Manager\ContentManage\VistorManage.aspx.cs">
+      <DependentUpon>VistorManage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Manager\SysManage\UserManage.aspx.designer.cs">
-      <DependentUpon>UserManage.aspx</DependentUpon>
+    <Compile Include="Manager\ContentManage\VistorManage.aspx.designer.cs">
+      <DependentUpon>VistorManage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manager\SysManage\UserOperateEdit.aspx.cs">
       <DependentUpon>UserOperateEdit.aspx</DependentUpon>
@@ -1572,6 +1582,20 @@
     </Compile>
     <Compile Include="Website\About\AboutIndex.aspx.designer.cs">
       <DependentUpon>AboutIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website\About\StuMemberIndex.aspx.cs">
+      <DependentUpon>StuMemberIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website\About\StuMemberIndex.aspx.designer.cs">
+      <DependentUpon>StuMemberIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website\About\ShowAllExperts.aspx.cs">
+      <DependentUpon>ShowAllExperts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website\About\ShowAllExperts.aspx.designer.cs">
+      <DependentUpon>ShowAllExperts.aspx</DependentUpon>
     </Compile>
     <Compile Include="Website\AcademicAlliance\MemberIndex.aspx.cs">
       <DependentUpon>MemberIndex.aspx</DependentUpon>
