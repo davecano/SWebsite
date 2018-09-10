@@ -15,6 +15,7 @@ namespace KBsiteframe.Model
         public static string ExpertBathPath = "ExpertPic";//专家上传图片的根目录
         public static string MemberBathPath = "MemberPic";//专家上传图片的根目录
         public static string NewsBathPath = "NewsPic";//新闻上传图片的根目录
+        public static string ToolBathPath = "ToolFile";//工具的根目录
         public static string DocumentBathPath = "DocumentFile"; // 文档上传文件的根目录
         public static string InvoiceBathPath = "InvoiceFile"; // 文档上传文件的根目录
         public static string BidResultBathPath = "BidResultFile"; // 文档上传文件的根目录
@@ -22,7 +23,9 @@ namespace KBsiteframe.Model
 
         public static string ProjectBathPath = "ProjectFile"; // 文档上传文件的根目录
         public static int FileMaxLength = 3;//上传文件最大大小。单位MB
+        public static int ToolFileMaxLength = 1000;//上传文件最大大小。单位MB
         public static string CanUploadFile = ".png|.jpg|.jpeg|.gif|.bmp|.xls|.xlsx|.rar|.zip|.doc|.docx|.pdf|.ppt|.pptx";
+        public static string ToolUploadFile = ".xls|.xlsx|.rar|.zip|.doc|.docx|.pdf|.ppt|.pptx|.mp4|.webm|.ogv";
         public static string BidUploadFile = ".xls|.xlsx";
         public static string DeliveryPricesFile = ".xls|.xlsx";
 
@@ -52,9 +55,9 @@ namespace KBsiteframe.Model
     /// </summary>
     public enum UserType
     {
-      访客,
-     普通管理员
-      }
+        访客,
+        普通管理员
+    }
     /// <summary>
     /// 审核状态
     /// </summary>
@@ -97,7 +100,8 @@ namespace KBsiteframe.Model
         团队成员信息,
         联盟成员信息,
         普通学生信息,
-        公告信息
+        公告信息,
+        工具信息
     }
 
     public enum MemberType
@@ -132,16 +136,28 @@ namespace KBsiteframe.Model
 
     public enum StaticType
     {
-        知识建构理论=1,
-        关于手段=2,
-        关于观点=3,
-        关于社区=4
+        知识建构理论 = 1,
+        关于手段 = 2,
+        关于观点 = 3,
+        关于社区 = 4
     }
 
     public enum Qualification
     {
-       
+
         博士,
         硕士
+    }
+    public enum ToolType
+    {
+        视频文件=1,
+        文本文件=2,
+        压缩文件=3
+    }
+
+    public enum PathType
+    {
+        服务器,
+        链接
     }
 }

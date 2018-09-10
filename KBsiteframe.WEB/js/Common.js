@@ -150,14 +150,30 @@ function closeLayer(obj) {
     }
 }
 
+//工具附件删除
+function delToolUpload($file, pageurl,funcname) {
 
-//资质附件删除
+    var ToolID = $file.attr("data-value");
+    var senddata = '{ ToolID: "' + ToolID + '"}';
+    $prent_file = $file.parent(".MultiFile-label");
+
+    ajaxExistTwo(pageurl + "/" + funcname, senddata, $prent_file, "删除成功", "删除成功");
+    var e = $file[0];
+    if (e && e.stopPropagation)
+        //因此它支持W3C的stopPropagation()方法
+        e.stopPropagation();
+    else
+        //否则，我们需要使用IE的方式来取消事件冒泡 
+        window.event.cancelBubble = true;
+}
+//附件删除
 function delFileUpload($file, pageurl) {
+ 
     var ArticleID = $file.attr("data-value");
     var senddata = '{ ArticleID: "' + ArticleID + '"}';
     $prent_file = $file.parent(".MultiFile-label");
 
-    ajaxExistTwo(pageurl + "/DeletePicByID", senddata, $prent_file, "pdf删除成功", "pdf删除成功");
+    ajaxExistTwo(pageurl + "/delArticleUpload", senddata, $prent_file, "pdf删除成功", "pdf删除成功");
     var e = $file[0];
     if (e && e.stopPropagation)
         //因此它支持W3C的stopPropagation()方法
@@ -182,6 +198,8 @@ function ShowIframeNotClose(pagesrc) {
 }
 //ajax封装
 function ajaxExistTwo(pageurl, senddata, $file, showmessage, errormessage) {
+    alert(pageurl);
+    alert(senddata);
     $.ajax({
         type: 'POST',//使用get方法访问后台
         dataType: 'json',//返回json格式的数据
@@ -200,8 +218,12 @@ function ajaxExistTwo(pageurl, senddata, $file, showmessage, errormessage) {
     });
 }
 
+////pdf 下载或查看
+//function ShowOrDown($div) {
+    
+//}
 
-//资质文件下载或查看
+//普通下载或查看
 function showOrdown($div) {
 
     var path = $div.attr("data-value");

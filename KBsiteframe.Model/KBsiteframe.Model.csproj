@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Member.cs" />
     <Compile Include="Notice.cs" />
+    <Compile Include="Tool.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="Treatise.cs" />
     <Compile Include="CommDef.cs" />

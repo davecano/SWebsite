@@ -18,7 +18,7 @@ namespace KBsiteframe.WEB.Website
     public partial class index : VistorPageBase
     {
         BNew bn = new BNew();
-        public IList<New> piclist = new List<New>();
+        //public IList<New> piclist = new List<New>();
 
         BNotice bo = new BNotice();
         BDynamic bd = new BDynamic();
@@ -47,18 +47,19 @@ namespace KBsiteframe.WEB.Website
 
             rpNewList.DataSource = NewsTitleList;
             rpNewList.DataBind();
-            var tlist = NewsTitleList.Take(3).ToList();
-            foreach (var pic in tlist)
-            {
-                pic.NewsPicPath = ConfigurationManager.AppSettings["FileBasicPath"] + "/"
-                  + pic.NewsPicPath;
-                piclist.Add(pic);
-            }
-            if (tlist.Count < 3)
-                for (int i = 0; i < 3 - tlist.Count; i++)
-                {
-                    piclist.Add(new New());
-                }
+           rppiclist.DataSource = NewsTitleList.Take(3).ToList();
+            rppiclist.DataBind();
+            //foreach (var pic in tlist)
+            //{
+            //    pic.NewsPicPath = ConfigurationManager.AppSettings["FileBasicPath"] + "/"
+            //      + pic.NewsPicPath;
+            //    piclist.Add(pic);
+            //}
+            //if (tlist.Count < 3)
+            //    for (int i = 0; i < 3 - tlist.Count; i++)
+            //    {
+            //        piclist.Add(new New());
+            //    }
 
             //绑定通知公告
             rpNoticeList.DataSource = bo.GetNoticesTitleList();

@@ -7,117 +7,99 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace KBsiteframe.WEB.Website {
+namespace KBsiteframe.WEB.Manager.ContentManage {
     
     
-    public partial class index {
+    public partial class ToolEdit {
         
         /// <summary>
-        /// rppiclist 控件。
+        /// form1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rppiclist;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// rpNewList 控件。
+        /// dpToolType 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rpNewList;
+        protected global::System.Web.UI.WebControls.DropDownList dpToolType;
         
         /// <summary>
-        /// rpNoticeList 控件。
+        /// Literal1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rpNoticeList;
+        protected global::System.Web.UI.WebControls.Literal Literal1;
         
         /// <summary>
-        /// rpLMlist 控件。
+        /// txtToolName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rpLMlist;
+        protected global::System.Web.UI.WebControls.TextBox txtToolName;
         
         /// <summary>
-        /// rpTDlist 控件。
+        /// Literal2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rpTDlist;
+        protected global::System.Web.UI.WebControls.Literal Literal2;
         
         /// <summary>
-        /// plLogin 控件。
+        /// dppathtype 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel plLogin;
+        protected global::System.Web.UI.WebControls.DropDownList dppathtype;
         
         /// <summary>
-        /// txtUserName 控件。
+        /// Literal4 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUserName;
+        protected global::System.Web.UI.WebControls.Literal Literal4;
         
         /// <summary>
-        /// txtPassword 控件。
+        /// txtToolPath 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword;
+        protected global::System.Web.UI.WebControls.TextBox txtToolPath;
         
         /// <summary>
-        /// txtImg 控件。
+        /// Literal3 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtImg;
+        protected global::System.Web.UI.WebControls.Literal Literal3;
         
         /// <summary>
-        /// Image1 控件。
+        /// btnAdd 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
-        
-        /// <summary>
-        /// ckisrember 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckisrember;
-        
-        /// <summary>
-        /// btnlogin 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnlogin;
+        protected global::Z.ZButton btnAdd;
     }
 }

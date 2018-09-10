@@ -76,7 +76,7 @@
                 $("#StarTime").focus();
                 return false;
             }
-        
+
             if ($.trim($("#txtSummary").val()) == "") {
                 layer.tips("请输入摘要", $("#txtSummary"), { guide: 1, time: 3 });
                 $("#txtSummary").focus();
@@ -132,7 +132,7 @@
                         </div>
                     </div>
                 </div>
-                  <div class="col-xs-12">
+                <div class="col-xs-12">
                     <div class="form-group">
                         <label class="col-sm-2 align-right control-label no-padding-right">图片</label>
                         <div class="col-sm-3">
@@ -142,7 +142,7 @@
 
                     </div>
                 </div>
-                  <div class="col-xs-12">
+                <div class="col-xs-12">
                     <div class="form-group">
 
 
@@ -161,14 +161,14 @@
                         </div>
                         <label class="col-sm-1 align-right control-label no-padding-right">语言</label>
                         <div class="col-sm-3">
-                            <asp:DropDownList ID="dpLanguage" runat="server" ></asp:DropDownList>
+                            <asp:DropDownList ID="dpLanguage" runat="server"></asp:DropDownList>
                             <asp:Literal ID="Literal4" runat="server" Text="&lt;font color=red&gt;*&lt;/font&gt;"></asp:Literal>
                         </div>
                         <label class="col-sm-1 align-right control-label no-padding-right">国内</label>
-					    <div class="col-sm-3">
-                     <asp:CheckBox runat="server" ID="ckIsinternal"/>
-                         
-					    </div>
+                        <div class="col-sm-3">
+                            <asp:CheckBox runat="server" ID="ckIsinternal" />
+
+                        </div>
                     </div>
                 </div>
                 <div class="col-xs-12">
@@ -211,7 +211,7 @@
                         </div>
                     </div>
                 </div>
-            <div class="col-xs-12">
+                <div class="col-xs-12">
                     <div class="form-group">
                         <%-- <label class="col-sm-2 align-right control-label no-padding-right">作者</label>
 					    <div class="col-sm-3">
@@ -256,7 +256,24 @@
                         <label class="col-sm-2 align-right control-label no-padding-right"></label>
                         <div class="col-sm-8">
                             <input type="file" name="FileUpload1" id="FileUpload1" class="multi" accept="pdf" />
-                            <div class="MultiFile-list" id="FileUpload1_wrap_list"></div>
+                            <div class="MultiFile-list" id="FileUpload1_wrap_list">
+
+                                <%--                                <div class="MultiFile-label" data-value='<%=GetArticlepath %>'   onclick="showOrdown($(this))">
+                                    <div class='MultiFile-view pdf_bg'  title='<%=GetTitle%>'></div>
+                                    <a class="MultiFile-remove" href="javascript:void(0)" data-value='<%=GetArticleID %>' onclick="delFileUpload($(this),'ArticleEdit.aspx')"></a>
+                                    <span class="MultiFile-title" title='<%=GetTitle%>'><%=GetTitle %></span>
+                                </div>--%>
+                                <asp:Repeater runat="server" ID="ralist">
+                                    <ItemTemplate>
+
+                                        <div class="MultiFile-label" data-value='<%#Eval("ArticlePath")%>' onclick="showOrdown($(this))">
+                                            <div class='MultiFile-view pdf_bg' title='<%#Eval("ArticleTitle")%>'></div>
+                                            <a class="MultiFile-remove" href="javascript:void(0)" data-value='<%#Eval("ArticleID")%>' onclick="delFileUpload($(this),'ArticleEdit.aspx')"></a>
+                                            <span class="MultiFile-title" title='<%#Eval("ArticleTitle")%>'><%#Eval("ArticleTitle")%>'</span>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                            </div>
                         </div>
                     </div>
                 </div>

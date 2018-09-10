@@ -31,9 +31,7 @@ namespace KBsiteframe.WEB.Manager.ContentManage
         BProject bp=new BProject();
         BMember bm=new BMember();
         private string articleID = "";
-        public string GetTitle;//注意变量的修饰符  
-        public string GetArticleID;//注意变量的修饰符  
-        public string GetArticlepath;//注意变量的修饰符  
+     IList<Article> alist=new List<Article>(); 
         protected void Page_Load(object sender, EventArgs e)
         {
             articleID= PubCom.Q("ID");
@@ -66,9 +64,7 @@ namespace KBsiteframe.WEB.Manager.ContentManage
             dpArticleType.SelectedValue = a.ArticleType;
             dpLanguage.SelectedValue = a.LanguageType;
             txtArticleTitle.Text = a.ArticleTitle;
-            GetTitle = a.ArticleTitle;
-            GetArticleID = a.ArticleID.ToString();
-            GetArticlepath = PicFilePathV+ a.ArticlePath;
+        
             txtKryword.Text = a.Keyword;
             txtSummary.Text = a.Summary;
             txtPublication.Text = a.Publication;
@@ -76,6 +72,14 @@ namespace KBsiteframe.WEB.Manager.ContentManage
             ImgNews.ImageUrl = PicFilePathV + a.ArticlePicPath;
             ckIsinternal.Checked = a.IsInternal ?? false;
             if (a.IsInternal != null) ckIsinternal.Checked = (bool) a.IsInternal;
+            if (!string.IsNullOrEmpty(a.ArticlePath))
+            {
+                a.ArticlePath = PicFilePathV + a.ArticlePath;
+                alist.Add(a);
+            }
+          
+            ralist.DataSource = alist;
+            ralist.DataBind();
         }
 
         void BindDropDownList()
@@ -222,7 +226,7 @@ namespace KBsiteframe.WEB.Manager.ContentManage
         }
         
              [WebMethod]
-        public static int DeletePicByID(string ArticleID)
+        public static int delArticleUpload(string ArticleID)
         {
             BArticle bq = new BArticle();
             return bq.Update(new Article()

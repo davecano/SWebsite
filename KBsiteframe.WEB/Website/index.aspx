@@ -24,6 +24,8 @@
             //    ShowIframe("添加字典信息", "CodeAdd.aspx", '780px', '500px');
             //    return false;
             //});
+            $("#lb1").find("li").first().addClass("active");
+            $("#lb2").find("div").first().addClass("active");
 
         });
 
@@ -51,7 +53,6 @@
 
         .carousel-indicators {
             margin-bottom: -75px;
-          
         }
     </style>
 </asp:Content>
@@ -135,27 +136,33 @@
 						</div>--%>
 
                             <div id="myCarousel" class="carousel slide slider-wrap " style="background: #2f4f4f">
-                                <!-- 轮播（Carousel）指标 -->
-                                <ol class="carousel-indicators">
-                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                                    <li data-target="#myCarousel" data-slide-to="2"></li>
+
+
+                                <ol class="carousel-indicators" id="lb1">
+                                    <%--    <li data-target="#myCarousel" data-slide-to='<%#Container.ItemIndex%>' class="active"></li>--%>
+                                    <li data-target="#myCarousel" data-slide-to="0" <%--class="active"--%>></li>
+                                    <li data-target="#myCarousel" data-slide-to="1" <%--class="active"--%>></li>
+                                    <li data-target="#myCarousel" data-slide-to="2" <%--class="active"--%>></li>
                                 </ol>
+
+
+
+
                                 <!-- 轮播（Carousel）项目 -->
-                                <div class="carousel-inner">
-                                    <div class="item active">
-                                        <a target="_blank" href="ShowNews.aspx?ID=<%=piclist?[0].NewsID %>">
-                                            <img src="<%=piclist[0].NewsPicPath %>" alt="<%=piclist[0].Title %>"/></a>
-                                    </div>
-                                    <div class="item">
-                                              <a target="_blank" href="ShowNews.aspx?ID=<%=piclist?[1].NewsID %>">
-                                            <img src="<%=piclist[1].NewsPicPath %>" alt="<%=piclist[1].Title %>"  /></a>
-                                    </div>
-                                    <div class="item">
-                                         <a target="_blank" href="ShowNews.aspx?ID=<%=piclist?[2].NewsID %>">
-                                            <img src="<%=piclist[2].NewsPicPath %>" alt="<%=piclist[2].Title %>"  /></a>
-                                    </div>
+                                <div class="carousel-inner" id="lb2">
+                                    <asp:Repeater runat="server" ID="rppiclist">
+                                        <ItemTemplate>
+                                            <div class="item<%-- active--%>">
+                                                <a target="_blank" href="ShowNews.aspx?ID=<%#Eval("NewsID")%>">
+                                                    <img src="<%#PicFilePathV+Eval("NewsPicPath")%>" alt="<%#Eval("Title")%>" /></a>
+                                            </div>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
                                 </div>
+
+
+                                <!-- 轮播（Carousel）指标 -->
+
 
                             </div>
                             <!-- 代码 结束 -->
@@ -281,15 +288,18 @@
                                             <div class="home_content2_right_text_one2_left"><a href="javascript:Register();">用户注册</a></div>
 
                                             <div class="home_content2_right_text_one2_right">
-                                                <asp:CheckBox runat="server" ID="ckisrember" Style="display: inline-block; width: 15px; height: 15px" Checked="True" />记住密码</div>
+                                                <asp:CheckBox runat="server" ID="ckisrember" Style="display: inline-block; width: 15px; height: 15px" Checked="True" />记住密码
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="home_content2_right_text">
                                         <div class="home_content2_right_text_one2">
                                             <div class="home_login">
-                                                <asp:Button runat="server" ID="btnlogin" Text="登&nbsp;录" OnClick="btnlogin_OnClick" /></div>
+                                                <asp:Button runat="server" ID="btnlogin" Text="登&nbsp;录" OnClick="btnlogin_OnClick" />
+                                            </div>
                                             <div class="home_clear">
-                                                <input id="Reset1" class="btn btn-mini btn-primary" type="reset" value="清&nbsp;除" /></div>
+                                                <input id="Reset1" class="btn btn-mini btn-primary" type="reset" value="清&nbsp;除" />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
