@@ -38,7 +38,7 @@
 
         function Register() {
             //ShowIframe("用户注册", "UserRegister.aspx", '780px', '600px');
-            ShowIframeNew("用户注册", "UserRegister.aspx", '780px', '600px');
+            ShowIframeNew("用户注册", "/Website/UserRegister.aspx", '780px', '600px');
             return false;
         }
     </script>
@@ -149,11 +149,11 @@
 
 
                                 <!-- 轮播（Carousel）项目 -->
-                                <div class="carousel-inner" id="lb2">
+                                <div class="carousel-inner" id="lb2" style="height: 300px">
                                     <asp:Repeater runat="server" ID="rppiclist">
                                         <ItemTemplate>
                                             <div class="item<%-- active--%>">
-                                                <a target="_blank" href="ShowNews.aspx?ID=<%#Eval("NewsID")%>">
+                                                <a target="_blank" href="/Website/ShowNews.aspx?ID=<%#Eval("NewsID")%>">
                                                     <img src="<%#PicFilePathV+Eval("NewsPicPath")%>" alt="<%#Eval("Title")%>" /></a>
                                             </div>
                                         </ItemTemplate>
@@ -178,7 +178,7 @@
                             <ul>
                                 <asp:Repeater runat="server" ID="rpNewList">
                                     <ItemTemplate>
-                                        <li><a target="_blank" href="javascript:GetID('ShowNews',<%#Eval("NewsID")%>);">•&nbsp;&nbsp;<%#Utils.CutString(Eval("Title"),37) %></a></li>
+                                        <li><a target="_blank" href="javascript:GetID('/Website/ShowNews',<%#Eval("NewsID")%>);">•&nbsp;&nbsp;<%#Utils.CutString(Eval("Title"),37) %></a></li>
                                     </ItemTemplate>
                                 </asp:Repeater>
 
@@ -195,7 +195,7 @@
                         <ul>
                             <asp:Repeater runat="server" ID="rpNoticeList">
                                 <ItemTemplate>
-                                    <li><a target="_blank" href="javascript:GetID('ShowNotice',<%#Eval("NoticeID")%>);">•&nbsp;&nbsp;<%#Utils.CutString(Eval("NoticeTitle"),37) %></a></li>
+                                    <li><a target="_blank" href="javascript:GetID('/Website/ShowNotice',<%#Eval("NoticeID")%>);">•&nbsp;&nbsp;<%#Utils.CutString(Eval("NoticeTitle"),37) %></a></li>
                                 </ItemTemplate>
                             </asp:Repeater>
 
@@ -204,7 +204,7 @@
                 </div>
             </div>
             <div class="home_content2">
-                <div class="home_content2_left">
+          <%--      <div class="home_content2_left">
                     <div class="home_content1_right_title">
                         <div class="home_news"><a href="#">联盟动态</a></div>
                         <div class="home_more"><a href="KbIntruoduce/ShowAllDynamic.aspx?type=1">MORE</a></div>
@@ -213,35 +213,28 @@
                         <ul>
                             <asp:Repeater runat="server" ID="rpLMlist">
                                 <ItemTemplate>
-                                    <li><a target="_blank" href="javascript:GetID('ShowDynamic',<%#Eval("DynamicID")%>);">•&nbsp;&nbsp;<%#Utils.CutString(Eval("Title"),37) %></a></li>
+                                    <li><a target="_blank" href="javascript:GetID('/Website/ShowDynamic',<%#Eval("DynamicID")%>);">•&nbsp;&nbsp;<%#Utils.CutString(Eval("Title"),37) %></a></li>
                                 </ItemTemplate>
                             </asp:Repeater>
 
                         </ul>
                     </div>
-                    <%--    <div class="home_content2_left_xia">
-          <div class="home_content2_left_xia_one">
-            <div class="home_content2_left_xia_one_left"><img src="image/bal-text.jpg" /></div>
-            <div class="home_content2_left_xia_one_right">
-              <div class="home_content2_left_xia_one_right_shang"><a href="#">全省高校武装部部长培训班</a></div>
-              <div class="home_content2_left_xia_one_right_xia"><a href="#">4月23日至25日，省教育厅、省军区战备建设局、省军区动员局...</a></div>
-            </div>
-          </div>
-          <div class="home_content2_left_xia_one">
-            <div class="home_content2_left_xia_one_left"><img src="image/bal-text.jpg" /></div>
-            <div class="home_content2_left_xia_one_right">
-              <div class="home_content2_left_xia_one_right_shang"><a href="#">全省高校武装部部长培训班</a></div>
-              <div class="home_content2_left_xia_one_right_xia"><a href="#">4月23日至25日，省教育厅、省军区战备建设局、省军区动员局...</a></div>
-            </div>
-          </div>
-          <div class="home_content2_left_xia_one">
-            <div class="home_content2_left_xia_one_left"><img src="image/bal-text.jpg" /></div>
-            <div class="home_content2_left_xia_one_right">
-              <div class="home_content2_left_xia_one_right_shang"><a href="#">全省高校武装部部长培训班</a></div>
-              <div class="home_content2_left_xia_one_right_xia"><a href="#">4月23日至25日，省教育厅、省军区战备建设局、省军区动员局...</a></div>
-            </div>
-          </div>
-        </div>--%>
+         
+                </div>--%>
+                      <div class="home_content2_left">
+                    <div class="home_content1_right_title">
+                        <div class="home_news"><a href="#">联盟动态</a></div>
+                        <div class="home_more"><a href="KbIntruoduce/ShowAllDynamic.aspx?type=1">MORE</a></div>
+                    </div>
+                    <div class="home_content1_right_text_all">
+                        <ul>
+                            <asp:Repeater runat="server" ID="rpLMlist">
+                                <ItemTemplate>
+                                    <li><a target="_blank" href="javascript:GetID('/Website/ShowDynamic',<%#Eval("DynamicID")%>);">•&nbsp;&nbsp;<%#Utils.CutString(Eval("Title"),37) %></a></li>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </ul>
+                    </div>
                 </div>
                 <div class="home_content2_middle">
                     <div class="home_content1_right_title">
@@ -252,7 +245,7 @@
                         <ul>
                             <asp:Repeater runat="server" ID="rpTDlist">
                                 <ItemTemplate>
-                                    <li><a target="_blank" href="javascript:GetID('ShowDynamic',<%#Eval("DynamicID")%>);">•&nbsp;&nbsp;<%#Utils.CutString(Eval("Title"),37) %></a></li>
+                                    <li><a target="_blank" href="javascript:GetID('/Website/ShowDynamic',<%#Eval("DynamicID")%>);">•&nbsp;&nbsp;<%#Utils.CutString(Eval("Title"),37) %></a></li>
                                 </ItemTemplate>
                             </asp:Repeater>
                         </ul>
@@ -316,7 +309,7 @@
             <div class="freind_left"><a href="../Login.aspx" target="_blank">管理员登录</a></div>
             <div class="freind_right">
 
-                <select name="教育信息网站" style="width: 272px; height: 25px;">
+           <%--     <select name="教育信息网站" style="width: 272px; height: 25px;">
                     <option>教育信息网站</option>
                     <option selected="selected">教育信息网站</option>
                 </select>
@@ -327,7 +320,7 @@
                 <select name="教育协会网站" id="seclect" style="width: 272px; height: 25px;">
                     <option>教育协会网站</option>
                     <option selected="selected">教育协会网站</option>
-                </select>
+                </select>--%>
 
             </div>
         </div>

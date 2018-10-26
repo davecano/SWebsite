@@ -19,8 +19,7 @@ namespace KBsiteframe.WEB
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            txtUserName.Text = "admin";
-            txtPassword.Text = "999999";
+          
 
         }
 

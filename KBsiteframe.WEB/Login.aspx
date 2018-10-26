@@ -14,7 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="css/login/ie.css">
 	<![endif]-->
 	<style type="text/css">
-	body { background: url(images/banner.png) fixed center center; }
+	body { background: url(/images/banner.png) fixed center center; }
     .tit { margin: auto; margin-top: 170px; text-align: center; width: 450px; padding-bottom: 20px; text-shadow: 1px 1px 2px #000000; line-height: 40px; }
     .login-wrap { width: 50%; min-width: 570px; margin: 0 auto; }
     /*

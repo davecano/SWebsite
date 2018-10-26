@@ -4,7 +4,7 @@
 <html>
 	<head>
 	<meta charset="utf-8">
-	<title>Video.js 7.0</title>
+	<title>视频播放</title>
 	<link href="/css/video-js.min.css" rel="stylesheet">
 	<style>
 body {
@@ -30,7 +30,7 @@ body {
     	<source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg">--%>
         <p class="vjs-no-js"> To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a> </p>
       </video>
-      <script src="js/video.min.js"></script> 
+      <script src="../js/video.min.js"></script> 
       <script src="http://vjs.zencdn.net/5.19/lang/zh-CN.js"></script>
       <script type="text/javascript">
 			var myPlayer = videojs('my-video');

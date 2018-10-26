@@ -28,7 +28,7 @@
       <li> <a href="/Website/AcademicCommunication/AcademicCommunicationIndex.aspx" target="_parent">学术交流</a> </li>
       <li> <a href="/Website/AcademicResource/AcademicResourceIndex.aspx" target="_parent">学术资源</a> </li>
       <li> <a href="/Website/About/AboutIndex.aspx" target="_parent">关于我们</a> </li>
-       <li> <a href="#">English</a> </li>
+     <%--  <li> <a href="#">English</a> </li>--%>
     </ul>
   </div>
 </div>

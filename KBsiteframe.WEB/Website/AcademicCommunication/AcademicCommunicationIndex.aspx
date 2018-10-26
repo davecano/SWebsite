@@ -70,7 +70,7 @@
                                     <asp:Repeater runat="server" ID="rplist1">
                                         <ItemTemplate>
                                     <%--   <li><a href="list4_show.html">•&nbsp;&nbsp;全国学校美育工作会议暨第三批学校美育改革发展备忘录签署仪式举行</a></li>--%>
-                                         <li><a href='../KbIntruoduce/ShowArticle.aspx?ID=<%#Eval("NewsID") %>' target="_blank">•&nbsp;&nbsp;<%#Utils.CutString(Eval("Title"),50) %></a></li>
+                                         <li><a href='../ShowNews.aspx?ID=<%#Eval("NewsID") %>' target="_blank">•&nbsp;&nbsp;<%#Utils.CutString(Eval("Title"),50) %></a></li>
                                         </ItemTemplate>
                                     </asp:Repeater>
                                  
@@ -98,7 +98,7 @@
                                       <asp:Repeater runat="server" ID="rplist2">
                                         <ItemTemplate>
                                     <%--   <li><a href="list4_show.html">•&nbsp;&nbsp;全国学校美育工作会议暨第三批学校美育改革发展备忘录签署仪式举行</a></li>--%>
-                                         <li><a href='../KbIntruoduce/ShowArticle.aspx?ID=<%#Eval("NewsID") %>' target="_blank">•&nbsp;&nbsp;<%#Utils.CutString(Eval("Title"),50) %></a></li>
+                                         <li><a href='../ShowNews.aspx?ID=<%#Eval("NewsID") %>' target="_blank">•&nbsp;&nbsp;<%#Utils.CutString(Eval("Title"),50) %></a></li>
                                         </ItemTemplate>
                                     </asp:Repeater>
                                  

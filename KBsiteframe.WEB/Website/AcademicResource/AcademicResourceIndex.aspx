@@ -107,7 +107,7 @@
                                 <asp:Repeater runat="server" ID="rplist3">
                                     <ItemTemplate>
                                         <%--  <li><a href="list5_show_wz.html">•&nbsp;&nbsp;全国学校美育工作会议暨第三批学校美育批学校改革发展备批学校美育改...</a></li>--%>
-                                        <li><a target="_blank" href="javascript:GetID('../ShowNews',<%#Eval("NewsID")%>);">•&nbsp;&nbsp;<%#Utils.CutString(Eval("Title"),45) %></a><span style="float: right"><%#Eval("SubmitTime","{0:yyyy-MM-dd}") %></span></li>
+                                        <li><a target="_blank" href="/Website/ShowNews.aspx?ID=<%#Eval("NewsID")%>">•&nbsp;&nbsp;<%#Utils.CutString(Eval("Title"),45) %></a><span style="float: right"><%#Eval("SubmitTime","{0:yyyy-MM-dd}") %></span></li>
 
                                     </ItemTemplate>
                                 </asp:Repeater>
